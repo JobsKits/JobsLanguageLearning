@@ -1,0 +1,34 @@
+JobsLanguageLearning/JobsLanguageHomeVC/JobsLanguageHomeVC.swift:26:        .byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsLanguageLearning/JobsLanguageHomeVC/JobsLanguageHomeVC.swift:40:            .byAccessoryType(.disclosureIndicator).byBackgroundColor(JobsCor.secondarySystemGroupedBackground)
+JobsByPods/JobsKanjiLearning@Pods/Core/View/JobsKanjiRubyText/JobsKanjiRubyText.swift:22:        byEditable(false).bySelectable(true).byScrollEnabled(false).byBackgroundColor(JobsCor.clear)
+JobsByPods/JobsKanjiLearning@Pods/Core/View/JobsKanjiRubyText/JobsKanjiRubyText.swift:31:            var attributes: [NSAttributedString.Key: Any] = [.font: JobsFont.systemFont(ofSize: 22), .foregroundColor: JobsCor.label]
+JobsByPods/JobsKanjiLearning@Pods/Core/View/JobsKanjiRubyText/JobsKanjiRubyText.swift:40:        byLinkTextAttributes([.foregroundColor: JobsCor.label])
+JobsByPods/JobsKanjiLearning@Pods/Core/View/JobsKanjiRubyText/JobsKanjiRubyText.swift:43:        let attributes = [kCTRubyAnnotationSizeFactorAttributeName: 0.5, kCTForegroundColorAttributeName: JobsCor.systemRed.cgColor] as CFDictionary
+JobsByPods/JobsRussianLearning@Pods/Core/JobsRussianLearningVC/JobsRussianLearningVC.swift:139:        view.byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsByPods/JobsEnglishLearning@Pods/Core/VC/JobsEnglishLearningVC/JobsEnglishLearningVC.swift:46:        .byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsByPods/JobsKanjiLearning@Pods/Core/VC/JobsKanjiLearningVC/JobsKanjiLearningVC.swift:39:        .byKeyboardDismissMode(.onDrag).byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsByPods/JobsKanjiLearning@Pods/Core/VC/JobsKanjiLearningVC/JobsKanjiLearningVC.swift:78:            .byAccessoryType(.disclosureIndicator).byBackgroundColor(JobsCor.secondarySystemGroupedBackground)
+JobsByPods/JobsEnglishLearning@Pods/Core/Cell/JobsEnglishWordCell/JobsEnglishWordCell.swift:32:        bySelectionStyle(.none).byBackgroundColor(JobsCor.secondarySystemGroupedBackground)
+JobsByPods/JobsRussianLearning@Pods/Core/JobsRussianConsonantPickerVC/JobsRussianConsonantPickerVC.swift:39:        view.byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:13:    @discardableResult func byLearningBackgroundColor(_ color: UIColor, cornerRadius: CGFloat = 12) -> Self {
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:14:        let apply: (UIButton, UIColor) -> Void = { button, resolved in
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:15:            button.byConfiguration((button.configuration ?? .plain())
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:17:                    .byBackgroundColor(resolved)
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:20:        let slot = "JobsLanguage.button.background"
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:21:        if let key = color.jobsThemeColorKey {
+JobsByPods/JobsLanguageCore@Pods/Core/Factory/UIButton/UIButton+DSL.swift:24:                apply(button, center.resolvedColor(key))
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:17:            .byLearningBackgroundColor(JobsCor.secondarySystemGroupedBackground)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:20:            .byTitleColor(JobsCor.label)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:21:            .byTitleColor(JobsCor.secondaryLabel, for: .disabled)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:27:            .byTextColor(secondary ? JobsCor.secondaryLabel : JobsCor.label)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:30:    public static func bindText(_ label: UILabel, key: JobsThemeColorKey) {
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:31:        label.byTextColor(JobsThemeCenter.shared.color(key))
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:34:        button.byLearningBackgroundColor(selected ? JobsCor.systemBlue : uncommon ? JobsCor.tertiarySystemGroupedBackground : JobsCor.secondarySystemGroupedBackground)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageLearningStyle/JobsLanguageLearningStyle.swift:35:            .byTitleColor(selected ? JobsCor.white : JobsCor.label)
+JobsByPods/JobsKanjiLearning@Pods/Core/Translation/JobsKanjiTranslationView/JobsKanjiTranslationView.swift:15:        Color.clear.translationTask(translator.configuration) { session in
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageSettingsVC/JobsLanguageSettingsVC.swift:25:        .byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageSettingsVC/JobsLanguageSettingsVC.swift:54:            .byBackgroundColor(JobsCor.secondarySystemGroupedBackground)
+JobsByPods/JobsLanguageCore@Pods/Core/JobsLanguageBaseVC/JobsLanguageBaseVC.swift:27:        view.byBackgroundColor(JobsCor.systemGroupedBackground)
+JobsByPods/JobsKanjiLearning@Pods/Core/Translation/JobsKanjiChineseTranslator/JobsKanjiChineseTranslator.swift:18:    @Published var configuration: TranslationSession.Configuration?
+JobsByPods/JobsKanjiLearning@Pods/Core/Translation/JobsKanjiChineseTranslator/JobsKanjiChineseTranslator.swift:54:        if configuration == nil { configuration = TranslationSession.Configuration(source: Locale.Language(identifier: "en"), target: Locale.Language(identifier: "zh-Hans")) }
+JobsByPods/JobsKanjiLearning@Pods/Core/Translation/JobsKanjiChineseTranslator/JobsKanjiChineseTranslator.swift:55:        else { configuration?.invalidate() }

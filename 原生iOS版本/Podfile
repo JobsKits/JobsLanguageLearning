@@ -1,0 +1,69 @@
+ENV['COCOAPODS_DISABLE_STATS'] = 'true'
+source 'https://cdn.cocoapods.org/'
+platform :ios, '18.0'
+install! 'cocoapods', :deterministic_uuids => false, :disable_input_output_paths => true
+
+# 依赖定义与安装配置分离；依赖文件不承载外部脚本。
+dependencies = File.join(__dir__, 'Podfile.deps')
+instance_eval(File.read(dependencies), dependencies) if File.file?(dependencies)
+
+# CocoaPods 只自动展示 Podfile；依赖清单需在每次集成后补充引用。
+def jobs_show_dependency_manifest(installer)
+  manifest = Pathname.new(File.join(__dir__, 'Podfile.deps')).expand_path
+  return unless manifest.file? && installer.pods_project
+
+  project_path = installer.pods_project.path
+  project_file = project_path.join('project.pbxproj')
+  original = File.binread(project_file)
+  project = Xcodeproj::Project.open(project_path)
+  raise 'Pods 工程根对象异常' unless project.root_object.isa == 'PBXProject'
+
+  root_uuid = project.root_object.uuid
+  existing_uuids = project.objects_by_uuid.keys
+  references = project.files.select { |file| file.real_path.expand_path == manifest }
+  raise '依赖清单已有重复引用' if references.size > 1
+
+  reference = references.first
+  unless reference
+    reference = project.main_group.new_file(manifest.relative_path_from(project_path.dirname).to_s, 'SOURCE_ROOT')
+    raise '文件引用 UUID 冲突' if existing_uuids.include?(reference.uuid)
+  end
+  reference.explicit_file_type = 'text.script.ruby'
+  reference.last_known_file_type = nil
+  reference.move(project.main_group) unless reference.parent == project.main_group
+  children = project.main_group.children
+  children.delete(reference)
+  podfile_index = children.index { |child| child.isa == 'PBXFileReference' && child.real_path.expand_path == manifest.dirname.join('Podfile') }
+  children.insert(podfile_index ? podfile_index + 1 : 0, reference)
+
+  saving = true
+  project.save
+  verified = Xcodeproj::Project.open(project_path)
+  raise 'Pods 工程保存后根对象异常' unless verified.root_object.isa == 'PBXProject' && verified.root_object.uuid == root_uuid
+  visible = verified.main_group.files.select { |file| file.real_path.expand_path == manifest }
+  raise '依赖清单引用校验失败' unless visible.size == 1 && visible.first.explicit_file_type == 'text.script.ruby'
+
+  Pod::UI.puts 'Jobs：Podfile.deps 已显示在 Pods > Podfile 下方。'
+rescue ::StandardError => error
+  File.binwrite(project_file, original) if saving && original
+  Pod::UI.warn "Jobs：跳过依赖清单展示，已保留原 Pods 工程：#{error.message}"
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '18.0'
+      config.build_settings['ENABLE_USER_SCRIPT_SANDBOXING'] = 'NO'
+      config.build_settings['SWIFT_VERSION'] = '5.0'
+      # 旧 Objective-C 网络库包含系统私有模块头；关闭它的模块扫描即可文本编译。
+      if target.name == 'AFNetworking'
+        config.build_settings['CLANG_ENABLE_MODULES'] = 'NO'
+        config.build_settings['CLANG_ENABLE_EXPLICIT_MODULES'] = 'NO'
+      end
+    end
+  end
+end
+
+post_integrate do |installer|
+  jobs_show_dependency_manifest(installer)
+end

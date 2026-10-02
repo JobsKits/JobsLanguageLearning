@@ -1,0 +1,999 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08C4DD93F701C7A82F02B83F /* JobsKanjiTranslationHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF09FB59C620E541A35062 /* JobsKanjiTranslationHost.swift */; };
+		0F61756E0ED22AE9C6EC5C48 /* JobsEnglishLearningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044E4269E0C058247DABE6F /* JobsEnglishLearningVC.swift */; };
+		13E05554B6552D62D5C14AFA /* Pods_JobsLanguageLearningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6873C8165022A323E8269EFF /* Pods_JobsLanguageLearningUITests.framework */; };
+		1B9DEEB6D810CC51CD30D6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3DAE4852445798D42750 /* Assets.xcassets */; };
+		32CBBD077D57FB21B0B6587C /* JobsKanjiChineseTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D29BA09E7A3087FE5FDBF44 /* JobsKanjiChineseTranslator.swift */; };
+		3737AFB2A48A994DE19E735B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D329AE79BA7A66E0DA834D27 /* Foundation.framework */; };
+		376B9B05ED17F229E431FEF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D329AE79BA7A66E0DA834D27 /* Foundation.framework */; };
+		38711E99E38139BC7F091870 /* JobsLanguageHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042FB72D01E0F36E061B609C /* JobsLanguageHomeVC.swift */; };
+		3C44EAC6DAB47EEBA4667757 /* JobsRussianTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429F79EDDFE8777D045BCD8 /* JobsRussianTableView.swift */; };
+		52A8B7F17FC916804F0D00DD /* JobsRussianLearningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272264BC9A4A938EA322ACBE /* JobsRussianLearningVC.swift */; };
+		59561BBA94F967053EF224EB /* JobsKanjiTranslationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A114D1D4DF34AC7F3DF3931 /* JobsKanjiTranslationView.swift */; };
+		72643E0993DD7D007873172D /* JobsEnglishWordDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC53105AA7BF322D7FBE88 /* JobsEnglishWordDetailVC.swift */; };
+		749B788AD7879F6BF8B09855 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA53FF72F24140D79D58B1C /* SceneDelegate.swift */; };
+		8B07BA8C4FC3B2699194A3B6 /* JobsKanjiWordDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38C74F95CA058717562AFF /* JobsKanjiWordDetailVC.swift */; };
+		8E4762DF9916D9692B201D56 /* JobsRussianPairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403189BAC0ABF35EBFD08FB /* JobsRussianPairView.swift */; };
+		A3404590E79B785418951206 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D329AE79BA7A66E0DA834D27 /* Foundation.framework */; };
+		B75DBBD1A0CB976D8B243B1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FA3FD4C8EBD84D327FD317 /* AppDelegate.swift */; };
+		C247A4CF05A4F887809F6BC3 /* JobsKanjiDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5C1C1F5989FBFEEBD6CE3A /* JobsKanjiDetailVC.swift */; };
+		C3FABF1A6E62B5AEAB8199D9 /* JobsKanjiLearningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FC260D9BC189055F13B568 /* JobsKanjiLearningVC.swift */; };
+		CDDF050EE12B8F46A5058466 /* JobsEnglishWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D050ADB1E95A50B5D6D904 /* JobsEnglishWordCell.swift */; };
+		D237BA5DB8606EAA0F42AF81 /* Pods_JobsLanguageLearningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0B79462C9C01D32165DCCF /* Pods_JobsLanguageLearningTests.framework */; };
+		D3C4DEAF8983FB86FAAE463B /* Pods_JobsLanguageLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFDA3303066FB252B3A6179 /* Pods_JobsLanguageLearning.framework */; };
+		E6607FD12519383FF32F0EC7 /* JobsLanguageFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C660754FE1542D27DD900 /* JobsLanguageFlowTests.swift */; };
+		E940888260A3A44D7267CE84 /* JobsKanjiRubyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A2A4C13BBC31C076B14DFB /* JobsKanjiRubyText.swift */; };
+		F0619E68677C9BD18A18A7CF /* JobsLanguageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB82B6328784AA9FFEC7398 /* JobsLanguageRepositoryTests.swift */; };
+		FCED568357BFEA0D6ECA2336 /* JobsRussianConsonantPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109FB31727953235F28BE65F /* JobsRussianConsonantPickerVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		959DE284BB507DC065BA692B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07C658B56E78DD84972E19D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D87A737AC84221B3D27518A8;
+			remoteInfo = JobsLanguageLearning;
+		};
+		E63367D8E8CB11FBD7271BBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07C658B56E78DD84972E19D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D87A737AC84221B3D27518A8;
+			remoteInfo = JobsLanguageLearning;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		042FB72D01E0F36E061B609C /* JobsLanguageHomeVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JobsLanguageHomeVC.swift; path = JobsLanguageHomeVC/JobsLanguageHomeVC.swift; sourceTree = "<group>"; };
+		109FB31727953235F28BE65F /* JobsRussianConsonantPickerVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsRussianConsonantPickerVC.swift; sourceTree = "<group>"; };
+		1429F79EDDFE8777D045BCD8 /* JobsRussianTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsRussianTableView.swift; sourceTree = "<group>"; };
+		1627B891AE6CD60A833B87B8 /* JobsLanguageLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobsLanguageLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A114D1D4DF34AC7F3DF3931 /* JobsKanjiTranslationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiTranslationView.swift; sourceTree = "<group>"; };
+		1F4C660754FE1542D27DD900 /* JobsLanguageFlowTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsLanguageFlowTests.swift; sourceTree = "<group>"; };
+		272264BC9A4A938EA322ACBE /* JobsRussianLearningVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsRussianLearningVC.swift; sourceTree = "<group>"; };
+		3DFDA3303066FB252B3A6179 /* Pods_JobsLanguageLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsLanguageLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D5C1C1F5989FBFEEBD6CE3A /* JobsKanjiDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiDetailVC.swift; sourceTree = "<group>"; };
+		4FF0A388EA50605B3B2E3BEE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A8ED4D148C0F240EA237A51 /* Pods-JobsLanguageLearningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearningUITests.debug.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearningUITests/Pods-JobsLanguageLearningUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5CAF09FB59C620E541A35062 /* JobsKanjiTranslationHost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiTranslationHost.swift; sourceTree = "<group>"; };
+		5E73B3E05E5F3E78E5C71EDE /* Pods-JobsLanguageLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearning.release.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearning/Pods-JobsLanguageLearning.release.xcconfig"; sourceTree = "<group>"; };
+		6403189BAC0ABF35EBFD08FB /* JobsRussianPairView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsRussianPairView.swift; sourceTree = "<group>"; };
+		6873C8165022A323E8269EFF /* Pods_JobsLanguageLearningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsLanguageLearningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6968FBD33409AA40220C3085 /* Pods-JobsLanguageLearningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearningTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearningTests/Pods-JobsLanguageLearningTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6EAE1308E55DFB3075AF37E1 /* JobsLanguageLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsLanguageLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74EE6F071CCD9AD2A05285D8 /* Pods-JobsLanguageLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearning.debug.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearning/Pods-JobsLanguageLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		7D29BA09E7A3087FE5FDBF44 /* JobsKanjiChineseTranslator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiChineseTranslator.swift; sourceTree = "<group>"; };
+		9044E4269E0C058247DABE6F /* JobsEnglishLearningVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsEnglishLearningVC.swift; sourceTree = "<group>"; };
+		9E0B79462C9C01D32165DCCF /* Pods_JobsLanguageLearningTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsLanguageLearningTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FC53105AA7BF322D7FBE88 /* JobsEnglishWordDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsEnglishWordDetailVC.swift; sourceTree = "<group>"; };
+		B5FA3FD4C8EBD84D327FD317 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate/AppDelegate.swift; sourceTree = "<group>"; };
+		C2A2A4C13BBC31C076B14DFB /* JobsKanjiRubyText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiRubyText.swift; sourceTree = "<group>"; };
+		C49C31BD0BD2E5D402825B88 /* Pods-JobsLanguageLearningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearningTests.release.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearningTests/Pods-JobsLanguageLearningTests.release.xcconfig"; sourceTree = "<group>"; };
+		C4A8F8AE0AB67D228BB381C8 /* Pods-JobsLanguageLearningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearningUITests.release.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearningUITests/Pods-JobsLanguageLearningUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C6388CB558D883B63EE170B1 /* JobsLanguageLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobsLanguageLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB38C74F95CA058717562AFF /* JobsKanjiWordDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiWordDetailVC.swift; sourceTree = "<group>"; };
+		CEDE3DAE4852445798D42750 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFB82B6328784AA9FFEC7398 /* JobsLanguageRepositoryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsLanguageRepositoryTests.swift; sourceTree = "<group>"; };
+		D329AE79BA7A66E0DA834D27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DCA53FF72F24140D79D58B1C /* SceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SceneDelegate/SceneDelegate.swift; sourceTree = "<group>"; };
+		E3FC260D9BC189055F13B568 /* JobsKanjiLearningVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiLearningVC.swift; sourceTree = "<group>"; };
+		E8D050ADB1E95A50B5D6D904 /* JobsEnglishWordCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsEnglishWordCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0B08D7805C3B6FCC09ADBAB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3737AFB2A48A994DE19E735B /* Foundation.framework in Frameworks */,
+				D3C4DEAF8983FB86FAAE463B /* Pods_JobsLanguageLearning.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3BCFA3D663CD5357A989DE4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3404590E79B785418951206 /* Foundation.framework in Frameworks */,
+				13E05554B6552D62D5C14AFA /* Pods_JobsLanguageLearningUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D758193A30532CBDAF0B8C5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				376B9B05ED17F229E431FEF3 /* Foundation.framework in Frameworks */,
+				D237BA5DB8606EAA0F42AF81 /* Pods_JobsLanguageLearningTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07EAE3BE50712CBE6737859D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4FF0A388EA50605B3B2E3BEE /* Info.plist */,
+				CEDE3DAE4852445798D42750 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		0C856265E4561180F1908833 /* JobsRussianLearning */ = {
+			isa = PBXGroup;
+			children = (
+				83D8ACBBDA61DFA53859BE6F /* JobsRussianLearningVC */,
+				52BC45F84B6059D9C902910D /* JobsRussianConsonantPickerVC */,
+				F1B63EC41A587D107DF1DD9D /* JobsRussianPairView */,
+				EC629822E5FBC41266F8BA1A /* JobsRussianTableView */,
+			);
+			name = JobsRussianLearning;
+			path = JobsRussianLearning;
+			sourceTree = "<group>";
+		};
+		0E5DBE9264D035472AA58451 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CFB82B6328784AA9FFEC7398 /* JobsLanguageRepositoryTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		131B62F70A5F989502A06B9A /* JobsKanjiRubyText */ = {
+			isa = PBXGroup;
+			children = (
+				C2A2A4C13BBC31C076B14DFB /* JobsKanjiRubyText.swift */,
+			);
+			name = JobsKanjiRubyText;
+			path = JobsKanjiRubyText;
+			sourceTree = "<group>";
+		};
+		173CBED3D25D696278013DF9 /* JobsLanguageLearning */ = {
+			isa = PBXGroup;
+			children = (
+				B5FA3FD4C8EBD84D327FD317 /* AppDelegate.swift */,
+				042FB72D01E0F36E061B609C /* JobsLanguageHomeVC.swift */,
+				DCA53FF72F24140D79D58B1C /* SceneDelegate.swift */,
+				07EAE3BE50712CBE6737859D /* Resource */,
+				E98E863C44A8207F9EB7D06B /* Business */,
+			);
+			path = JobsLanguageLearning;
+			sourceTree = "<group>";
+		};
+		22F0F84C2F55F893C9BAD13F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72B4F81E81706D8D51F5F6CE /* iOS */,
+				3DFDA3303066FB252B3A6179 /* Pods_JobsLanguageLearning.framework */,
+				9E0B79462C9C01D32165DCCF /* Pods_JobsLanguageLearningTests.framework */,
+				6873C8165022A323E8269EFF /* Pods_JobsLanguageLearningUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33373AC0CA520A4D47232858 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				4C48475DB97DF844693C571C /* JobsKanjiTranslationHost */,
+				FBBC4469C5B66DA9E3BCBF10 /* JobsKanjiChineseTranslator */,
+				5A6E9A83C235F89F9C782F36 /* JobsKanjiTranslationView */,
+			);
+			name = Translation;
+			path = Translation;
+			sourceTree = "<group>";
+		};
+		37AA06D404BE35F574D6B35C /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D549EC4FA8A344652AD398AF /* JobsEnglishLearningVC */,
+				85A1B07F69A6E83C647303B4 /* JobsEnglishWordDetailVC */,
+			);
+			name = VC;
+			path = VC;
+			sourceTree = "<group>";
+		};
+		4C48475DB97DF844693C571C /* JobsKanjiTranslationHost */ = {
+			isa = PBXGroup;
+			children = (
+				5CAF09FB59C620E541A35062 /* JobsKanjiTranslationHost.swift */,
+			);
+			name = JobsKanjiTranslationHost;
+			path = JobsKanjiTranslationHost;
+			sourceTree = "<group>";
+		};
+		5272C1BE09F8479D3D2E4151 = {
+			isa = PBXGroup;
+			children = (
+				B9B48C1D1DC05F5F7DAA1D77 /* Products */,
+				22F0F84C2F55F893C9BAD13F /* Frameworks */,
+				173CBED3D25D696278013DF9 /* JobsLanguageLearning */,
+				0E5DBE9264D035472AA58451 /* Tests */,
+				F23CBB41E7ECA7B01DEBBF49 /* UITests */,
+				DF1215D532B19E64448BC6EC /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		52BC45F84B6059D9C902910D /* JobsRussianConsonantPickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				109FB31727953235F28BE65F /* JobsRussianConsonantPickerVC.swift */,
+			);
+			name = JobsRussianConsonantPickerVC;
+			path = JobsRussianConsonantPickerVC;
+			sourceTree = "<group>";
+		};
+		54964600586FD26809C4FBAD /* JobsEnglishWordCell */ = {
+			isa = PBXGroup;
+			children = (
+				E8D050ADB1E95A50B5D6D904 /* JobsEnglishWordCell.swift */,
+			);
+			name = JobsEnglishWordCell;
+			path = JobsEnglishWordCell;
+			sourceTree = "<group>";
+		};
+		5A6E9A83C235F89F9C782F36 /* JobsKanjiTranslationView */ = {
+			isa = PBXGroup;
+			children = (
+				1A114D1D4DF34AC7F3DF3931 /* JobsKanjiTranslationView.swift */,
+			);
+			name = JobsKanjiTranslationView;
+			path = JobsKanjiTranslationView;
+			sourceTree = "<group>";
+		};
+		63063C68C283014FE26F741B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				54964600586FD26809C4FBAD /* JobsEnglishWordCell */,
+			);
+			name = Cell;
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		72B4F81E81706D8D51F5F6CE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D329AE79BA7A66E0DA834D27 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		757681CFDDCC4B8A0F606F41 /* JobsKanjiLearningVC */ = {
+			isa = PBXGroup;
+			children = (
+				E3FC260D9BC189055F13B568 /* JobsKanjiLearningVC.swift */,
+			);
+			name = JobsKanjiLearningVC;
+			path = JobsKanjiLearningVC;
+			sourceTree = "<group>";
+		};
+		78932B798093AA141C3B88FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				131B62F70A5F989502A06B9A /* JobsKanjiRubyText */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B0FA6C1D5764BA5F99B474A /* JobsKanjiWordDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				CB38C74F95CA058717562AFF /* JobsKanjiWordDetailVC.swift */,
+			);
+			name = JobsKanjiWordDetailVC;
+			path = JobsKanjiWordDetailVC;
+			sourceTree = "<group>";
+		};
+		83D8ACBBDA61DFA53859BE6F /* JobsRussianLearningVC */ = {
+			isa = PBXGroup;
+			children = (
+				272264BC9A4A938EA322ACBE /* JobsRussianLearningVC.swift */,
+			);
+			name = JobsRussianLearningVC;
+			path = JobsRussianLearningVC;
+			sourceTree = "<group>";
+		};
+		85A1B07F69A6E83C647303B4 /* JobsEnglishWordDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				B2FC53105AA7BF322D7FBE88 /* JobsEnglishWordDetailVC.swift */,
+			);
+			name = JobsEnglishWordDetailVC;
+			path = JobsEnglishWordDetailVC;
+			sourceTree = "<group>";
+		};
+		967A00FAF5C8B4B9296DA766 /* JobsKanjiDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				4D5C1C1F5989FBFEEBD6CE3A /* JobsKanjiDetailVC.swift */,
+			);
+			name = JobsKanjiDetailVC;
+			path = JobsKanjiDetailVC;
+			sourceTree = "<group>";
+		};
+		B9B48C1D1DC05F5F7DAA1D77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EAE1308E55DFB3075AF37E1 /* JobsLanguageLearning.app */,
+				C6388CB558D883B63EE170B1 /* JobsLanguageLearningTests.xctest */,
+				1627B891AE6CD60A833B87B8 /* JobsLanguageLearningUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFAC5DA414F8C60F567E5F6E /* JobsKanjiLearning */ = {
+			isa = PBXGroup;
+			children = (
+				E90B9E28295532B6CB2EB225 /* VC */,
+				78932B798093AA141C3B88FC /* View */,
+				33373AC0CA520A4D47232858 /* Translation */,
+			);
+			name = JobsKanjiLearning;
+			path = JobsKanjiLearning;
+			sourceTree = "<group>";
+		};
+		D549EC4FA8A344652AD398AF /* JobsEnglishLearningVC */ = {
+			isa = PBXGroup;
+			children = (
+				9044E4269E0C058247DABE6F /* JobsEnglishLearningVC.swift */,
+			);
+			name = JobsEnglishLearningVC;
+			path = JobsEnglishLearningVC;
+			sourceTree = "<group>";
+		};
+		DF1215D532B19E64448BC6EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E73B3E05E5F3E78E5C71EDE /* Pods-JobsLanguageLearning.release.xcconfig */,
+				74EE6F071CCD9AD2A05285D8 /* Pods-JobsLanguageLearning.debug.xcconfig */,
+				C49C31BD0BD2E5D402825B88 /* Pods-JobsLanguageLearningTests.release.xcconfig */,
+				6968FBD33409AA40220C3085 /* Pods-JobsLanguageLearningTests.debug.xcconfig */,
+				C4A8F8AE0AB67D228BB381C8 /* Pods-JobsLanguageLearningUITests.release.xcconfig */,
+				5A8ED4D148C0F240EA237A51 /* Pods-JobsLanguageLearningUITests.debug.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E90B9E28295532B6CB2EB225 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				7B0FA6C1D5764BA5F99B474A /* JobsKanjiWordDetailVC */,
+				757681CFDDCC4B8A0F606F41 /* JobsKanjiLearningVC */,
+				967A00FAF5C8B4B9296DA766 /* JobsKanjiDetailVC */,
+			);
+			name = VC;
+			path = VC;
+			sourceTree = "<group>";
+		};
+		E98E863C44A8207F9EB7D06B /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				0C856265E4561180F1908833 /* JobsRussianLearning */,
+				F305A610A1F90E7CD7B188F2 /* JobsEnglishLearning */,
+				BFAC5DA414F8C60F567E5F6E /* JobsKanjiLearning */,
+			);
+			name = Business;
+			path = Business;
+			sourceTree = "<group>";
+		};
+		EC629822E5FBC41266F8BA1A /* JobsRussianTableView */ = {
+			isa = PBXGroup;
+			children = (
+				1429F79EDDFE8777D045BCD8 /* JobsRussianTableView.swift */,
+			);
+			name = JobsRussianTableView;
+			path = JobsRussianTableView;
+			sourceTree = "<group>";
+		};
+		F1B63EC41A587D107DF1DD9D /* JobsRussianPairView */ = {
+			isa = PBXGroup;
+			children = (
+				6403189BAC0ABF35EBFD08FB /* JobsRussianPairView.swift */,
+			);
+			name = JobsRussianPairView;
+			path = JobsRussianPairView;
+			sourceTree = "<group>";
+		};
+		F23CBB41E7ECA7B01DEBBF49 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				1F4C660754FE1542D27DD900 /* JobsLanguageFlowTests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		F305A610A1F90E7CD7B188F2 /* JobsEnglishLearning */ = {
+			isa = PBXGroup;
+			children = (
+				37AA06D404BE35F574D6B35C /* VC */,
+				63063C68C283014FE26F741B /* Cell */,
+			);
+			name = JobsEnglishLearning;
+			path = JobsEnglishLearning;
+			sourceTree = "<group>";
+		};
+		FBBC4469C5B66DA9E3BCBF10 /* JobsKanjiChineseTranslator */ = {
+			isa = PBXGroup;
+			children = (
+				7D29BA09E7A3087FE5FDBF44 /* JobsKanjiChineseTranslator.swift */,
+			);
+			name = JobsKanjiChineseTranslator;
+			path = JobsKanjiChineseTranslator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6A41C27F2C7956FB36AB25CD /* JobsLanguageLearningTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 521B26051FD4B4B5582AB92F /* Build configuration list for PBXNativeTarget "JobsLanguageLearningTests" */;
+			buildPhases = (
+				21E2CD5B99B47146D237BBD5 /* [CP] Check Pods Manifest.lock */,
+				EFC60BA968101148EF97CB58 /* Sources */,
+				D758193A30532CBDAF0B8C5F /* Frameworks */,
+				3304437CB29C05525C9B0A67 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				690EB2B4EC4238A7956219F8 /* PBXTargetDependency */,
+			);
+			name = JobsLanguageLearningTests;
+			productName = JobsLanguageLearningTests;
+			productReference = C6388CB558D883B63EE170B1 /* JobsLanguageLearningTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2913B358C50CD5AB74574EF /* JobsLanguageLearningUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BF44BCAC887C6E32F6F1FB2 /* Build configuration list for PBXNativeTarget "JobsLanguageLearningUITests" */;
+			buildPhases = (
+				9685DD1505DD1879D59BA5E2 /* [CP] Check Pods Manifest.lock */,
+				BCA0EE93659A0CABD2E1A223 /* Sources */,
+				A3BCFA3D663CD5357A989DE4 /* Frameworks */,
+				2AA08B0F4E2DAC237F82C1BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F27B86C7B8B693765662DE1 /* PBXTargetDependency */,
+			);
+			name = JobsLanguageLearningUITests;
+			productName = JobsLanguageLearningUITests;
+			productReference = 1627B891AE6CD60A833B87B8 /* JobsLanguageLearningUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D87A737AC84221B3D27518A8 /* JobsLanguageLearning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D4E411E90058EB4E9CBD412 /* Build configuration list for PBXNativeTarget "JobsLanguageLearning" */;
+			buildPhases = (
+				48ECF01F342457438282E57A /* [CP] Check Pods Manifest.lock */,
+				33546CB372E71BB0440D04EA /* Sources */,
+				0B08D7805C3B6FCC09ADBAB0 /* Frameworks */,
+				FCAE9907C0CAF4C803EBA55A /* Resources */,
+				610485CC8C8A61A5D62D3453 /* [CP] Copy Pods Resources */,
+				A2D000052026100100000005 /* Save Build IPA */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobsLanguageLearning;
+			productName = JobsLanguageLearning;
+			productReference = 6EAE1308E55DFB3075AF37E1 /* JobsLanguageLearning.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07C658B56E78DD84972E19D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					6A41C27F2C7956FB36AB25CD = {
+						ProvisioningStyle = Automatic;
+					};
+					D2913B358C50CD5AB74574EF = {
+						ProvisioningStyle = Automatic;
+					};
+					D87A737AC84221B3D27518A8 = {
+						DevelopmentTeam = K5692KLW75;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B23381A4C67B555C25030429 /* Build configuration list for PBXProject "JobsLanguageLearning" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5272C1BE09F8479D3D2E4151;
+			productRefGroup = B9B48C1D1DC05F5F7DAA1D77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D87A737AC84221B3D27518A8 /* JobsLanguageLearning */,
+				6A41C27F2C7956FB36AB25CD /* JobsLanguageLearningTests */,
+				D2913B358C50CD5AB74574EF /* JobsLanguageLearningUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AA08B0F4E2DAC237F82C1BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3304437CB29C05525C9B0A67 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCAE9907C0CAF4C803EBA55A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B9DEEB6D810CC51CD30D6C8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21E2CD5B99B47146D237BBD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobsLanguageLearningTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48ECF01F342457438282E57A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobsLanguageLearning-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		610485CC8C8A61A5D62D3453 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobsLanguageLearning/Pods-JobsLanguageLearning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9685DD1505DD1879D59BA5E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobsLanguageLearningUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2D000052026100100000005 /* Save Build IPA */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/ScriptsByDevTools/save_device_ipa_after_build.sh",
+			);
+			name = "Save Build IPA";
+			outputPaths = (
+				"$(SRCROOT)/build",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "/bin/zsh \"${SRCROOT}/ScriptsByDevTools/save_device_ipa_after_build.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		33546CB372E71BB0440D04EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B75DBBD1A0CB976D8B243B1D /* AppDelegate.swift in Sources */,
+				38711E99E38139BC7F091870 /* JobsLanguageHomeVC.swift in Sources */,
+				749B788AD7879F6BF8B09855 /* SceneDelegate.swift in Sources */,
+				52A8B7F17FC916804F0D00DD /* JobsRussianLearningVC.swift in Sources */,
+				FCED568357BFEA0D6ECA2336 /* JobsRussianConsonantPickerVC.swift in Sources */,
+				8E4762DF9916D9692B201D56 /* JobsRussianPairView.swift in Sources */,
+				3C44EAC6DAB47EEBA4667757 /* JobsRussianTableView.swift in Sources */,
+				0F61756E0ED22AE9C6EC5C48 /* JobsEnglishLearningVC.swift in Sources */,
+				72643E0993DD7D007873172D /* JobsEnglishWordDetailVC.swift in Sources */,
+				CDDF050EE12B8F46A5058466 /* JobsEnglishWordCell.swift in Sources */,
+				8B07BA8C4FC3B2699194A3B6 /* JobsKanjiWordDetailVC.swift in Sources */,
+				C3FABF1A6E62B5AEAB8199D9 /* JobsKanjiLearningVC.swift in Sources */,
+				C247A4CF05A4F887809F6BC3 /* JobsKanjiDetailVC.swift in Sources */,
+				E940888260A3A44D7267CE84 /* JobsKanjiRubyText.swift in Sources */,
+				08C4DD93F701C7A82F02B83F /* JobsKanjiTranslationHost.swift in Sources */,
+				32CBBD077D57FB21B0B6587C /* JobsKanjiChineseTranslator.swift in Sources */,
+				59561BBA94F967053EF224EB /* JobsKanjiTranslationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA0EE93659A0CABD2E1A223 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6607FD12519383FF32F0EC7 /* JobsLanguageFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFC60BA968101148EF97CB58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0619E68677C9BD18A18A7CF /* JobsLanguageRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F27B86C7B8B693765662DE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JobsLanguageLearning;
+			target = D87A737AC84221B3D27518A8 /* JobsLanguageLearning */;
+			targetProxy = 959DE284BB507DC065BA692B /* PBXContainerItemProxy */;
+		};
+		690EB2B4EC4238A7956219F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JobsLanguageLearning;
+			target = D87A737AC84221B3D27518A8 /* JobsLanguageLearning */;
+			targetProxy = E63367D8E8CB11FBD7271BBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		200D78D4FFE1554A5E3CB971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A8ED4D148C0F240EA237A51 /* Pods-JobsLanguageLearningUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobs.JobsLanguageLearningUITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JobsLanguageLearning;
+			};
+			name = Debug;
+		};
+		3FF3EC7AE592E3FFD4C6F651 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6968FBD33409AA40220C3085 /* Pods-JobsLanguageLearningTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobs.JobsLanguageLearningTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobsLanguageLearning.app/JobsLanguageLearning";
+			};
+			name = Debug;
+		};
+		6E629818842BC382D7CA30DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		71208442B69F0789579C4AA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AF9122CD5A9D195A51C1404E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74EE6F071CCD9AD2A05285D8 /* Pods-JobsLanguageLearning.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5692KLW75;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = JobsLanguageLearning/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobs.JobsLanguageLearning;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2D7EA4766C30327A3999C7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4A8F8AE0AB67D228BB381C8 /* Pods-JobsLanguageLearningUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobs.JobsLanguageLearningUITests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JobsLanguageLearning;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD9AAD111861A5606AED874A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C49C31BD0BD2E5D402825B88 /* Pods-JobsLanguageLearningTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobs.JobsLanguageLearningTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobsLanguageLearning.app/JobsLanguageLearning";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D35020CC2DE30104E50F23F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E73B3E05E5F3E78E5C71EDE /* Pods-JobsLanguageLearning.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K5692KLW75;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = JobsLanguageLearning/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jobs.JobsLanguageLearning;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		521B26051FD4B4B5582AB92F /* Build configuration list for PBXNativeTarget "JobsLanguageLearningTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD9AAD111861A5606AED874A /* Release */,
+				3FF3EC7AE592E3FFD4C6F651 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BF44BCAC887C6E32F6F1FB2 /* Build configuration list for PBXNativeTarget "JobsLanguageLearningUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2D7EA4766C30327A3999C7A /* Release */,
+				200D78D4FFE1554A5E3CB971 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D4E411E90058EB4E9CBD412 /* Build configuration list for PBXNativeTarget "JobsLanguageLearning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D35020CC2DE30104E50F23F3 /* Release */,
+				AF9122CD5A9D195A51C1404E /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B23381A4C67B555C25030429 /* Build configuration list for PBXProject "JobsLanguageLearning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E629818842BC382D7CA30DF /* Debug */,
+				71208442B69F0789579C4AA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07C658B56E78DD84972E19D7 /* Project object */;
+}

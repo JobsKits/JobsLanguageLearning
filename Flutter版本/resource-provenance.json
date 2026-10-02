@@ -1,0 +1,66 @@
+{
+  "source_app": "/Users/jobs/Documents/Github/JobsLanguageLearning",
+  "copied_on": "2026-10-02",
+  "files": [
+    {
+      "asset": "assets/english/catalog.sqlite3",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsEnglishLearning@Pods/Resource/catalog.sqlite3",
+      "sha256": "b7bc45166f5adbd3ba4000b19bcde7aaae2505a16b3d3f2dc98991091329a0a8",
+      "bytes": 23699456
+    },
+    {
+      "asset": "assets/english/THIRD_PARTY_NOTICES.txt",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsEnglishLearning@Pods/Resource/THIRD_PARTY_NOTICES.txt",
+      "sha256": "1dc410e49a5219f39a9f5a31f061c49c997db90ffd2496ad7adec4a562f306ea",
+      "bytes": 1377
+    },
+    {
+      "asset": "assets/english/coverage.json",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsEnglishLearning@Pods/Resource/coverage.json",
+      "sha256": "f4c2169805a5ebf29959cd245a4bc117030106b291dc1dd53b53deab1ee9c72d",
+      "bytes": 4295
+    },
+    {
+      "asset": "assets/japanese/chinese_seed.sqlite",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/chinese_seed.sqlite",
+      "sha256": "5ad733e9120dddd17669408ce29d866f655e1697253ce52ce39dbb9b1eea134b",
+      "bytes": 2129920
+    },
+    {
+      "asset": "assets/japanese/catalog.sqlite",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/catalog.sqlite",
+      "sha256": "7c3c38a4e17f850280fb1473baed129e5fc4f1695b5673f2c0f091e8f5026c15",
+      "bytes": 150216704
+    },
+    {
+      "asset": "assets/japanese/guides.json",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/guides.json",
+      "sha256": "9cc7376b30c96f4fade6e27d57eb8db62784c0ecd403cce3747dd13037ba9766",
+      "bytes": 18370
+    },
+    {
+      "asset": "assets/japanese/chinese_cache.json",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/chinese_cache.json",
+      "sha256": "738358e2616cd2ee804a6b9986f1e356713d9e696c1a102087c340a5fb21cb8c",
+      "bytes": 533883
+    },
+    {
+      "asset": "assets/japanese/pos_zh.json",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/pos_zh.json",
+      "sha256": "6bf052cfe5416591b1043f2c800ee2b2f6249f75d0861c7820f0e519555eb408",
+      "bytes": 5828
+    },
+    {
+      "asset": "assets/japanese/NOTICE.txt",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/NOTICE.txt",
+      "sha256": "3faca757257b6a98421f0021e971edda0ae74c02b8545fdabb61db1c06f7ef3a",
+      "bytes": 2627
+    },
+    {
+      "asset": "assets/japanese/coverage.json",
+      "source": "/Users/jobs/Documents/Github/JobsLanguageLearning/JobsByPods/JobsKanjiLearning@Pods/Resource/coverage.json",
+      "sha256": "9929ceffef1ce4bf730bb54b24f29f4bc665607ccc36ef92f3d4febefb8f2de9",
+      "bytes": 1653
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[submodule "Python版本/JobsEnglishWordBook.py"]
+	path = Python版本/JobsEnglishWordBook.py
+	url = git@github.com:JobsKits/JobsEnglishWordBook.git
+	branch = main
+[submodule "Python版本/JobsKanjiByJap.py"]
+	path = Python版本/JobsKanjiByJap.py
+	url = git@github.com:JobsKits/JobsKanjiByJap.git
+	branch = main
+[submodule "Python版本/JobsRussianTrainer.py"]
+	path = Python版本/JobsRussianTrainer.py
+	url = git@github.com:JobsKits/JobsRussianTrainer.git
+	branch = main

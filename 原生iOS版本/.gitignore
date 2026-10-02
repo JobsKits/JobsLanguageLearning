@@ -1,0 +1,14 @@
+Pods/
+build/
+DerivedData/
+work/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+
+.ThemeDerivedData/
+.NavigationDerivedData/
+
+Verification/*.xcresult/
+
+Verification/*.log

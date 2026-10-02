@@ -1,0 +1,42 @@
+def swiftAppCommon
+  pod 'lottie-ios', :path => 'JobsByPods/ManualBySwiftPods@Pods/lottie-ios'
+end
+
+def byJobs
+  pod 'JobsLanguageCore', :path => 'JobsByPods/JobsLanguageCore@Pods'
+  pod 'JobsRussianLearning', :path => 'JobsByPods/JobsRussianLearning@Pods'
+  pod 'JobsEnglishLearning', :path => 'JobsByPods/JobsEnglishLearning@Pods'
+  pod 'JobsKanjiLearning', :path => 'JobsByPods/JobsKanjiLearning@Pods'
+
+  pod 'JobsByUIKit', :path => 'JobsByPods/JobsByUIKit@Pods'
+  pod 'JobsSwiftDSL', :path => 'JobsByPods/JobsSwiftDSL@Pods'
+  pod 'JobsInheritance', :path => 'JobsByPods/JobsInheritance@Pods'
+  pod 'Jobsl10n', :path => 'JobsByPods/Jobsl10n@Pods'
+  pod 'JobsScale', :path => 'JobsByPods/JobsScale@Pods'
+  pod 'JobsGetWindow', :path => 'JobsByPods/JobsGetWindow@Pods'
+  pod 'JobsNavBar', :path => 'JobsByPods/JobsNavBar@Pods'
+  pod 'JobsSwiftBlock', :path => 'JobsByPods/JobsSwiftBlock@Pods'
+  pod 'JobsSwiftBaseDefines', :path => 'JobsByPods/JobsSwiftBaseDefines@Pods'
+  pod 'JobsTextTools', :path => 'JobsByPods/JobsTextTools@Pods'
+  pod 'JobsSwiftTimer', :path => 'JobsByPods/JobsSwiftTimer@Pods'
+  pod 'JobsImageTools', :path => 'JobsByPods/JobsImageTools@Pods'
+  pod 'JobsByQuartzCore', :path => 'JobsByPods/JobsByQuartzCore@Pods'
+  pod 'JobsViewPush', :path => 'JobsByPods/JobsViewPush@Pods'
+  pod 'JobsToast', :path => 'JobsByPods/JobsToast@Pods'
+  pod 'JobsByWebKit', :path => 'JobsByPods/JobsByWebKit@Pods'
+  pod 'JobsSwiftDebugTools', :path => 'JobsByPods/JobsSwiftDebugTools@Pods'
+  pod 'JobsSwiftFoundation', :path => 'JobsByPods/JobsSwiftFoundation@Pods'
+  pod 'JobsSwiftStandardLibrary', :path => 'JobsByPods/JobsSwiftStandardLibrary@Pods'
+end
+
+target 'JobsLanguageLearning' do
+  use_frameworks! :linkage => :static
+  swiftAppCommon
+  byJobs
+  target 'JobsLanguageLearningTests' do
+    inherit! :search_paths
+  end
+  target 'JobsLanguageLearningUITests' do
+    inherit! :search_paths
+  end
+end

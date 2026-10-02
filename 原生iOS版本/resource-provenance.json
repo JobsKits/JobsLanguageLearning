@@ -1,0 +1,103 @@
+{
+  "date": "2026-10-01",
+  "unchanged_copies": [
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsEnglishWordBook.py/JobsEnglishWordBook/src/jobs_english_wordbook/assets/catalog.sqlite3",
+      "copy": "JobsByPods/JobsEnglishLearning@Pods/Resource/catalog.sqlite3",
+      "bytes": 23699456,
+      "sha256": "b7bc45166f5adbd3ba4000b19bcde7aaae2505a16b3d3f2dc98991091329a0a8",
+      "identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsEnglishWordBook.py/JobsEnglishWordBook/src/jobs_english_wordbook/assets/coverage.json",
+      "copy": "JobsByPods/JobsEnglishLearning@Pods/Resource/coverage.json",
+      "bytes": 4295,
+      "sha256": "f4c2169805a5ebf29959cd245a4bc117030106b291dc1dd53b53deab1ee9c72d",
+      "identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsEnglishWordBook.py/JobsEnglishWordBook/src/jobs_english_wordbook/assets/THIRD_PARTY_NOTICES.txt",
+      "copy": "JobsByPods/JobsEnglishLearning@Pods/Resource/THIRD_PARTY_NOTICES.txt",
+      "bytes": 1377,
+      "sha256": "1dc410e49a5219f39a9f5a31f061c49c997db90ffd2496ad7adec4a562f306ea",
+      "identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/catalog.sqlite",
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/catalog.sqlite",
+      "bytes": 150216704,
+      "sha256": "7c3c38a4e17f850280fb1473baed129e5fc4f1695b5673f2c0f091e8f5026c15",
+      "identical": true,
+      "current_source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanjiByJap.py/JobsKanjiByJap/src/jobs_kanji_by_jap/assets/catalog.sqlite",
+      "current_source_sha256": "7c3c38a4e17f850280fb1473baed129e5fc4f1695b5673f2c0f091e8f5026c15",
+      "current_source_identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/chinese_seed.sqlite",
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/chinese_seed.sqlite",
+      "bytes": 2129920,
+      "sha256": "5ad733e9120dddd17669408ce29d866f655e1697253ce52ce39dbb9b1eea134b",
+      "identical": true,
+      "current_source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanjiByJap.py/JobsKanjiByJap/src/jobs_kanji_by_jap/assets/chinese_seed.sqlite",
+      "current_source_sha256": "5ad733e9120dddd17669408ce29d866f655e1697253ce52ce39dbb9b1eea134b",
+      "current_source_identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/guides.json",
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/guides.json",
+      "bytes": 18370,
+      "sha256": "9cc7376b30c96f4fade6e27d57eb8db62784c0ecd403cce3747dd13037ba9766",
+      "identical": true,
+      "current_source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanjiByJap.py/JobsKanjiByJap/src/jobs_kanji_by_jap/assets/guides.json",
+      "current_source_sha256": "9cc7376b30c96f4fade6e27d57eb8db62784c0ecd403cce3747dd13037ba9766",
+      "current_source_identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/coverage.json",
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/coverage.json",
+      "bytes": 1653,
+      "sha256": "9929ceffef1ce4bf730bb54b24f29f4bc665607ccc36ef92f3d4febefb8f2de9",
+      "identical": true,
+      "current_source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanjiByJap.py/JobsKanjiByJap/src/jobs_kanji_by_jap/assets/coverage.json",
+      "current_source_sha256": "9929ceffef1ce4bf730bb54b24f29f4bc665607ccc36ef92f3d4febefb8f2de9",
+      "current_source_identical": true
+    },
+    {
+      "source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/NOTICE.txt",
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/NOTICE.txt",
+      "bytes": 2627,
+      "sha256": "3faca757257b6a98421f0021e971edda0ae74c02b8545fdabb61db1c06f7ef3a",
+      "identical": true,
+      "current_source": "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanjiByJap.py/JobsKanjiByJap/src/jobs_kanji_by_jap/assets/NOTICE.txt",
+      "current_source_sha256": "ae5df777b5250641db0fe32eb62ad280c9df0f553f4aad925f7822c734e9e4fa",
+      "current_source_identical": false,
+      "current_source_note": "源软件重命名仅更新声明标题；本 App 保留提取时原始声明，许可正文相同。"
+    }
+  ],
+  "derived_chinese": [
+    {
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/chinese_cache.json",
+      "sha256": "738358e2616cd2ee804a6b9986f1e356713d9e696c1a102087c340a5fb21cb8c",
+      "bytes": 533883,
+      "method": "原 chinese_seed.sqlite 中文缓存合并 chinese.py 的 EXACT 和 POS 精确词表",
+      "sources": [
+        "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/chinese.py",
+        "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/chinese_seed.sqlite"
+      ],
+      "chinese_py_sha256": "213d07d9ed2847e7a2d6e69832ab638a11a2d1a34c1c491a96d42344e934c8a3"
+    },
+    {
+      "copy": "JobsByPods/JobsKanjiLearning@Pods/Resource/pos_zh.json",
+      "sha256": "6bf052cfe5416591b1043f2c800ee2b2f6249f75d0861c7820f0e519555eb408",
+      "bytes": 5828,
+      "method": "扫描原 JMdict 词性标签，通过原 chinese.py 的 pos_zh 函数逐项转换",
+      "sources": [
+        "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/chinese.py",
+        "/Users/jobs/Documents/Github/JobsGenesis/JobsPythonTools.py/语言学习.py/JobsKanji.py/JobsKanji/src/jobs_kanji/assets/chinese_seed.sqlite"
+      ],
+      "chinese_py_sha256": "213d07d9ed2847e7a2d6e69832ab638a11a2d1a34c1c491a96d42344e934c8a3"
+    }
+  ],
+  "translation_runtime": "Apple Translation on iOS 18+; original Python Argos runtime is not included",
+  "source_note": "日语来源提取时为 JobsKanji.py，交付核验时已更名为 JobsKanjiByJap.py。原始副本保留提取时 SHA-256；现行词库、中文种子、指南和覆盖报告一致，NOTICE 仅标题改名。"
+}

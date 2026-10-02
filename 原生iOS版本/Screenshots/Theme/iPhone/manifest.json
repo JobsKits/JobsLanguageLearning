@@ -1,0 +1,377 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "BEE577EC-2428-4D97-8FF3-9136F20EE3B9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "英语例句_0_9478B9C9-9A06-4A4B-B606-F8DA11D670C6.png",
+        "timestamp" : 1790844994.921
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "748FA1F1-07A6-4F3E-9DFC-36CE58EF6CCE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "英语词表_0_65B3F5DE-E55B-4923-8D3F-F9A1B2B3C50A.png",
+        "timestamp" : 1790844992.995
+      }
+    ],
+    "testIdentifier" : "JobsLanguageFlowTests/testEnglishWordAndDetail()",
+    "testIdentifierURL" : "test://com.apple.xcode/JobsLanguageLearning/JobsLanguageLearningUITests/JobsLanguageFlowTests/testEnglishWordAndDetail"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "895053E6-9CD2-4218-B575-04C180AD6B4F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题设置_0_FC53D716-6A08-418E-A8E6-5F5009806F2F.png",
+        "timestamp" : 1790845023.562
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "12BA9332-86D0-4DF2-B4FB-4E359422E734.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "日语例句_0_DAEC2187-8D20-4A69-8D5B-7335CD744434.png",
+        "timestamp" : 1790845022.165
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "8B34321B-7D31-4E7D-98A5-6E44B0E22D6F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "日语振假名_0_7AB8A096-BD71-46BC-90CD-F2351F572697.png",
+        "timestamp" : 1790845011.997
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "C00D9DCF-596F-4FE0-B8CD-F1011AE50CEB.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "日语读法_0_BD75846B-6136-4A9D-A903-5AF2D0449CC6.png",
+        "timestamp" : 1790845009.171
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "56D913DE-9C16-42A6-8BFE-651B5B0CFC81.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "日语字表_0_573879ED-9D38-485B-AFED-538DA91C4F89.png",
+        "timestamp" : 1790845004.897
+      }
+    ],
+    "testIdentifier" : "JobsLanguageFlowTests/testKanjiReadingsAndTheme()",
+    "testIdentifierURL" : "test://com.apple.xcode/JobsLanguageLearning/JobsLanguageLearningUITests/JobsLanguageFlowTests/testKanjiReadingsAndTheme"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "0DB65A4B-9460-4100-AAC4-1A4A6F469607.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "俄语矩阵_0_6420A63E-6969-4EE2-8D80-8E84FF1228FA.png",
+        "timestamp" : 1790845035.364
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "2CB42B9C-F20A-4943-826F-52E1833FACA1.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "俄语分组_0_E94F431D-5A7B-4C23-9449-1C27EB6DBDE1.png",
+        "timestamp" : 1790845034.809
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "901B93EA-9079-4B70-B1FC-7660434F820D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "首页_0_46757C90-8AB4-45EF-927B-0925BB9761D0.png",
+        "timestamp" : 1790845032.909
+      }
+    ],
+    "testIdentifier" : "JobsLanguageFlowTests/testRootAndRussianModes()",
+    "testIdentifierURL" : "test://com.apple.xcode/JobsLanguageLearning/JobsLanguageLearningUITests/JobsLanguageFlowTests/testRootAndRussianModes"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "02EE7491-B540-4EA1-B0F2-262A8CAE0935.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语读法与振假名-白天_0_F0FD3BEA-4DE1-4625-B51E-95A284F87369.png",
+        "timestamp" : 1790845126.302
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "23807C48-437C-460A-9DB1-B9A12E091F25.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语读法与振假名-白天-设置_0_9E8F77B5-7E01-42B5-9150-EA3FD3A3E076.png",
+        "timestamp" : 1790845124.486
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "952438F6-816A-4892-A859-4A7260276CA3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语读法与振假名-黑夜_0_DE5D3A21-7B33-4E6D-B275-18D5089C71CD.png",
+        "timestamp" : 1790845121.988
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "CEE938F2-9962-4DA6-8F83-598E9B96CDAF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语读法与振假名-黑夜-设置_0_4002BCCB-1DFE-4DD2-9EB4-988748A37CBD.png",
+        "timestamp" : 1790845120.152
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "C10397B8-DD23-4B35-ABDC-8D0EBDDC69F7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语-跟随系统_0_6E41B0E7-1645-4377-97BD-6367B87C9838.png",
+        "timestamp" : 1790845111.688
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "94199C7D-0AAB-4100-976A-D2C2BF318CF4.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语-跟随系统-设置_0_2B2AB6FA-21D3-4918-BBEF-652593C26B47.png",
+        "timestamp" : 1790845109.929
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "12FB9ADC-C0D1-43FD-B8DE-CC2E397CA707.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语-黑夜_0_D161BBE0-59F1-4F7A-9FD5-B43E2B21EE56.png",
+        "timestamp" : 1790845107.432
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "916E2998-7ACD-4F9B-949C-83B42C3A0F3A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语-黑夜-设置_0_24DECD88-E882-4C9A-92A3-E3FDCAD19D54.png",
+        "timestamp" : 1790845105.672
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "EC850BBE-33A2-47E3-B176-603890B56111.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语-白天_0_4A10F521-7DC4-48E3-8FFE-51DD3B0CBCDC.png",
+        "timestamp" : 1790845103.191
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "1A5CE982-4809-471D-B928-F39FB4194BD3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-日语-白天-设置_0_382F6FBA-B267-4D03-907C-AFEB67697630.png",
+        "timestamp" : 1790845101.432
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "0301E897-104B-484F-8765-50EF2A774624.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语例句-白天_0_282892E3-462E-43F6-9D43-AB21F7E9DA92.png",
+        "timestamp" : 1790845095.884
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "7587E547-D5BE-41EE-A954-5CB56FAB2A3A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语例句-白天-设置_0_82B8CEDB-49AC-43AA-9A2F-B74A19B80C95.png",
+        "timestamp" : 1790845094.17
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "10D1F9D8-C94F-4995-9CBB-69BFC9FD6BD9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语例句-黑夜_0_BE4A040A-F985-4DC7-8224-4E093428EECC.png",
+        "timestamp" : 1790845091.75
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "4474789C-25CF-4A25-8E51-A75D760D2FA5.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语例句-黑夜-设置_0_13CF7B02-BA95-4EF1-BD12-289D350834BC.png",
+        "timestamp" : 1790845090.026
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "3884B856-8758-4D55-B0D5-01EB56032C25.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语-跟随系统_0_549CD103-EBC9-47EC-B1A2-61DEDEB8427C.png",
+        "timestamp" : 1790845084.711
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "0BCD4367-21BC-41B2-B996-1CEC90574AC0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语-跟随系统-设置_0_E8F6918F-68AA-4697-BDCD-7135CEAD729A.png",
+        "timestamp" : 1790845082.918
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "BCBA9FED-074D-4922-8BAC-0ADDF450A7F7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语-黑夜_0_0D08CA17-0738-4014-A22E-3B0739D3E977.png",
+        "timestamp" : 1790845080.35
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "CB8358C0-FF6A-4B38-AA38-A3456B127A16.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语-黑夜-设置_0_810B74FB-48F0-439A-B279-A28CDA8DCDB5.png",
+        "timestamp" : 1790845078.574
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "B9D3105B-6669-495B-BC96-5B0E02DA6B36.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语-白天_0_256E4454-58C8-4B57-9293-15EF9743D687.png",
+        "timestamp" : 1790845076.006
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "B41A4240-ED07-4D69-AFDB-3570AFE2F633.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-英语-白天-设置_0_7CB2DFA3-BD40-4333-A9EE-845540DB39CD.png",
+        "timestamp" : 1790845074.215
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "2BD0235A-7F36-4463-AC1B-96851EDB25C2.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-俄语-跟随系统_0_173BBA33-FB1D-448E-A901-874DBD882DFF.png",
+        "timestamp" : 1790845069.138
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "C04A4DE7-EF5A-4A05-B167-86B0C0519B00.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-俄语-跟随系统-设置_0_4CF9CD24-5CD1-4788-B18E-7DDFF680DD4B.png",
+        "timestamp" : 1790845067.388
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "68385C31-0AC3-4EB1-9E66-46E63C05028B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-俄语-黑夜_0_4E2C6D91-0DE8-43A3-9E4F-169F4560691D.png",
+        "timestamp" : 1790845064.954
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "A0D2418A-5803-4D26-B9FE-1A92C61C16DE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-俄语-黑夜-设置_0_3BD4F56B-61EA-4C31-BAAC-7E5ADB900AAE.png",
+        "timestamp" : 1790845063.176
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "77C15B6F-FDB1-4856-B5EF-342C3A955A70.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-俄语-白天_0_854122DC-7D02-4CB0-A912-C681CE50BE38.png",
+        "timestamp" : 1790845060.709
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "0465E599-DD29-4FBA-A57E-7AACCBD84D19.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-俄语-白天-设置_0_6FE1427E-109D-413C-9E92-8A5016B28515.png",
+        "timestamp" : 1790845058.945
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "CAB93CFB-F65C-4365-B804-F0458D55814F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-首页-黑夜_0_7F2B377F-0768-4E5E-BE6F-AAFB6F076571.png",
+        "timestamp" : 1790845054.668
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "7DA6FE4C-7DC1-4083-8267-970F1AEA028D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-首页-黑夜-设置_0_3C908023-FE35-4D71-A2C4-8BB38B239364.png",
+        "timestamp" : 1790845052.958
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "42A75ACE-2503-428B-8CF2-2F12D057870E",
+        "deviceName" : "JobsLanguageLearning-iPhone",
+        "exportedFileName" : "5BC3181F-3F1F-40FD-9769-C6CDEB6074CD.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "主题回归-首页-跟随系统_0_C330FF92-3151-4298-A4F5-DC4F74C30F48.png",
+        "timestamp" : 1790845050.588
+      }
+    ],
+    "testIdentifier" : "JobsLanguageFlowTests/testThemeAcrossLoadedModules()",
+    "testIdentifierURL" : "test://com.apple.xcode/JobsLanguageLearning/JobsLanguageLearningUITests/JobsLanguageFlowTests/testThemeAcrossLoadedModules"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "moved_to_app": [
+    "JobsLanguageLearning/Business/JobsRussianLearning/JobsRussianLearningVC/JobsRussianLearningVC.swift",
+    "JobsLanguageLearning/Business/JobsRussianLearning/JobsRussianConsonantPickerVC/JobsRussianConsonantPickerVC.swift",
+    "JobsLanguageLearning/Business/JobsRussianLearning/JobsRussianPairView/JobsRussianPairView.swift",
+    "JobsLanguageLearning/Business/JobsRussianLearning/JobsRussianTableView/JobsRussianTableView.swift",
+    "JobsLanguageLearning/Business/JobsEnglishLearning/VC/JobsEnglishLearningVC/JobsEnglishLearningVC.swift",
+    "JobsLanguageLearning/Business/JobsEnglishLearning/VC/JobsEnglishWordDetailVC/JobsEnglishWordDetailVC.swift",
+    "JobsLanguageLearning/Business/JobsEnglishLearning/Cell/JobsEnglishWordCell/JobsEnglishWordCell.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/VC/JobsKanjiWordDetailVC/JobsKanjiWordDetailVC.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/VC/JobsKanjiLearningVC/JobsKanjiLearningVC.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/VC/JobsKanjiDetailVC/JobsKanjiDetailVC.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/View/JobsKanjiRubyText/JobsKanjiRubyText.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/Translation/JobsKanjiTranslationHost/JobsKanjiTranslationHost.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/Translation/JobsKanjiChineseTranslator/JobsKanjiChineseTranslator.swift",
+    "JobsLanguageLearning/Business/JobsKanjiLearning/Translation/JobsKanjiTranslationView/JobsKanjiTranslationView.swift"
+  ]
+}
