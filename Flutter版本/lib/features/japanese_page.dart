@@ -18,6 +18,7 @@ class JapanesePage extends StatefulWidget {
 }
 
 class _JapanesePageState extends State<JapanesePage> {
+  final TextEditingController searchController = TextEditingController();
   String query = '';
   int group = 0;
   int offset = 0;
@@ -38,12 +39,29 @@ class _JapanesePageState extends State<JapanesePage> {
   @override
   void dispose() {
     debounce?.cancel();
+    searchController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => LearningPage(
     title: '日语汉字点读',
+    titleWidget: LearningSearchField(
+      controller: searchController,
+      hint: '搜索汉字、词语、假名或中文',
+      onChanged: (value) {
+        debounce?.cancel();
+        debounce = Timer(const Duration(milliseconds: 250), () {
+          if (mounted) {
+            setState(() {
+              query = value.trim();
+              offset = 0;
+              reload();
+            });
+          }
+        });
+      },
+    ),
     language: 'ja-JP',
     child: Column(
       children: [
@@ -60,28 +78,7 @@ class _JapanesePageState extends State<JapanesePage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: TextField(
-            decoration: const InputDecoration(
-              labelText: '搜索汉字、词语、假名或中文',
-              border: OutlineInputBorder(),
-            ),
-            onChanged: (value) {
-              debounce?.cancel();
-              debounce = Timer(const Duration(milliseconds: 250), () {
-                if (mounted) {
-                  setState(() {
-                    query = value.trim();
-                    offset = 0;
-                    reload();
-                  });
-                }
-              });
-            },
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
           child: SegmentedButton<int>(
             segments: const [
               ButtonSegment(value: 0, label: Text('全部')),
@@ -121,12 +118,37 @@ class _JapanesePageState extends State<JapanesePage> {
               return Column(
                 children: [
                   Expanded(
-                    child: result.rows.isEmpty
-                        ? const Center(child: Text('没有匹配汉字'))
-                        : ListView.builder(
-                            itemCount: result.rows.length,
-                            itemBuilder: (_, i) {
-                              final row = result.rows[i];
+                    child: CustomScrollView(
+                      slivers: [
+                        SliverPersistentHeader(
+                          pinned: true,
+                          delegate: PinnedSectionHeader(
+                            height: 44,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 16,
+                              ),
+                              child: Align(
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  '共 ${result.total} 字 · ${result.total == 0 ? 0 : offset + 1}–${(offset + 50).clamp(0, result.total)}',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        if (result.rows.isEmpty)
+                          const SliverFillRemaining(
+                            child: Center(child: Text('没有匹配汉字')),
+                          )
+                        else
+                          SliverList(
+                            delegate: SliverChildBuilderDelegate((
+                              context,
+                              index,
+                            ) {
+                              final row = result.rows[index];
                               return Card(
                                 margin: const EdgeInsets.symmetric(
                                   horizontal: 12,
@@ -146,13 +168,16 @@ class _JapanesePageState extends State<JapanesePage> {
                                   ),
                                 ),
                               );
-                            },
+                            }, childCount: result.rows.length),
                           ),
+                      ],
+                    ),
                   ),
                   PageControls(
                     offset: offset,
                     total: result.total,
                     size: 50,
+                    showTotal: false,
                     onPage: (value) => setState(() {
                       offset = value;
                       reload();
@@ -176,6 +201,7 @@ class KanjiDetail extends StatefulWidget {
 }
 
 class _KanjiDetailState extends State<KanjiDetail> {
+  final TextEditingController searchController = TextEditingController();
   Future<CatalogRecord>? entry;
   Future<CatalogPage>? words;
   int offset = 0;
@@ -193,12 +219,29 @@ class _KanjiDetailState extends State<KanjiDetail> {
   @override
   void dispose() {
     debounce?.cancel();
+    searchController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => LearningPage(
     title: '$literal · 读音与词语',
+    titleWidget: LearningSearchField(
+      controller: searchController,
+      hint: '筛选关联词语或假名',
+      onChanged: (value) {
+        debounce?.cancel();
+        debounce = Timer(const Duration(milliseconds: 250), () {
+          if (mounted) {
+            setState(() {
+              query = value.trim();
+              offset = 0;
+              words = catalog.words(literal, query, offset);
+            });
+          }
+        });
+      },
+    ),
     language: 'ja-JP',
     child: FutureBuilder(
       future: entry,
@@ -270,21 +313,6 @@ class _KanjiDetailState extends State<KanjiDetail> {
             ],
             const SizedBox(height: 20),
             Text('关联词语', style: Theme.of(context).textTheme.titleLarge),
-            TextField(
-              decoration: const InputDecoration(labelText: '筛选词语或假名'),
-              onChanged: (value) {
-                debounce?.cancel();
-                debounce = Timer(const Duration(milliseconds: 250), () {
-                  if (mounted) {
-                    setState(() {
-                      query = value.trim();
-                      offset = 0;
-                      words = catalog.words(literal, query, offset);
-                    });
-                  }
-                });
-              },
-            ),
             FutureBuilder(
               future: words,
               builder: (context, snapshot) {

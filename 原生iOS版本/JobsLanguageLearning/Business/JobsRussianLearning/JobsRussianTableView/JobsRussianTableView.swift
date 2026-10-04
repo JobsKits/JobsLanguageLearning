@@ -18,7 +18,7 @@ final class JobsRussianTableView: UIView, UIScrollViewDelegate {
     var onRead: ((String) -> Void)?
     private var buttons: [String: UIButton] = [:]
     private var cellWidth: CGFloat = 72
-    private let cellHeight: CGFloat = 50
+    private let cellHeight: CGFloat = 66
     private lazy var corner =
         UILabel.jobsMake {
             JobsLanguageLearningStyle.bindText($0, key: .textSecondary)
@@ -88,15 +88,15 @@ final class JobsRussianTableView: UIView, UIScrollViewDelegate {
     }
 
     private func assemble() {
-        corner.byAddTo(self) { make in
+        corner.byAddTo(self) { [unowned self] make in
             make.left.top.equalToSuperview()
             make.width.equalTo(56)
-            make.height.equalTo(50)
+            make.height.equalTo(cellHeight)
         }
         topScroll.byAddTo(self) { [unowned self] make in
             make.left.equalTo(corner.snp.right)
             make.top.right.equalToSuperview()
-            make.height.equalTo(50)
+            make.height.equalTo(cellHeight)
         }
         leftScroll.byAddTo(self) { [unowned self] make in
             make.top.equalTo(corner.snp.bottom)
@@ -111,7 +111,7 @@ final class JobsRussianTableView: UIView, UIScrollViewDelegate {
         topContent.byAddTo(topScroll) { [unowned self] make in
             make.edges.equalTo(topScroll.contentLayoutGuide)
             make.width.equalTo(CGFloat(JobsRussianLesson.vowels.count) * cellWidth)
-            make.height.equalTo(50)
+            make.height.equalTo(cellHeight)
         }
         leftContent.byAddTo(leftScroll) { [unowned self] make in
             make.edges.equalTo(leftScroll.contentLayoutGuide)
@@ -127,22 +127,53 @@ final class JobsRussianTableView: UIView, UIScrollViewDelegate {
 
     private func makeButtons() {
         for (col, vowel) in JobsRussianLesson.vowels.enumerated() {
-            add(vowel, title: vowel, parent: topContent, x: CGFloat(col) * cellWidth, y: 0, width: cellWidth)
+            add(
+                vowel,
+                annotation: JobsRussianLesson.pronunciationHint(forVowel: vowel),
+                parent: topContent,
+                x: CGFloat(col) * cellWidth,
+                y: 0,
+                width: cellWidth
+            )
         }
         for (row, consonant) in JobsRussianLesson.consonants.enumerated() {
-            add(consonant, title: consonant, parent: leftContent, x: 0, y: CGFloat(row) * cellHeight, width: 56)
+            add(
+                consonant,
+                annotation: JobsRussianLesson.pronunciationHint(forConsonant: consonant),
+                parent: leftContent,
+                x: 0,
+                y: CGFloat(row) * cellHeight,
+                width: 56
+            )
             for (col, vowel) in JobsRussianLesson.vowels.enumerated() {
                 let text = consonant + vowel
                 add(
-                    text, title: text + (JobsRussianLesson.isUncommon(consonant, vowel) ? "·" : ""),
+                    text,
+                    annotation: JobsRussianLesson.pronunciationHint(consonant: consonant, vowel: vowel),
                     parent: bodyContent,
-                    x: CGFloat(col) * cellWidth, y: CGFloat(row) * cellHeight, width: cellWidth)
+                    x: CGFloat(col) * cellWidth,
+                    y: CGFloat(row) * cellHeight,
+                    width: cellWidth
+                )
             }
         }
     }
 
-    private func add(_ text: String, title: String, parent: UIView, x: CGFloat, y: CGFloat, width: CGFloat) {
-        buttons[text] = JobsLanguageLearningStyle.button(title, size: 20)
+    private func add(
+        _ text: String,
+        annotation: String,
+        parent: UIView,
+        x: CGFloat,
+        y: CGFloat,
+        width: CGFloat
+    ) {
+        let title = text + (text.count == 2 && JobsRussianLesson.consonants.contains(String(text.prefix(1)))
+            && JobsRussianLesson.isUncommon(String(text.prefix(1)), String(text.suffix(1))) ? "·" : "")
+        buttons[text] = JobsLanguageLearningStyle.button(title, size: 26)
+            .bySubTitle(annotation)
+            .bySubTitleFont(JobsFont.systemFont(ofSize: 11))
+            .bySubTitleColor(JobsCor.secondaryLabel)
+            .byNumberOfLines(2)
             .onTap { [weak self] _ in
                 self?.onRead?(text)
             }
@@ -157,6 +188,7 @@ final class JobsRussianTableView: UIView, UIScrollViewDelegate {
     func highlight(_ text: String) {
         for (key, button) in buttons {
             JobsLanguageLearningStyle.paint(button, selected: key == text)
+            button.bySubTitleColor(key == text ? JobsCor.white : JobsCor.secondaryLabel)
         }
     }
 

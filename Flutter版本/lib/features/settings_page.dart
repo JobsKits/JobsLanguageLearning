@@ -49,8 +49,13 @@ class _SettingsPageState extends State<SettingsPage> {
               decoration: const InputDecoration(labelText: '语种'),
               items: const [
                 DropdownMenuItem(value: 'ru-RU', child: Text('俄语')),
+                DropdownMenuItem(value: 'de-DE', child: Text('德语')),
                 DropdownMenuItem(value: 'en-US', child: Text('英语')),
                 DropdownMenuItem(value: 'ja-JP', child: Text('日语')),
+                DropdownMenuItem(value: 'fr-FR', child: Text('法语')),
+                DropdownMenuItem(value: 'es-ES', child: Text('西班牙语')),
+                DropdownMenuItem(value: 'ko-KR', child: Text('朝鲜语')),
+                DropdownMenuItem(value: 'ar-SA', child: Text('阿拉伯语')),
               ],
               onChanged: (value) {
                 if (value == null) return;

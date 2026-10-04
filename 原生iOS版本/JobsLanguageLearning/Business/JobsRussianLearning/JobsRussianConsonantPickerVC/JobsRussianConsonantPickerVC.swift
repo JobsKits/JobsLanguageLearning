@@ -47,7 +47,11 @@ final class JobsRussianConsonantPickerVC: JobsLanguageBaseVC {
     private lazy var content = UIView.jobsMake { _ in
     }
     private lazy var buttons = JobsRussianLesson.consonants.map { letter in
-        JobsLanguageLearningStyle.button(letter.uppercased() + " " + letter, size: 22)
+        JobsLanguageLearningStyle.button(
+            "\(letter.uppercased()) \(letter)\n\(JobsRussianLesson.pronunciationHint(forConsonant: letter))",
+            size: 11
+        )
+            .byNumberOfLines(2)
             .onTap { [weak self] _ in
                 self?.onSelect?(letter)
                 self?.dismiss(animated: true)

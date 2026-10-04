@@ -72,6 +72,16 @@ PODS:
     - JobsSwiftBaseDefines
     - JobsSwiftDSL
     - SnapKit
+  - JobsFrenchLearning (1.0.0):
+    - JobsFrenchLearning/Support (= 1.0.0)
+    - JobsLanguageCore
+  - JobsFrenchLearning/Support (1.0.0):
+    - JobsLanguageCore
+  - JobsGermanLearning (1.0.0):
+    - JobsGermanLearning/Support (= 1.0.0)
+    - JobsLanguageCore
+  - JobsGermanLearning/Support (1.0.0):
+    - JobsLanguageCore
   - JobsGetWindow (0.1.14)
   - JobsImageTools (0.1.14):
     - JobsSwiftBaseDefines
@@ -109,6 +119,11 @@ PODS:
     - JobsSwiftBlock
     - JobsSwiftDSL
     - SnapKit
+  - JobsKoreanLearning (1.0.0):
+    - JobsKoreanLearning/Support (= 1.0.0)
+    - JobsLanguageCore
+  - JobsKoreanLearning/Support (1.0.0):
+    - JobsLanguageCore
   - Jobsl10n (0.1.14)
   - JobsLanguageCore (1.0.0):
     - GKNavigationBarSwift
@@ -148,6 +163,11 @@ PODS:
     - SnapKit
   - JobsScale (0.1.14):
     - JobsGetWindow
+  - JobsSpanishLearning (1.0.0):
+    - JobsLanguageCore
+    - JobsSpanishLearning/Support (= 1.0.0)
+  - JobsSpanishLearning/Support (1.0.0):
+    - JobsLanguageCore
   - JobsSwiftBaseDefines (0.1.6):
     - JobsSwiftBlock
     - JobsTextTools
@@ -222,15 +242,19 @@ DEPENDENCIES:
   - "JobsByUIKit (from `JobsByPods/JobsByUIKit@Pods`)"
   - "JobsByWebKit (from `JobsByPods/JobsByWebKit@Pods`)"
   - "JobsEnglishLearning (from `JobsByPods/JobsEnglishLearning@Pods`)"
+  - "JobsFrenchLearning (from `JobsByPods/JobsFrenchLearning@Pods`)"
+  - "JobsGermanLearning (from `JobsByPods/JobsGermanLearning@Pods`)"
   - "JobsGetWindow (from `JobsByPods/JobsGetWindow@Pods`)"
   - "JobsImageTools (from `JobsByPods/JobsImageTools@Pods`)"
   - "JobsInheritance (from `JobsByPods/JobsInheritance@Pods`)"
   - "JobsKanjiLearning (from `JobsByPods/JobsKanjiLearning@Pods`)"
+  - "JobsKoreanLearning (from `JobsByPods/JobsKoreanLearning@Pods`)"
   - "Jobsl10n (from `JobsByPods/Jobsl10n@Pods`)"
   - "JobsLanguageCore (from `JobsByPods/JobsLanguageCore@Pods`)"
   - "JobsNavBar (from `JobsByPods/JobsNavBar@Pods`)"
   - "JobsRussianLearning (from `JobsByPods/JobsRussianLearning@Pods`)"
   - "JobsScale (from `JobsByPods/JobsScale@Pods`)"
+  - "JobsSpanishLearning (from `JobsByPods/JobsSpanishLearning@Pods`)"
   - "JobsSwiftBaseDefines (from `JobsByPods/JobsSwiftBaseDefines@Pods`)"
   - "JobsSwiftBlock (from `JobsByPods/JobsSwiftBlock@Pods`)"
   - "JobsSwiftDebugTools (from `JobsByPods/JobsSwiftDebugTools@Pods`)"
@@ -274,6 +298,10 @@ EXTERNAL SOURCES:
     :path: "JobsByPods/JobsByWebKit@Pods"
   JobsEnglishLearning:
     :path: "JobsByPods/JobsEnglishLearning@Pods"
+  JobsFrenchLearning:
+    :path: "JobsByPods/JobsFrenchLearning@Pods"
+  JobsGermanLearning:
+    :path: "JobsByPods/JobsGermanLearning@Pods"
   JobsGetWindow:
     :path: "JobsByPods/JobsGetWindow@Pods"
   JobsImageTools:
@@ -282,6 +310,8 @@ EXTERNAL SOURCES:
     :path: "JobsByPods/JobsInheritance@Pods"
   JobsKanjiLearning:
     :path: "JobsByPods/JobsKanjiLearning@Pods"
+  JobsKoreanLearning:
+    :path: "JobsByPods/JobsKoreanLearning@Pods"
   Jobsl10n:
     :path: "JobsByPods/Jobsl10n@Pods"
   JobsLanguageCore:
@@ -292,6 +322,8 @@ EXTERNAL SOURCES:
     :path: "JobsByPods/JobsRussianLearning@Pods"
   JobsScale:
     :path: "JobsByPods/JobsScale@Pods"
+  JobsSpanishLearning:
+    :path: "JobsByPods/JobsSpanishLearning@Pods"
   JobsSwiftBaseDefines:
     :path: "JobsByPods/JobsSwiftBaseDefines@Pods"
   JobsSwiftBlock:
@@ -326,15 +358,19 @@ SPEC CHECKSUMS:
   JobsByUIKit: 07b4700e0d290d8bc190c56283fcf7a074407849
   JobsByWebKit: b6fec1f5591c5255a3af8a87414af8a28e4f0b57
   JobsEnglishLearning: c97766299459287dd44279f0b07c4ffb970dc67e
+  JobsFrenchLearning: 9dda0d79e6306d58c3fc3213489be83ff3818dc8
+  JobsGermanLearning: 3be948663d3ad5f1331cdb0e51dd50b1a38368cd
   JobsGetWindow: fb0bbe8603081fb4645ea5d03317ce36c0f31c65
   JobsImageTools: 5442c54a3ae113aad76fd39a1f5ae3ae5b8fea28
   JobsInheritance: 2a48bc8e2d7dae3643ad2668803c8a1b773dbba0
   JobsKanjiLearning: eaf9d0ebd279fb53214c4e6b8e36330a1d70e269
+  JobsKoreanLearning: 4ba62e02b53707d4197b80b3fde27dfc342152de
   Jobsl10n: 7dcc6eee8ebefe092b65bd16350bbb9a29460aa6
   JobsLanguageCore: 3d62b69e0f6a88284c3a237b1c1e91e415f01d1f
   JobsNavBar: 8e2d20df7de3e739edb457278920c44e72507047
   JobsRussianLearning: 8de74699ed1204701fbe6d064005a39094419340
   JobsScale: 0455fa25096eae822c98ecb443122e6125053231
+  JobsSpanishLearning: 57dd629501ea37ae71318fd2e44cd70708868817
   JobsSwiftBaseDefines: f75d5587dfe99fb44479aa4b23294d9484313884
   JobsSwiftBlock: ad1994f4adf1832dc6c526d7e870bb38a3945da2
   JobsSwiftDebugTools: 0b091cc71765ad995323dde20f5017f42ee34819

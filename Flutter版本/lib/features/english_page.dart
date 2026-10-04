@@ -14,6 +14,7 @@ class EnglishPage extends StatefulWidget {
 }
 
 class _EnglishPageState extends State<EnglishPage> {
+  final TextEditingController searchController = TextEditingController();
   List<CatalogRecord> levels = [];
   String level = 'junior';
   String letter = '';
@@ -55,12 +56,29 @@ class _EnglishPageState extends State<EnglishPage> {
   @override
   void dispose() {
     debounce?.cancel();
+    searchController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) => LearningPage(
     title: '英语分级词典',
+    titleWidget: LearningSearchField(
+      controller: searchController,
+      hint: '搜索单词或中文释义',
+      onChanged: (value) {
+        debounce?.cancel();
+        debounce = Timer(const Duration(milliseconds: 250), () {
+          if (mounted) {
+            setState(() {
+              query = value.trim();
+              offset = 0;
+              reload();
+            });
+          }
+        });
+      },
+    ),
     language: 'en-US',
     child: Column(
       children: [
@@ -89,27 +107,6 @@ class _EnglishPageState extends State<EnglishPage> {
               }),
             ),
           ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: TextField(
-            decoration: const InputDecoration(
-              labelText: '搜索单词或中文',
-              border: OutlineInputBorder(),
-            ),
-            onChanged: (value) {
-              debounce?.cancel();
-              debounce = Timer(const Duration(milliseconds: 250), () {
-                if (mounted) {
-                  setState(() {
-                    query = value.trim();
-                    offset = 0;
-                    reload();
-                  });
-                }
-              });
-            },
-          ),
-        ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(

@@ -1,4 +1,4 @@
-# Lottie for iOS
+# <span id="前言">Lottie for iOS</span>
  [![Version](https://img.shields.io/cocoapods/v/lottie-ios.svg?style=flat)](https://cocoapods.org/pods/lottie-ios) [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![SwiftPM](https://img.shields.io/badge/SPM-supported-DE5C43.svg?style=flat)](https://swift.org/package-manager/) [![License](https://img.shields.io/cocoapods/l/lottie-ios.svg?style=flat)](https://cocoapods.org/pods/lottie-ios) [![Platform](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fairbnb%2Flottie-ios%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/airbnb/lottie-ios) [![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fairbnb%2Flottie-ios%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/airbnb/lottie-ios)
 
 **View documentation, FAQ, help, examples, and more at [airbnb.io/lottie](https://airbnb.io/lottie/)**
@@ -24,14 +24,14 @@ Here is just a small sampling of the power of Lottie
 
 ![Abcs](_Gifs/Examples4.gif)
 
-## Installing Lottie
+## Installing Lottie <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 Lottie supports [Swift Package Manager](https://www.swift.org/package-manager/), [CocoaPods](https://cocoapods.org/), and [Carthage](https://github.com/Carthage/Carthage) (Both dynamic and static).
 
-### Github Repo
+### Github Repo <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 You can pull the [Lottie Github Repo](https://github.com/airbnb/lottie-ios/) and include the `Lottie.xcodeproj` to build a dynamic or static library.
 
-### Swift Package Manager
+### Swift Package Manager <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 To install Lottie using [Swift Package Manager](https://github.com/swiftlang/swift-package-manager) you can follow the [tutorial published by Apple](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app) using the URL for the Lottie repo with the current version:
 
@@ -48,7 +48,7 @@ When using Swift Package Manager we recommend using the [lottie-spm](https://git
 
 Instead of downloading the full git history of Lottie and building it from source, the lottie-spm repo just contains a pointer to the precompiled XCFramework included in the [latest lottie-ios release](https://github.com/airbnb/lottie-ios/releases/latest) (typically ~8MB). If you prefer to include Lottie source directly your project, you can directly depend on the main lottie-ios repo by referencing `https://github.com/airbnb/lottie-ios.git` instead.
 
-### CocoaPods
+### CocoaPods <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 Add the pod to your Podfile:
 ```ruby
 pod 'lottie-ios'
@@ -63,7 +63,7 @@ After installing the cocoapod into your project import Lottie with
 import Lottie
 ```
 
-### Carthage
+### Carthage <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 Add Lottie to your Cartfile:
 ```
 github "airbnb/lottie-ios" "master"
@@ -75,17 +75,17 @@ carthage update
 ```
 In your application targets “General” tab under the “Linked Frameworks and Libraries” section, drag and drop lottie-ios.framework from the Carthage/Build/iOS directory that `carthage update` produced.
 
-## Swift Version Support
+## Swift Version Support <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 Lottie supports Swift / Xcode versions back to the minimum version that is permitted by Apple for submissions to the App Store. You can see the most up-to-date information for which Swift versions Lottie supports on [Swift Package Index](https://swiftpackageindex.com/airbnb/lottie-ios):
 
 [![Swift Versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fairbnb%2Flottie-ios%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/airbnb/lottie-ios)
 
-## Privacy
+## Privacy <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 Lottie does not collect any data. We provide this notice to help you fill out [App Privacy Details](https://developer.apple.com/app-store/app-privacy-details/). We additionally provide a [privacy manifest](https://github.com/airbnb/lottie-ios/blob/master/Sources/PrivacyInfo.xcprivacy) which can be included in your app.
 
-## Security
+## Security <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 We distribute XCFramework bundles for each release on [GitHub](https://github.com/airbnb/lottie-ios/releases/latest). In Lottie 4.4.0 and later, these XCFramework bundles include a [code signature](https://developer.apple.com/documentation/xcode/verifying-the-origin-of-your-xcframeworks). These bundles are self-signed under the name "Lottie iOS" and have the following fingerprint:
 
@@ -97,7 +97,7 @@ In Xcode you can verify this by selecting `Lottie.xcframework` and confirming th
 
 ![Code Signature in Xcode](_Gifs/code_signature.png)
 
-## Contributing
+## Contributing <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 We always appreciate contributions from the community. To make changes to the project, you can clone the repo and open `Lottie.xcworkspace`. This workspace includes:
  - the Lottie framework (for iOS, macOS, and tvOS)
@@ -123,3 +123,5 @@ $ bundle exec rake build:package:iOS # builds the Lottie package for iOS
 $ bundle exec rake test:package # tests the Lottie package
 $ bundle exec rake format:swift # reformat Swift code based on the Airbnb Swift Style Guide
 ```
+
+<a id="🔚" href="#前言" style="font-size:17px; color:green; font-weight:bold;">我是有底线的➤点我回到首页</a>

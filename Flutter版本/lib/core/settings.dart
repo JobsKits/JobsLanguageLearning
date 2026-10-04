@@ -30,7 +30,16 @@ class AppSettings extends ChangeNotifier {
   AppSettings(this.preferences) {
     final index = preferences.getInt('theme') ?? 0;
     theme = ThemeMode.values[index.clamp(0, 2)];
-    for (final language in ['ru-RU', 'en-US', 'ja-JP']) {
+    for (final language in [
+      'ru-RU',
+      'ar-SA',
+      'fr-FR',
+      'es-ES',
+      'ko-KR',
+      'de-DE',
+      'en-US',
+      'ja-JP',
+    ]) {
       try {
         final data = jsonDecode(preferences.getString(language) ?? '{}') as Map;
         voices[language] = VoiceSettings(

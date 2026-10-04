@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		0F61756E0ED22AE9C6EC5C48 /* JobsEnglishLearningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044E4269E0C058247DABE6F /* JobsEnglishLearningVC.swift */; };
 		13E05554B6552D62D5C14AFA /* Pods_JobsLanguageLearningUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6873C8165022A323E8269EFF /* Pods_JobsLanguageLearningUITests.framework */; };
 		1B9DEEB6D810CC51CD30D6C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEDE3DAE4852445798D42750 /* Assets.xcassets */; };
+		22AC96820DE84BC1C790A0D6 /* JobsSyllableLearningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F52B7A4F9CC37706ABC6E22 /* JobsSyllableLearningVC.swift */; };
 		32CBBD077D57FB21B0B6587C /* JobsKanjiChineseTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D29BA09E7A3087FE5FDBF44 /* JobsKanjiChineseTranslator.swift */; };
 		3737AFB2A48A994DE19E735B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D329AE79BA7A66E0DA834D27 /* Foundation.framework */; };
 		376B9B05ED17F229E431FEF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D329AE79BA7A66E0DA834D27 /* Foundation.framework */; };
@@ -29,6 +30,7 @@
 		CDDF050EE12B8F46A5058466 /* JobsEnglishWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D050ADB1E95A50B5D6D904 /* JobsEnglishWordCell.swift */; };
 		D237BA5DB8606EAA0F42AF81 /* Pods_JobsLanguageLearningTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0B79462C9C01D32165DCCF /* Pods_JobsLanguageLearningTests.framework */; };
 		D3C4DEAF8983FB86FAAE463B /* Pods_JobsLanguageLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFDA3303066FB252B3A6179 /* Pods_JobsLanguageLearning.framework */; };
+		DA2CED347105E2DEF311F03E /* JobsLanguageSyllablePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526CEA87C57DE257D916B9C8 /* JobsLanguageSyllablePickerVC.swift */; };
 		E6607FD12519383FF32F0EC7 /* JobsLanguageFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4C660754FE1542D27DD900 /* JobsLanguageFlowTests.swift */; };
 		E940888260A3A44D7267CE84 /* JobsKanjiRubyText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A2A4C13BBC31C076B14DFB /* JobsKanjiRubyText.swift */; };
 		F0619E68677C9BD18A18A7CF /* JobsLanguageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB82B6328784AA9FFEC7398 /* JobsLanguageRepositoryTests.swift */; };
@@ -63,6 +65,7 @@
 		3DFDA3303066FB252B3A6179 /* Pods_JobsLanguageLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsLanguageLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D5C1C1F5989FBFEEBD6CE3A /* JobsKanjiDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiDetailVC.swift; sourceTree = "<group>"; };
 		4FF0A388EA50605B3B2E3BEE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		526CEA87C57DE257D916B9C8 /* JobsLanguageSyllablePickerVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsLanguageSyllablePickerVC.swift; sourceTree = "<group>"; };
 		5A8ED4D148C0F240EA237A51 /* Pods-JobsLanguageLearningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearningUITests.debug.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearningUITests/Pods-JobsLanguageLearningUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5CAF09FB59C620E541A35062 /* JobsKanjiTranslationHost.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiTranslationHost.swift; sourceTree = "<group>"; };
 		5E73B3E05E5F3E78E5C71EDE /* Pods-JobsLanguageLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearning.release.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearning/Pods-JobsLanguageLearning.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		6873C8165022A323E8269EFF /* Pods_JobsLanguageLearningUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobsLanguageLearningUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6968FBD33409AA40220C3085 /* Pods-JobsLanguageLearningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearningTests.debug.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearningTests/Pods-JobsLanguageLearningTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EAE1308E55DFB3075AF37E1 /* JobsLanguageLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsLanguageLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F52B7A4F9CC37706ABC6E22 /* JobsSyllableLearningVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsSyllableLearningVC.swift; sourceTree = "<group>"; };
 		74EE6F071CCD9AD2A05285D8 /* Pods-JobsLanguageLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobsLanguageLearning.debug.xcconfig"; path = "Target Support Files/Pods-JobsLanguageLearning/Pods-JobsLanguageLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		7D29BA09E7A3087FE5FDBF44 /* JobsKanjiChineseTranslator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiChineseTranslator.swift; sourceTree = "<group>"; };
 		9044E4269E0C058247DABE6F /* JobsEnglishLearningVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsEnglishLearningVC.swift; sourceTree = "<group>"; };
@@ -137,7 +141,6 @@
 				F1B63EC41A587D107DF1DD9D /* JobsRussianPairView */,
 				EC629822E5FBC41266F8BA1A /* JobsRussianTableView */,
 			);
-			name = JobsRussianLearning;
 			path = JobsRussianLearning;
 			sourceTree = "<group>";
 		};
@@ -154,7 +157,6 @@
 			children = (
 				C2A2A4C13BBC31C076B14DFB /* JobsKanjiRubyText.swift */,
 			);
-			name = JobsKanjiRubyText;
 			path = JobsKanjiRubyText;
 			sourceTree = "<group>";
 		};
@@ -181,6 +183,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A6410ABF363C095B65C9DF3 /* JobsSyllableLearningVC */ = {
+			isa = PBXGroup;
+			children = (
+				6F52B7A4F9CC37706ABC6E22 /* JobsSyllableLearningVC.swift */,
+			);
+			path = JobsSyllableLearningVC;
+			sourceTree = "<group>";
+		};
 		33373AC0CA520A4D47232858 /* Translation */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +198,6 @@
 				FBBC4469C5B66DA9E3BCBF10 /* JobsKanjiChineseTranslator */,
 				5A6E9A83C235F89F9C782F36 /* JobsKanjiTranslationView */,
 			);
-			name = Translation;
 			path = Translation;
 			sourceTree = "<group>";
 		};
@@ -198,7 +207,6 @@
 				D549EC4FA8A344652AD398AF /* JobsEnglishLearningVC */,
 				85A1B07F69A6E83C647303B4 /* JobsEnglishWordDetailVC */,
 			);
-			name = VC;
 			path = VC;
 			sourceTree = "<group>";
 		};
@@ -207,7 +215,6 @@
 			children = (
 				5CAF09FB59C620E541A35062 /* JobsKanjiTranslationHost.swift */,
 			);
-			name = JobsKanjiTranslationHost;
 			path = JobsKanjiTranslationHost;
 			sourceTree = "<group>";
 		};
@@ -228,7 +235,6 @@
 			children = (
 				109FB31727953235F28BE65F /* JobsRussianConsonantPickerVC.swift */,
 			);
-			name = JobsRussianConsonantPickerVC;
 			path = JobsRussianConsonantPickerVC;
 			sourceTree = "<group>";
 		};
@@ -237,7 +243,6 @@
 			children = (
 				E8D050ADB1E95A50B5D6D904 /* JobsEnglishWordCell.swift */,
 			);
-			name = JobsEnglishWordCell;
 			path = JobsEnglishWordCell;
 			sourceTree = "<group>";
 		};
@@ -246,8 +251,15 @@
 			children = (
 				1A114D1D4DF34AC7F3DF3931 /* JobsKanjiTranslationView.swift */,
 			);
-			name = JobsKanjiTranslationView;
 			path = JobsKanjiTranslationView;
+			sourceTree = "<group>";
+		};
+		5DCB38E076BC1FEB0437283C /* JobsLanguageSyllablePickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				526CEA87C57DE257D916B9C8 /* JobsLanguageSyllablePickerVC.swift */,
+			);
+			path = JobsLanguageSyllablePickerVC;
 			sourceTree = "<group>";
 		};
 		63063C68C283014FE26F741B /* Cell */ = {
@@ -255,7 +267,6 @@
 			children = (
 				54964600586FD26809C4FBAD /* JobsEnglishWordCell */,
 			);
-			name = Cell;
 			path = Cell;
 			sourceTree = "<group>";
 		};
@@ -272,7 +283,6 @@
 			children = (
 				E3FC260D9BC189055F13B568 /* JobsKanjiLearningVC.swift */,
 			);
-			name = JobsKanjiLearningVC;
 			path = JobsKanjiLearningVC;
 			sourceTree = "<group>";
 		};
@@ -281,7 +291,6 @@
 			children = (
 				131B62F70A5F989502A06B9A /* JobsKanjiRubyText */,
 			);
-			name = View;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -290,8 +299,16 @@
 			children = (
 				CB38C74F95CA058717562AFF /* JobsKanjiWordDetailVC.swift */,
 			);
-			name = JobsKanjiWordDetailVC;
 			path = JobsKanjiWordDetailVC;
+			sourceTree = "<group>";
+		};
+		7EB127DE7B35B0A7832A44E5 /* JobsPronunciationLearning */ = {
+			isa = PBXGroup;
+			children = (
+				2A6410ABF363C095B65C9DF3 /* JobsSyllableLearningVC */,
+				5DCB38E076BC1FEB0437283C /* JobsLanguageSyllablePickerVC */,
+			);
+			path = JobsPronunciationLearning;
 			sourceTree = "<group>";
 		};
 		83D8ACBBDA61DFA53859BE6F /* JobsRussianLearningVC */ = {
@@ -299,7 +316,6 @@
 			children = (
 				272264BC9A4A938EA322ACBE /* JobsRussianLearningVC.swift */,
 			);
-			name = JobsRussianLearningVC;
 			path = JobsRussianLearningVC;
 			sourceTree = "<group>";
 		};
@@ -308,7 +324,6 @@
 			children = (
 				B2FC53105AA7BF322D7FBE88 /* JobsEnglishWordDetailVC.swift */,
 			);
-			name = JobsEnglishWordDetailVC;
 			path = JobsEnglishWordDetailVC;
 			sourceTree = "<group>";
 		};
@@ -317,7 +332,6 @@
 			children = (
 				4D5C1C1F5989FBFEEBD6CE3A /* JobsKanjiDetailVC.swift */,
 			);
-			name = JobsKanjiDetailVC;
 			path = JobsKanjiDetailVC;
 			sourceTree = "<group>";
 		};
@@ -338,7 +352,6 @@
 				78932B798093AA141C3B88FC /* View */,
 				33373AC0CA520A4D47232858 /* Translation */,
 			);
-			name = JobsKanjiLearning;
 			path = JobsKanjiLearning;
 			sourceTree = "<group>";
 		};
@@ -347,7 +360,6 @@
 			children = (
 				9044E4269E0C058247DABE6F /* JobsEnglishLearningVC.swift */,
 			);
-			name = JobsEnglishLearningVC;
 			path = JobsEnglishLearningVC;
 			sourceTree = "<group>";
 		};
@@ -371,7 +383,6 @@
 				757681CFDDCC4B8A0F606F41 /* JobsKanjiLearningVC */,
 				967A00FAF5C8B4B9296DA766 /* JobsKanjiDetailVC */,
 			);
-			name = VC;
 			path = VC;
 			sourceTree = "<group>";
 		};
@@ -381,8 +392,8 @@
 				0C856265E4561180F1908833 /* JobsRussianLearning */,
 				F305A610A1F90E7CD7B188F2 /* JobsEnglishLearning */,
 				BFAC5DA414F8C60F567E5F6E /* JobsKanjiLearning */,
+				7EB127DE7B35B0A7832A44E5 /* JobsPronunciationLearning */,
 			);
-			name = Business;
 			path = Business;
 			sourceTree = "<group>";
 		};
@@ -391,7 +402,6 @@
 			children = (
 				1429F79EDDFE8777D045BCD8 /* JobsRussianTableView.swift */,
 			);
-			name = JobsRussianTableView;
 			path = JobsRussianTableView;
 			sourceTree = "<group>";
 		};
@@ -400,7 +410,6 @@
 			children = (
 				6403189BAC0ABF35EBFD08FB /* JobsRussianPairView.swift */,
 			);
-			name = JobsRussianPairView;
 			path = JobsRussianPairView;
 			sourceTree = "<group>";
 		};
@@ -418,7 +427,6 @@
 				37AA06D404BE35F574D6B35C /* VC */,
 				63063C68C283014FE26F741B /* Cell */,
 			);
-			name = JobsEnglishLearning;
 			path = JobsEnglishLearning;
 			sourceTree = "<group>";
 		};
@@ -427,7 +435,6 @@
 			children = (
 				7D29BA09E7A3087FE5FDBF44 /* JobsKanjiChineseTranslator.swift */,
 			);
-			name = JobsKanjiChineseTranslator;
 			path = JobsKanjiChineseTranslator;
 			sourceTree = "<group>";
 		};
@@ -682,6 +689,8 @@
 				08C4DD93F701C7A82F02B83F /* JobsKanjiTranslationHost.swift in Sources */,
 				32CBBD077D57FB21B0B6587C /* JobsKanjiChineseTranslator.swift in Sources */,
 				59561BBA94F967053EF224EB /* JobsKanjiTranslationView.swift in Sources */,
+				22AC96820DE84BC1C790A0D6 /* JobsSyllableLearningVC.swift in Sources */,
+				DA2CED347105E2DEF311F03E /* JobsLanguageSyllablePickerVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,7 +870,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -879,7 +889,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = JobsLanguageLearning/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -940,7 +953,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = JobsLanguageLearning/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",

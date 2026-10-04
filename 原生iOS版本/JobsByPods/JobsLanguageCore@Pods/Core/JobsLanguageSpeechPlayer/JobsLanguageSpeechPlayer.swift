@@ -45,9 +45,10 @@ public final class JobsLanguageSpeechPlayer: NSObject, AVSpeechSynthesizerDelega
             saved?.language.hasPrefix(String(language.prefix(2))) == true
             ? saved : AVSpeechSynthesisVoice.make(lessonLanguage: language)
         guard let voice, voice.language.hasPrefix(String(language.prefix(2))) else {
-            onError?(
-                "未找到\(language.hasPrefix("ru") ? "俄语" : language.hasPrefix("ja") ? "日语" : "英语")声音，请在系统辅助功能的朗读声音设置中下载对应语言后重试。"
-            )
+            let message =
+                "未找到\(Self.languageName(language))声音，"
+                + "请在系统辅助功能的朗读声音设置中下载对应语言后重试。"
+            onError?(message)
             return
         }
         for text in texts where !text.isEmpty {
@@ -67,6 +68,28 @@ public final class JobsLanguageSpeechPlayer: NSObject, AVSpeechSynthesizerDelega
         pending.removeAll()
         synthesizer.byLessonStop()
     }
+
+    private static func languageName(_ language: String) -> String {
+        switch String(language.prefix(2)) {
+        case "ru":
+            return "俄语"
+        case "ar":
+            return "阿拉伯语"
+        case "fr":
+            return "法语"
+        case "es":
+            return "西班牙语"
+        case "ko":
+            return "朝鲜语"
+        case "de":
+            return "德语"
+        case "ja":
+            return "日语"
+        default:
+            return "英语"
+        }
+    }
+
     nonisolated public func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance)
     {
         let id = ObjectIdentifier(utterance)

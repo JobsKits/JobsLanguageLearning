@@ -103,7 +103,7 @@ let motionManager = CMMotionManager.make()
 - 封装实现内部可以调用系统 API；上层调用方必须使用对应 `byXxx` / `onXxx` 入口。
 - 原 Pod 暂时保留薄桥接文件，便于老代码平滑迁移。
 
-## Jobs DSL 调用约定
+## Jobs DSL 调用约定 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 Pod 内 Jobs 自维护代码统一采用“一镜到底”：同一配置语义的主对象只作为链起点出现一次；子对象通过宿主级 `byXxx` 或配置闭包继续收口。缺少链式入口时，先在低层补齐返回 `Self` 的 DSL，再改调用端。
 
@@ -130,26 +130,26 @@ return cell
 
 <a id="jobs-architecture"></a>
 
-## 五、架构脉络与关键设计
+## 五、架构脉络与关键设计 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 本节用于用中文快速理解组件，并为按框架重建提供入口；关注职责、运行关系和关键边界，不要求逐行复刻。
 
-### 5.1、设计目的与职责划分
+### 5.1、设计目的与职责划分 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 作为系统对象链式配置的集中层，按 Foundation、UIKit、QuartzCore、WebKit、PDFKit、PhotosUI、MetalKit 等框架划分扩展，统一 byXxx 与配置闭包表达，承接原先散落在多个 Pod 的 DSL。
 
-### 5.2、运行脉络
+### 5.2、运行脉络 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 创建目标对象 → 链式配置属性或子对象 → 执行明确的行为入口 → 返回当前对象继续配置
 
-### 5.3、关键设计与边界
+### 5.3、关键设计与边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 - 链式返回尽量保持 Self，不能在中途降为父类后丢失子类接口；值类型需要按复制返回规则处理。
 - 配置和 start/stop 等明确行为入口要区分，不能把有副作用的方法理解成普通属性设置。
 - 兼容 Pod 的桥接与本层实现要保持单一归属，防止重复扩展引发歧义。
 - 系统版本差异在相应扩展内部消化，例如日期选择器的可用样式；无条件调用新 API 会破坏旧系统支持。
 
-### 5.4、阅读与重建顺序
+### 5.4、阅读与重建顺序 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 先按目标框架找到扩展，再检查接收类型、返回类型和版本条件，最后沿 JobsByUIKit 等使用方看完整链条。
 

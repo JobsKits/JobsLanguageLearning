@@ -44,40 +44,89 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
         ("b", "ばびぶべぼ", ["ba", "bi", "bu", "be", "bo"]),
         ("p", "ぱぴぷぺぽ", ["pa", "pi", "pu", "pe", "po"])
     ]
+    private let kanaIPA: [Character: String] = [
+        "あ": "a", "い": "i", "う": "ɯ", "え": "e", "お": "o",
+        "か": "ka", "き": "ki", "く": "kɯ", "け": "ke", "こ": "ko",
+        "さ": "sa", "し": "ɕi", "す": "sɯ", "せ": "se", "そ": "so",
+        "た": "ta", "ち": "tɕi", "つ": "tsɯ", "て": "te", "と": "to",
+        "な": "na", "に": "ni", "ぬ": "nɯ", "ね": "ne", "の": "no",
+        "は": "ha", "ひ": "çi", "ふ": "ɸɯ", "へ": "he", "ほ": "ho",
+        "ま": "ma", "み": "mi", "む": "mɯ", "め": "me", "も": "mo",
+        "や": "ja", "ゆ": "jɯ", "よ": "jo",
+        "ら": "ɾa", "り": "ɾi", "る": "ɾɯ", "れ": "ɾe", "ろ": "ɾo",
+        "わ": "wa", "を": "o",
+        "が": "ɡa", "ぎ": "ɡi", "ぐ": "ɡɯ", "げ": "ɡe", "ご": "ɡo",
+        "ざ": "za", "じ": "dʑi", "ず": "zɯ", "ぜ": "ze", "ぞ": "zo",
+        "だ": "da", "ぢ": "dʑi", "づ": "dzɯ", "で": "de", "ど": "do",
+        "ば": "ba", "び": "bi", "ぶ": "bɯ", "べ": "be", "ぼ": "bo",
+        "ぱ": "pa", "ぴ": "pi", "ぷ": "pɯ", "ぺ": "pe", "ぽ": "po",
+        "ん": "ɴ"
+    ]
     private lazy var kanaButton = JobsLanguageLearningStyle.button("元音 · 辅音 · 元音＋辅音", size: 14)
-        .onTap { [weak self] _ in
+        .onTap { [weak self] sender in
             guard let self else {
                 return
             }
             showingKana.toggle()
-            kanaButton.byTitle(showingKana ? "返回汉字词库" : "元音 · 辅音 · 元音＋辅音")
-            search.byHidden(showingKana)
+            sender.byTitle(showingKana ? "返回汉字词库" : "元音 · 辅音 · 元音＋辅音")
+            gk_navTitleView = showingKana ? nil : searchTitleView
             pages.byHidden(showingKana)
-            table.byReloadData()
+            scopeSelection.byHidden(showingKana)
+            tableTopConstraint?.update(offset: showingKana ? -40 : 4)
+            tableBottomConstraint?.update(offset: showingKana ? 32 : -8)
             if showingKana {
-                status.byText("表头元音、左侧辅音、组合均可点读。辅音用代表音节试听；— 无组合。し shi、ち chi、つ tsu、ふ fu；を读 o，ん为鼻音。系统 TTS 非音素录音。")
+                setSectionStatus("元音 · 辅音 · 罗马字 · IPA 均可点读")
             } else {
                 refresh()
             }
+            table.byReloadData()
         }
     private let repository = JobsKanjiRepository()
     private var entries: [JobsKanjiSummary] = []
     private var query = ""
     private var group = 0
+    private var sectionStatus = "正在读取字库…"
     private var offset = 0
     private var total = 0
     private var generation = 0
+    private var tableTopConstraint: Constraint?
+    private var tableBottomConstraint: Constraint?
     private var loadTask: Task<Void, Never>?
     private lazy var search =
         UISearchBar.jobsMake { _ in
         }
         .byDelegate(self)
         .byPlaceholder("搜索汉字、假名或中文")
-        .byScopeButtonTitles(["全部", "常用", "人名用"])
-        .byShowsScopeBar(true)
         .bySearchBarStyle(.minimal)
-    private lazy var status = JobsLanguageLearningStyle.label("正在读取字库…", size: 12, secondary: true)
-        .byNumberOfLines(0)
+    private lazy var scopeButtons: [UIButton] = ["全部", "常用", "人名用"].enumerated().map { index, title in
+        JobsLanguageLearningStyle.button(title, size: 13)
+            .onTap { [weak self] _ in
+                guard let self else {
+                    return
+                }
+                group = index
+                for (buttonIndex, button) in scopeButtons.enumerated() {
+                    JobsLanguageLearningStyle.paint(button, selected: buttonIndex == group)
+                }
+                offset = 0
+                refresh()
+            }
+    }
+    private lazy var scopeSelection = UIStackView.jobsMake { _ in
+    }
+    .byAxis(.horizontal)
+    .bySpacing(8)
+    .byDistribution(.fillEqually)
+    .byAddArrangedSubview(scopeButtons[0])
+    .byAddArrangedSubview(scopeButtons[1])
+    .byAddArrangedSubview(scopeButtons[2])
+    private lazy var dismissKeyboardTap = UITapGestureRecognizer
+        .byConfig { [weak self] _ in
+            self?.view.jobsDismissKeyboard()
+        }
+        .byCancelsTouchesInView(false)
+        .byDelaysTouchesBegan(false)
+        .byDelaysTouchesEnded(false)
     private lazy var previous = JobsLanguageLearningStyle.button("上一页", size: 14)
         .onTap { [weak self] _ in
             self?.turn(-1)
@@ -94,30 +143,33 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
         .byDistribution(.fillEqually)
         .byAddArrangedSubview(previous)
         .byAddArrangedSubview(nextPageButton)
-    private lazy var table = UITableView.make(learningStyle: .insetGrouped)
+    private lazy var table = UITableView.make(learningStyle: .plain)
         .byDelegate(self)
         .byDataSource(self)
         .byRowHeight(UITableView.automaticDimension)
         .byEstimatedRowHeight(90)
+        .bySectionHeaderHeight(44)
+        .byEstimatedSectionHeaderHeight(44)
+        .byNoSectionHeaderTopPadding()
         .byKeyboardDismissMode(.onDrag)
         .byBackgroundColor(JobsCor.systemGroupedBackground)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gk_navTitleView = searchTitleView
+        fitSearchBarToNavigationTitle()
         kanaButton.byAddTo(view) { [unowned self] make in
             make.top.equalTo(gk_navigationBar.snp.bottom).offset(4)
             make.left.right.equalToSuperview().inset(12)
             make.height.equalTo(40)
         }
-        search.byAddTo(view) { [unowned self] make in
-            make.top.equalTo(kanaButton.snp.bottom)
-            make.left.right.equalToSuperview()
-
-            make.height.equalTo(100)
+        for (index, button) in scopeButtons.enumerated() {
+            JobsLanguageLearningStyle.paint(button, selected: index == group)
         }
-        status.byAddTo(view) { [unowned self] make in
-            make.top.equalTo(search.snp.bottom)
-            make.left.right.equalToSuperview().inset(16)
+        scopeSelection.byAddTo(view) { [unowned self] make in
+            make.top.equalTo(kanaButton.snp.bottom).offset(8)
+            make.left.right.equalToSuperview().inset(12)
+            make.height.equalTo(36)
         }
         pages.byAddTo(view) { [unowned self] make in
             make.left.right.equalToSuperview().inset(12)
@@ -125,11 +177,37 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
             make.height.equalTo(40)
         }
         table.byAddTo(view) { [unowned self] make in
-            make.top.equalTo(status.snp.bottom).offset(8)
+            tableTopConstraint = make.top.equalTo(scopeSelection.snp.bottom).offset(4).constraint
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(pages.snp.top).offset(-8)
+            tableBottomConstraint = make.bottom.equalTo(pages.snp.top).offset(-8).constraint
         }
+        view.jobs_addGestureRetView(dismissKeyboardTap)
         refresh()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        fitSearchBarToNavigationTitle()
+    }
+
+    /// 导航栏管理外层尺寸，内部约束保持搜索框上移位置。
+    private lazy var searchTitleView = UIView.jobsMake { [unowned self] container in
+        search.byAddTo(container) { make in
+            make.left.right.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-6)
+            make.height.equalTo(44)
+        }
+    }
+
+    private func fitSearchBarToNavigationTitle() {
+        searchTitleView.byFrame(
+            CGRect(
+                x: 0,
+                y: 0,
+                width: max(150, view.bounds.width - 136),
+                height: 44
+            )
+        )
     }
 
     private func kanaCell(_ row: Int) -> UITableViewCell {
@@ -148,21 +226,23 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
         var sounds: [(String, String)] = []
         if row == 0 {
             sounds = [("辅 / 元", "")] + zip(Array("あいうえお"), ["a", "i", "u", "e", "o"]).map {
-                ("元音 \($0.1)\n\($0.0)", String($0.0))
+                ("\($0.0)\n\($0.1) /\(kanaIPA[$0.0] ?? "")/", String($0.0))
             }
         } else if row == kanaRows.count + 1 {
-            sounds = [("ん ン / n · 鼻音", "ん")]
+            sounds = [("ん ン\nn /ɴ/", "ん")]
         } else {
             let (consonant, kana, readings) = kanaRows[row - 1]
-            sounds.append(("\(consonant) 行\n\(kana.first!)", String(kana.first!)))
+            sounds.append(("\(consonant) 行\n\(kana.first!) /\(kanaIPA[kana.first!] ?? "")/", String(kana.first!)))
             for (index, character) in kana.enumerated() {
                 let roman = readings[index]
                 let katakana = String(UnicodeScalar(character.unicodeScalars.first!.value + 0x60)!)
-                sounds.append(roman.isEmpty ? ("—", "") : ("\(character)\(katakana)\n\(roman)", String(character)))
+                sounds.append(roman.isEmpty
+                    ? ("—", "")
+                    : ("\(character)\(katakana)\n\(roman) /\(kanaIPA[character] ?? "")/", String(character)))
             }
         }
         for (title, sound) in sounds {
-            let button = JobsLanguageLearningStyle.button(title, size: 12)
+            let button = JobsLanguageLearningStyle.button(title, size: 9)
                 .byNumberOfLines(2)
                 .byEnabled(!sound.isEmpty)
                 .onTap { [weak self] _ in
@@ -179,7 +259,7 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
         let query = query
         let group = group
         let offset = offset
-        status.byText("正在查询…")
+        setSectionStatus("正在查询…")
         loadTask?.cancel()
         loadTask = Task { [weak self] in
             guard let self else {
@@ -195,16 +275,21 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
                 guard !showingKana else {
                     return
                 }
-                status.byText(total == 0 ? "没有匹配汉字" : "共 \(total) 字 · \(offset + 1)–\(min(offset + 50, total))")
+                setSectionStatus(total == 0 ? "没有匹配汉字" : "共 \(total) 字 · \(offset + 1)–\(min(offset + 50, total))")
                 previous.byEnabled(offset > 0)
                 nextPageButton.byEnabled(offset + 50 < total)
                 table.byReloadData()
             } catch {
                 if token == generation {
-                    status.byText(error.localizedDescription)
+                    setSectionStatus(error.localizedDescription)
                 }
             }
         }
+    }
+
+    private func setSectionStatus(_ value: String) {
+        sectionStatus = value
+        table.byReloadData()
     }
 
     private func turn(_ delta: Int) {
@@ -218,10 +303,8 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
         refresh()
     }
 
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        group = selectedScope
-        offset = 0
-        refresh()
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sectionStatus
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

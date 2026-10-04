@@ -59,6 +59,13 @@ final class JobsEnglishLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UI
         .byDelegate(self)
         .byPlaceholder("搜索单词或中文释义")
         .bySearchBarStyle(.minimal)
+    private lazy var dismissKeyboardTap = UITapGestureRecognizer
+        .byConfig { [weak self] _ in
+            self?.view.jobsDismissKeyboard()
+        }
+        .byCancelsTouchesInView(false)
+        .byDelaysTouchesBegan(false)
+        .byDelaysTouchesEnded(false)
     private lazy var status = JobsLanguageLearningStyle.label("正在读取离线词库…", size: 12, secondary: true)
     private lazy var previous = JobsLanguageLearningStyle.button("上一页", size: 14)
         .onTap { [weak self] _ in
@@ -87,18 +94,15 @@ final class JobsEnglishLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gk_navTitleView = searchTitleView
+        fitSearchBarToNavigationTitle()
         filters.byAddTo(view) { [unowned self] make in
             make.top.equalTo(gk_navigationBar.snp.bottom).offset(8)
             make.left.right.equalToSuperview().inset(12)
             make.height.equalTo(42)
         }
-        search.byAddTo(view) { [unowned self] make in
-            make.top.equalTo(filters.snp.bottom)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(52)
-        }
         status.byAddTo(view) { [unowned self] make in
-            make.top.equalTo(search.snp.bottom)
+            make.top.equalTo(filters.snp.bottom).offset(8)
             make.left.right.equalToSuperview().inset(16)
         }
         pages.byAddTo(view) { [unowned self] make in
@@ -111,6 +115,7 @@ final class JobsEnglishLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UI
             make.left.right.equalToSuperview()
             make.bottom.equalTo(pages.snp.top).offset(-8)
         }
+        view.jobs_addGestureRetView(dismissKeyboardTap)
         Task { [weak self] in
             guard let self else {
                 return
@@ -127,6 +132,31 @@ final class JobsEnglishLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UI
                 status.byText(error.localizedDescription)
             }
         }
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        fitSearchBarToNavigationTitle()
+    }
+
+    /// 导航栏管理外层尺寸，内部约束保持搜索框上移位置。
+    private lazy var searchTitleView = UIView.jobsMake { [unowned self] container in
+        search.byAddTo(container) { make in
+            make.left.right.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-6)
+            make.height.equalTo(44)
+        }
+    }
+
+    private func fitSearchBarToNavigationTitle() {
+        searchTitleView.byFrame(
+            CGRect(
+                x: 0,
+                y: 0,
+                width: max(150, view.bounds.width - 136),
+                height: 44
+            )
+        )
     }
 
     private func refresh() {

@@ -1,7 +1,7 @@
 > 中文架构入口：[架构脉络与关键设计](#jobs-architecture)。
 
 
-## DSL 迁移说明
+## <span id="前言">DSL 迁移说明 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span>
 
 - 本 Pod 原有的链式 DSL / 点语法封装已经抽离到 `JobsSwiftDSL`。
 - 继续使用 `byXxx(...)`、`dsl { ... }` 这类语法时，请在调用文件显式 `import JobsSwiftDSL`。
@@ -9,25 +9,25 @@
 
 <a id="jobs-architecture"></a>
 
-## 一、架构脉络与关键设计
+## 一、架构脉络与关键设计 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 本节用于用中文快速理解组件，并为按框架重建提供入口；关注职责、运行关系和关键边界，不要求逐行复刻。
 
-### 1.1、设计目的与职责划分
+### 1.1、设计目的与职责划分 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 当前是 WebKit DSL 的兼容模块，桥接入口依赖 JobsSwiftDSL；WebKit 系统对象的链式配置已经迁出。本目录不承载完整浏览器页面、下载中心或网页与原生通信系统。
 
-### 1.2、运行脉络
+### 1.2、运行脉络 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 引入兼容模块 → 调用 JobsSwiftDSL 的 WebKit 配置 → 由宿主或业务基类承接网页生命周期
 
-### 1.3、关键设计与边界
+### 1.3、关键设计与边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 - 需要网页容器、导航栏联动或桥接逻辑时，还应查 JobsInheritance 等实际使用方，不能都归入这个 Pod。
 - 依赖 JobsByUIKit 不代表所有 UIKit 功能都由本目录实现。
 - 复建时先恢复模块可见性和实际需要的 DSL，防止复制出两套同名扩展。
 
-### 1.4、阅读与重建顺序
+### 1.4、阅读与重建顺序 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 先看 JobsByWebKitDSLBridge.swift，再看 JobsSwiftDSL 对应扩展，最后追具体网页容器的调用。
 
@@ -36,3 +36,5 @@
 - [JobsByWebKitDSLBridge.swift](<./JobsByWebKitDSLBridge.swift>)
 
 依赖与编译入口：[JobsByWebKit.podspec](<./JobsByWebKit.podspec>)。其中显式依赖声明包括 `JobsByUIKit`、`JobsSwiftDSL`。源码范围、资源及可选 subspec 以这里的声明为准；辅助脚本动态补充的依赖不在上述摘录中展开。
+
+<a id="🔚" href="#前言" style="font-size:17px; color:green; font-weight:bold;">我是有底线的➤点我回到首页</a>

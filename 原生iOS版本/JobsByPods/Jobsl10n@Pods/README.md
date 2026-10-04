@@ -1,10 +1,10 @@
-# 多语言国际化
+# <span id="前言">多语言国际化</span>
 
 [toc]
 
 > 中文架构入口：[架构脉络与关键设计](#jobs-architecture)。
 
-## 一、使用说明
+## 一、使用说明 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 * 必要时，需要在启动时注册
 
@@ -57,11 +57,11 @@
   * **语言变化能触发刷新**（通知）且 **翻译来源 bundle 正确**（`TRLang.bundleProvider` 指向当前语言 bundle）
   * **UI 文案设置时走 TRBind/tr_setXXX 形成绑定注册**（而不是直接赋值/提前缓存翻译结果）
 
-## 二、✅ UI 统一调用规范示例
+## 二、✅ UI 统一调用规范示例 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 调用方应引入 `JobsByUIKit`；按钮创建以及 UIKit 配置继续遵守 `JobsByUIKit` / `JobsSwiftDSL` 规范。
 
-### 1、`UILabel`
+### 1、`UILabel` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 * 普通文本
 
@@ -87,7 +87,7 @@
   }
   ```
 
-### 2、`UIButton`
+### 2、`UIButton` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 * 普通文本
 
@@ -114,7 +114,7 @@
   }
   ```
 
-### 3、`UITextField`
+### 3、`UITextField` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 * `placeholder`
 
@@ -168,7 +168,7 @@
     }
     ```
 
-### 4、`UITextView`
+### 4、`UITextView` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 > 原生的**UIKit**并不存在`UITextView.placeholder`
 
@@ -196,7 +196,7 @@
   }
   ```
 
-### 5、`UIBarButtonItem`
+### 5、`UIBarButtonItem` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 * ```swift
   navigationItem.tr_setTitle("KEY".tr)          /// 主标题（中间大字）
@@ -209,27 +209,27 @@
   navigationItem.rightBarButtonItem?.tr_setTitle("KEY".tr)
   ```
 
-### 6、`UITabBarItem`
+### 6、`UITabBarItem` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```swift
 tabBarItem.tr_setTitle("KEY".tr)
 ```
 
-### 7、`UISegmentedControl`
+### 7、`UISegmentedControl` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```swift
 segmentedControl.tr_setTitle("KEY".tr, forSegmentAt: 0)
 segmentedControl.tr_setTitle("KEY".tr, forSegmentAt: 1)
 ```
 
-### 8、`UISearchBar`
+### 8、`UISearchBar` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```swift
 searchBar.tr_setPlaceholder("KEY".tr)
 searchBar.tr_setPrompt("KEY".tr)
 ```
 
-### 9、`UIAlertController`
+### 9、`UIAlertController` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```swift
 let alert = UIAlertController.makeAlert()
@@ -242,7 +242,7 @@ alert.byAddAction(title: "KEY".tr)
 present(alert, animated: true)
 ```
 
-### 10、`UIView`（无障碍 `accessibilityLabel` / `Hint`）
+### 10、`UIView`（无障碍 `accessibilityLabel` / `Hint`） <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```swift
 contentView
@@ -250,7 +250,7 @@ contentView
     .tr_setA11yHint("KEY".tr)
 ```
 
-### 11、`UIViewController`.`title`
+### 11、`UIViewController`.`title` <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```swift
 TRBind.bind(self, translated: "KEY".tr) { vc, text in
@@ -279,26 +279,26 @@ TRBind.bind(self, translated: "KEY".tr) { vc, text in
 
 <a id="jobs-architecture"></a>
 
-## 三、架构脉络与关键设计
+## 三、架构脉络与关键设计 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 本节用于用中文快速理解组件，并为按框架重建提供入口；关注职责、运行关系和关键边界，不要求逐行复刻。
 
-### 3.1、设计目的与职责划分
+### 3.1、设计目的与职责划分 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 将语言选择、语言码归一化、Bundle 查词和已绑定 UI 自动刷新连接起来。LanguageManager 管理当前语言，Bundle 扩展改变本地化查找目标，TRAutoRefresh 与 UIKit 入口登记需要随语言变化重放的赋值。
 
-### 3.2、运行脉络
+### 3.2、运行脉络 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 设置或恢复语言 → 选择对应 lproj → 翻译键查词 → 登记 UI 文本绑定 → 语言切换通知触发刷新
 
-### 3.3、关键设计与边界
+### 3.3、关键设计与边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 - 只替换一次文字不会自动获得持续刷新，必须理解 tr_setText 等绑定入口与翻译键登记之间的关系。
 - 语言码到资源目录存在归一化规则，简繁中文和地区变体不能只截取前两个字符。
 - 普通文本、富文本与输入占位有不同赋值路径，UITextView 本身没有原生 placeholder 属性。
 - Bundle.main 的覆盖具有全局影响，业务应统一管理语言入口，避免多个库各自安装互相冲突的覆盖。
 
-### 3.4、阅读与重建顺序
+### 3.4、阅读与重建顺序 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 先读 LanguageManager、TRLang，再看 Bundle/String 扩展，最后追 TRAutoRefresh 与 UIKit 的登记、通知和释放。
 
@@ -311,3 +311,5 @@ TRBind.bind(self, translated: "KEY".tr) { vc, text in
 - [Foundation&UIKit/Bundle+多语言国际化.swift](<./Foundation&UIKit/Bundle+多语言国际化.swift>)
 
 依赖与编译入口：[Jobsl10n.podspec](<./Jobsl10n.podspec>)。源码范围、资源及可选 subspec 以这里的声明为准；辅助脚本动态补充的依赖不在上述摘录中展开。
+
+<a id="🔚" href="#前言" style="font-size:17px; color:green; font-weight:bold;">我是有底线的➤点我回到首页</a>

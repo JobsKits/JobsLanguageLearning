@@ -1,7 +1,7 @@
 > 中文架构入口：[架构脉络与关键设计](#jobs-architecture)。
 
 
-## DSL 迁移说明
+## <span id="前言">DSL 迁移说明 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span>
 
 - 本 Pod 原有的链式 DSL / 点语法封装已经抽离到 `JobsSwiftDSL`。
 - 本 Pod 提供 UIKit 创建工厂、事件和功能封装；`JobsByUIKitDSLBridge` 使用 `@_exported import JobsSwiftDSL`，因此引入 `JobsByUIKit` 后可直接使用 `byXxx(...)`。
@@ -24,38 +24,38 @@
 - `UIKitAttributes` 的 TextKit 属性封装只声明真实可用系统版本，不复制系统的未来 deprecated 标记；调用方只看到 Jobs API 的实际 availability 边界。
 - `UIWindowScene.keyWindowCompat` 统一处理新旧系统取窗逻辑；历史 `legacyKeyWindowPreiOS13()` 的弃用提示只指向 Jobs 替代入口，不向上层复制 Apple API 提示。
 
-## 明暗主题契约
+## 明暗主题契约 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 - 页面、列表和弹框的普通承载面使用 `JobsCor.systemBackground` / `JobsCor.secondarySystemBackground`，正文、说明和占位文字使用 `JobsCor.label` / `JobsCor.secondaryLabel` / `JobsCor.placeholderText`，确保白天浅底深字、黑夜深底浅字。
 - 品牌色、媒体画布、二维码、相机、视频、手写和马赛克内容保留业务色；颜色写入 `CGColor`、`CALayer` 或自绘上下文时，需要显式绑定主题 Key，或监听 `.JobsThemeDidChange` 后重新解析和绘制。
 - 验证时从 Demo 全局主题入口分别切换白天和黑夜，检查组件的背景、文字、禁用态、占位态与弹出层对比度。
 
-## Jobs DSL 调用约定
+## Jobs DSL 调用约定 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 Pod 内 Jobs 自维护代码统一采用“一镜到底”：同一配置语义的主对象只作为链起点出现一次；子对象通过宿主级 `byXxx` 或配置闭包继续收口。缺少链式入口时，先在低层补齐返回 `Self` 的 DSL，再改调用端。
 
 <a id="jobs-architecture"></a>
 
-## 一、架构脉络与关键设计
+## 一、架构脉络与关键设计 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 本节用于用中文快速理解组件，并为按框架重建提供入口；关注职责、运行关系和关键边界，不要求逐行复刻。
 
-### 1.1、设计目的与职责划分
+### 1.1、设计目的与职责划分 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 以系统类型为组织轴，承载 Jobs 的对象创建工厂、UIKit 功能扩展与事件便利入口。纯配置型链式 DSL 归入 JobsSwiftDSL；本 Pod 的桥接入口与 iOS.SDK 下的类型目录连接这两层。
 
-### 1.2、运行脉络
+### 1.2、运行脉络 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 工厂创建系统对象 → DSL 配置基础属性 → 功能或事件扩展接入行为 → 宿主安装并管理对象
 
-### 1.3、关键设计与边界
+### 1.3、关键设计与边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 - 不要把 iOS.SDK 目录误当成 Apple 的 SDK 副本；其中包含本库自维护的系统类型扩展。
 - 纯属性配置与带 [**SnapKit**](https://github.com/SnapKit/SnapKit) 闭包的安装、事件绑定、图片加载等功能要分层；例如 byAddTo 的不同重载分布在不同模块。
 - 工厂、语言与主题辅助、图片加载器适配等各有依赖和系统版本边界，不能合并成一个万能扩展文件。
 - 复建链式入口时保持当前对象类型；处理子对象的配置闭包应明确作用对象，避免链条返回父类后丢失能力。
 
-### 1.4、阅读与重建顺序
+### 1.4、阅读与重建顺序 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 先读桥接入口明确 DSL 边界，再按 iOS.SDK 下的系统类型定位工厂、功能和事件实现，最后看调用方如何组合。
 
@@ -68,3 +68,5 @@ Pod 内 Jobs 自维护代码统一采用“一镜到底”：同一配置语义�
 - [iOS.SDK/Others@SDK/UIPageViewController.swift](<./iOS.SDK/Others@SDK/UIPageViewController.swift>)
 
 依赖与编译入口：[JobsByUIKit.podspec](<./JobsByUIKit.podspec>)。其中显式依赖声明包括 `Kingfisher`、`GKNavigationBarSwift`、`SnapKit`、`SVGKit`、`ESPullToRefresh`、`RxSwift`、`RxCocoa`、`RxRelay`、`NSObject+Rx`、`SkeletonView`、`lottie-ios`、`Jobsl10n`、`JobsScale`、`JobsNavBar`、`JobsTextTools`、`JobsSwiftTimer`、`JobsSwiftBlock`、`JobsImageTools`、`JobsByQuartzCore`、`JobsSwiftBaseDefines`、`JobsViewPush`、`JobsSwiftDSL`。源码范围、资源及可选 subspec 以这里的声明为准；辅助脚本动态补充的依赖不在上述摘录中展开。
+
+<a id="🔚" href="#前言" style="font-size:17px; color:green; font-weight:bold;">我是有底线的➤点我回到首页</a>

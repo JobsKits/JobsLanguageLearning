@@ -5,6 +5,10 @@ end
 def byJobs
   pod 'JobsLanguageCore', :path => 'JobsByPods/JobsLanguageCore@Pods'
   pod 'JobsRussianLearning', :path => 'JobsByPods/JobsRussianLearning@Pods'
+  pod 'JobsFrenchLearning', :path => 'JobsByPods/JobsFrenchLearning@Pods'
+  pod 'JobsSpanishLearning', :path => 'JobsByPods/JobsSpanishLearning@Pods'
+  pod 'JobsKoreanLearning', :path => 'JobsByPods/JobsKoreanLearning@Pods'
+  pod 'JobsGermanLearning', :path => 'JobsByPods/JobsGermanLearning@Pods'
   pod 'JobsEnglishLearning', :path => 'JobsByPods/JobsEnglishLearning@Pods'
   pod 'JobsKanjiLearning', :path => 'JobsByPods/JobsKanjiLearning@Pods'
 

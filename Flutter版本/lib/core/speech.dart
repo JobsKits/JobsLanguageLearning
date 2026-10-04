@@ -66,7 +66,7 @@ class SpeechService extends ChangeNotifier {
       final available = await voices(language);
       if (available.isEmpty) {
         throw StateError(
-          '未安装${{'ru-RU': '俄语', 'en-US': '英语', 'ja-JP': '日语'}[language]}语音，请在系统语音设置安装后重启。',
+          '未安装${{'ru-RU': '俄语', 'ar-SA': '阿拉伯语', 'fr-FR': '法语', 'es-ES': '西班牙语', 'ko-KR': '朝鲜语', 'de-DE': '德语', 'en-US': '英语', 'ja-JP': '日语'}[language]}语音，请在系统语音设置安装后重启。',
         );
       }
       final config = settings.voices[language]!;

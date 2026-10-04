@@ -19,14 +19,20 @@ final class JobsRussianPairView: UIView {
     private var vowel = "а"
     private var syllable = "ба"
     private var uncommon = false
-    private lazy var vowelButton = JobsLanguageLearningStyle.button("а", size: 22)
+    private lazy var vowelButton = JobsLanguageLearningStyle.button("а", size: 26)
+        .bySubTitleFont(JobsFont.systemFont(ofSize: 11))
+        .bySubTitleColor(JobsCor.secondaryLabel)
+        .byNumberOfLines(2)
         .onTap { [weak self] _ in
             guard let self else {
                 return
             }
             onRead?(vowel)
         }
-    private lazy var syllableButton = JobsLanguageLearningStyle.button("ба", size: 27)
+    private lazy var syllableButton = JobsLanguageLearningStyle.button("ба", size: 26)
+        .bySubTitleFont(JobsFont.systemFont(ofSize: 11))
+        .bySubTitleColor(JobsCor.secondaryLabel)
+        .byNumberOfLines(2)
         .onTap { [weak self] _ in
             guard let self else {
                 return
@@ -38,7 +44,7 @@ final class JobsRussianPairView: UIView {
         super.init(frame: frame)
         vowelButton.byAddTo(self) { make in
             make.left.top.bottom.equalToSuperview()
-            make.width.equalTo(48)
+            make.width.equalTo(62)
         }
         syllableButton.byAddTo(self) { [unowned self] make in
             make.left.equalTo(vowelButton.snp.right).offset(3)
@@ -53,13 +59,19 @@ final class JobsRussianPairView: UIView {
         self.vowel = vowel
         syllable = consonant + vowel
         uncommon = JobsRussianLesson.isUncommon(consonant, vowel)
-        vowelButton.byTitle(vowel)
-        syllableButton.byTitle(syllable + (uncommon ? "·" : ""))
+        vowelButton
+            .byTitle(vowel)
+            .bySubTitle(JobsRussianLesson.pronunciationHint(forVowel: vowel))
+        syllableButton
+            .byTitle("\(syllable)\(uncommon ? "·" : "")")
+            .bySubTitle(JobsRussianLesson.pronunciationHint(consonant: consonant, vowel: vowel))
         highlight(current)
     }
 
     func highlight(_ text: String) {
         JobsLanguageLearningStyle.paint(vowelButton, selected: text == vowel)
         JobsLanguageLearningStyle.paint(syllableButton, selected: text == syllable, uncommon: uncommon)
+        vowelButton.bySubTitleColor(text == vowel ? JobsCor.white : JobsCor.secondaryLabel)
+        syllableButton.bySubTitleColor(text == syllable ? JobsCor.white : JobsCor.secondaryLabel)
     }
 }
