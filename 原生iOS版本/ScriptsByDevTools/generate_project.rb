@@ -17,11 +17,25 @@ Dir.glob(root.join('JobsLanguageLearning/Resource/*').to_s).sort.each do |file|
   target.resources_build_phase.add_file_reference(resources.new_file(File.basename(file)))
 end
 resources.new_file('Info.plist')
+# 手动依赖入口只展示文件，不参与 target 或自动构建流程。
+pod_script_name = '【MacOS@Xcode】🫘打开终端运行Pod Install.command'
+pod_scripts = project.main_group.new_group('ScriptsByPods', 'ScriptsByPods')
+pod_package = pod_scripts.new_group(pod_script_name, pod_script_name)
+pod_script = pod_package.new_file(pod_script_name)
+pod_script.last_known_file_type = 'text.script.sh'
+pod_package.new_file('README.md')
+# 自动 IPA 脚本包只展示文件，实际执行由主 App 最后构建阶段负责。
+ipa_script_name = 'save_device_ipa_after_build.command'
+dev_scripts = project.main_group.new_group('ScriptsByDevTools', 'ScriptsByDevTools')
+ipa_package = dev_scripts.new_group(ipa_script_name, ipa_script_name)
+ipa_script = ipa_package.new_file(ipa_script_name)
+ipa_script.last_known_file_type = 'text.script.sh'
+ipa_package.new_file('README.md')
 # 主 App 自动保存本次真机 / 模拟器 IPA，build/ 专用于一次性产物。
 ipa_phase = target.new_shell_script_build_phase('Save Build IPA')
 ipa_phase.shell_path = '/bin/zsh'
-ipa_phase.shell_script = '/bin/zsh "${SRCROOT}/ScriptsByDevTools/save_device_ipa_after_build.sh"' + "\n"
-ipa_phase.input_paths = ['$(SRCROOT)/ScriptsByDevTools/save_device_ipa_after_build.sh']
+ipa_phase.shell_script = '/bin/zsh "${SRCROOT}/ScriptsByDevTools/save_device_ipa_after_build.command/save_device_ipa_after_build.command"' + "\n"
+ipa_phase.input_paths = ['$(SRCROOT)/ScriptsByDevTools/save_device_ipa_after_build.command/save_device_ipa_after_build.command']
 ipa_phase.output_paths = ['$(SRCROOT)/build']
 ipa_phase.always_out_of_date = '1'
 ipa_phase.show_env_vars_in_log = '0'

@@ -17,16 +17,16 @@ open class JobsLanguageBaseVC: UIViewController {
         "语言学习"
     }
 
-    open var learningHelp: String {
-        "选择一个学习工具；点按文字试听，使用右上角设置调整外观与声音。"
-    }
-
     open var speechLanguage: String? {
         nil
     }
 
     open var showsLearningSettings: Bool {
         true
+    }
+
+    open var learningNavigationButtons: [UIButton] {
+        showsLearningSettings ? [menuButton] : []
     }
     public private(set) lazy var speech =
         JobsLanguageSpeechPlayer.jobsMake { _ in
@@ -47,7 +47,7 @@ open class JobsLanguageBaseVC: UIViewController {
         view.byBackgroundColor(JobsCor.systemGroupedBackground)
         let rootButton = navigationController?.viewControllers.first === self ? emptyBackButton : nil
         jobsSetupGKNav(
-            title: learningTitle, leftButton: rootButton, rightButtons: showsLearningSettings ? [menuButton] : nil)
+            title: learningTitle, leftButton: rootButton, rightButtons: learningNavigationButtons)
         if navigationController?.viewControllers.first === self {
             byLearningHideRootBackItem()
         } else {
@@ -109,7 +109,6 @@ open class JobsLanguageBaseVC: UIViewController {
             JobsLanguageSettingsVC.jobsMake { _ in
             }
             .byLanguage(speechLanguage)
-            .byHelp(learningHelp)
         push(controller)
     }
 }

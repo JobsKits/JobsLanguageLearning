@@ -24,9 +24,6 @@ final class JobsRussianLearningVC: JobsLanguageBaseVC {
         "ru-RU"
     }
 
-    override var learningHelp: String {
-        "元音、辅音、210 个组合都可点读；分组与全表可切换。· 表示少见拼写。系统 TTS 不是专业音素录音，单个辅音可能读字母名称。ъ、ь 是符号，不列入辅音。"
-    }
     private var consonantIndex = 0
     private var currentText = "ба"
     private var isTable = false
@@ -124,14 +121,6 @@ final class JobsRussianLearningVC: JobsLanguageBaseVC {
             JobsLanguageSpeechSettings.save(repeats, language: "ru-RU", name: "repeats")
             stop()
             repeatButton.byTitle("每项：\(repeats) 遍")
-        }
-    private lazy var helpButton: UIButton = JobsLanguageLearningStyle.button("学习说明", size: 14)
-        .onTap { [weak self] _ in
-            self?
-                .showMessage(
-                    "俄语点读",
-                    "卡片左侧读元音，右侧读组合。全表的上下表头也能点读。\n\n· 标记不常见或非标准拼写组合，仅作探索。系统合成声音不等同于专业语音教材；单独辅音可能读成字母名称。ъ、ь 是符号，不列为辅音。\n\n本页按课程数据、播放控制、界面拆分，后续语种可复用播放器。"
-                )
         }
     private lazy var instruction =
         UILabel.jobsMake {

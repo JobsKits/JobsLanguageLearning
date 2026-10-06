@@ -24,9 +24,6 @@ final class JobsKanjiLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UITa
         "ja-JP"
     }
 
-    override var learningHelp: String {
-        "点击汉字查看音读、训读和名乘，点击词语的读法查看相应词义及红色振假名例句。13,108 字、218,844 词、26,269 不同例句；原库仍有缺读音、缺字义或缺例句。译文是辅助机器译文，尚未全量校对。未缓存的中文需真机首次下载 Apple 翻译语言包。"
-    }
     private var showingKana = false
     private let kanaRows: [(String, String, [String])] = [
         ("k", "かきくけこ", ["ka", "ki", "ku", "ke", "ko"]),

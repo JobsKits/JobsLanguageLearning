@@ -43,6 +43,69 @@ final class JobsLanguageHomeVC: JobsLanguageBaseVC, UITableViewDataSource, UITab
     override var learningTitle: String {
         "Jobs语言学习"
     }
+
+    override var learningNavigationButtons: [UIButton] {
+        [themeButton]
+    }
+
+    private let themeOptions = [
+        (value: "light", title: "白天"),
+        (value: "dark", title: "黑夜"),
+        (value: "system", title: "跟随系统")
+    ]
+    private var isThemeMenuVisible = false
+    private lazy var themeButton: UIButton = JobsLanguageLearningStyle.button("主题 ▾", size: 15)
+        .byContentEdgeInsets(.zero)
+        .byAddConstraintsClosure { make in
+            make.width.equalTo(84)
+            make.height.equalTo(44)
+        }
+        .onTap { [weak self] _ in
+            guard let self else {
+                return
+            }
+            self.showThemeMenu(!self.isThemeMenuVisible)
+        }
+    private lazy var themeMenuOverlay = UIView.jobsMake { _ in
+    }
+    .byBackgroundColor(JobsCor.clear)
+    .byHidden(true)
+    private lazy var themeDismissButton = UIButton.sys()
+        .byBackgroundColor(JobsCor.clear)
+        .byLearningAccessibility(label: "收起主题列表", value: "", hint: "")
+        .onTap { [weak self] _ in
+            self?.showThemeMenu(false)
+        }
+    private lazy var themeMenu = UIStackView.jobsMake { _ in
+    }
+    .byAxis(.vertical)
+    .byDistribution(.fillEqually)
+    .byBackgroundColor(JobsCor.secondarySystemBackground)
+    .byCornerRadius(8)
+    .byClipsToBounds()
+    private lazy var themeOptionButtons: [UIButton] = themeOptions.map { option in
+        UIButton.sys()
+            .byTitle(option.title)
+            .byTitleFont(JobsFont.systemFont(ofSize: 15, weight: .medium))
+            .byTitleColor(JobsCor.label)
+            .byContentHorizontalAlignment(.leading)
+            .byContentEdgeInsets(UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12))
+            .byLearningBackgroundColor(JobsCor.secondarySystemBackground, cornerRadius: 0)
+            .onTap { [weak self] _ in
+                guard let self else {
+                    return
+                }
+                self.showThemeMenu(false)
+                JobsLanguageAppearance.shared.choose(option.value)
+                self.refreshThemeButton()
+            }
+    }
+    private lazy var themeMenuSeparators: [UIView] = themeOptions.dropLast().map { _ in
+        UIView.jobsMake { _ in
+        }
+        .byBackgroundColor(JobsCor.separator)
+    }
+
     private let tools = [
         Tool(
             kind: .english,
@@ -113,9 +176,84 @@ final class JobsLanguageHomeVC: JobsLanguageBaseVC, UITableViewDataSource, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshThemeButton()
         table.byAddTo(view) { [unowned self] make in
             make.top.equalTo(gk_navigationBar.snp.bottom)
             make.left.right.bottom.equalToSuperview()
+        }
+        setupThemeMenu()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        refreshThemeButton()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        showThemeMenu(false)
+    }
+
+    override func accessibilityPerformEscape() -> Bool {
+        guard isThemeMenuVisible else {
+            return super.accessibilityPerformEscape()
+        }
+        showThemeMenu(false)
+        return true
+    }
+
+    private func setupThemeMenu() {
+        themeMenuOverlay.byAddTo(view) { [unowned self] make in
+            make.top.equalTo(gk_navigationBar.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+        }
+        themeDismissButton.byAddTo(themeMenuOverlay) { make in
+            make.edges.equalToSuperview()
+        }
+        /// 沿用 Swift Demo 主题菜单的导航栏下方定位与行尺寸。
+        themeMenu.byAddTo(themeMenuOverlay) { make in
+            make.top.equalToSuperview().offset(6)
+            make.right.equalToSuperview().inset(12)
+            make.width.equalTo(210)
+            make.height.equalTo(132)
+        }
+        themeOptionButtons.forEach { button in
+            themeMenu.byAddArrangedSubview(button)
+        }
+        for (index, separator) in themeMenuSeparators.enumerated() {
+            separator.byAddTo(themeOptionButtons[index]) { [unowned self] make in
+                make.left.equalToSuperview().inset(12)
+                make.right.bottom.equalToSuperview()
+                make.height.equalTo(1 / traitCollection.displayScale)
+            }
+        }
+    }
+
+    private func showThemeMenu(_ visible: Bool) {
+        isThemeMenuVisible = visible
+        themeMenuOverlay.byHidden(!visible)
+        refreshThemeButton()
+    }
+
+    private func refreshThemeButton() {
+        let mode = JobsLanguageAppearance.shared.mode
+        let currentTitle = themeOptions.first { $0.value == mode }?.title ?? "跟随系统"
+        themeButton.byTitle(isThemeMenuVisible ? "主题 ▴" : "主题 ▾")
+            .byLearningAccessibility(
+                label: isThemeMenuVisible ? "收起主题列表" : "展开主题列表",
+                value: currentTitle,
+                hint: "选择白天、黑夜或跟随系统"
+            )
+        for (index, button) in themeOptionButtons.enumerated() {
+            let option = themeOptions[index]
+            let selected = option.value == mode
+            button.byTitle(selected ? "\(option.title)  ✓" : option.title)
+                .bySelected(selected)
+                .byLearningAccessibility(
+                    label: option.title,
+                    value: selected ? "已选择" : "",
+                    hint: "选择此主题并收起列表"
+                )
         }
     }
 

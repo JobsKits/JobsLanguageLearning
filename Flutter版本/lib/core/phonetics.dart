@@ -768,7 +768,8 @@ class PronunciationCourse {
       final soundSequence = consonant == 'ch'
           ? '$initial $vowelIPA'
           : '$initial$vowelIPA';
-      return '$consonant$vowel /$soundSequence/';
+      final spelling = syllable(consonant, vowel, coda) ?? '$consonant$vowel';
+      return '$spelling /$soundSequence/';
     }
     return '';
   }

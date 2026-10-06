@@ -39,10 +39,6 @@ final class JobsSyllableLearningVC: JobsLanguageBaseVC {
         course.language
     }
 
-    override var learningHelp: String {
-        course.notice
-    }
-
     private var usesLargeScript: Bool {
         true
     }
@@ -103,17 +99,6 @@ final class JobsSyllableLearningVC: JobsLanguageBaseVC {
                 read([currentText])
             }
         }
-    private lazy var helpButton = JobsLanguageLearningStyle.button("学习说明", size: 14)
-        .onTap { [weak self] _ in
-            guard let self else {
-                return
-            }
-            showMessage(
-                "\(course.title)点读",
-                course.notice + "\n\n系统 TTS 仅供试听，不等同于专业音素录音。"
-            )
-        }
-
     private lazy var selection = UIStackView.jobsMake { _ in
     }
     .byAxis(.horizontal)
@@ -230,7 +215,7 @@ final class JobsSyllableLearningVC: JobsLanguageBaseVC {
                     $0.height.equalTo(44)
                 }
             }
-        [status, hint, helpButton]
+        [status, hint]
             .forEach { footer.byAddArrangedSubview($0) }
         controls.byAddTo(view) { [unowned self] make in
             make.top.equalTo(gk_navigationBar.snp.bottom).offset(8)

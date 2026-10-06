@@ -327,6 +327,13 @@ class _PhoneticsPageState extends State<PhoneticsPage> {
                     if (value != null) setState(() => coda = value);
                   },
                 ),
+              if (!matrix)
+                ReadButton(
+                  '试听 $consonant',
+                  consonant,
+                  language,
+                  annotation: course.pronunciationHintForConsonant(consonant),
+                ),
               FilledButton(
                 onPressed: () => Services.of(context).speech.readAll([
                   for (final onset in matrix ? course.consonants : [consonant])

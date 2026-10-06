@@ -27,7 +27,7 @@ https://github.com/user-attachments/assets/26dbbee0-261b-4f5b-b9f1-43260d51d281
 | 分级英语词本 | 初中、高中、CET4、CET6、专八、雅思 1～7；字母分区；英文 / 中文搜索；分页；左侧单词点读；右侧释义进入例句页；单词、例句、词组点读 |
 | 日语汉字点读 | 全部 / 常用 / 人名用；汉字、假名、中文检索；音读、训读、名乘点读；多音字中文学习示例；关联词语筛选与分页；按写法 / 读法限制选择词义；红色振假名及整句点读；中文辅助翻译与持久缓存 |
 
-每页右上角“设置”提供白天、黑夜、跟随系统；语种页面还能设置声音、语速、重复次数和音量。首次默认跟随系统，选择保存到 App 沙盒。页面离开或 App 失去活跃状态时停止点读；新目标取消旧队列并过滤旧回调。
+首页右上角“主题 ▾”展开导航栏下方的列表，可选择白天、黑夜或跟随系统，当前选项带勾。选择后保存并收起，点击外部或再次点击主题按钮也可收起；语种页面的“设置”保留外观、声音、语速、重复次数和音量。首次默认跟随系统，选择保存到 App 沙盒。“学习说明”入口与弹窗已移除，页面内发音提示仍保留。页面离开或 App 失去活跃状态时停止点读；新目标取消旧队列并过滤旧回调。
 
 ## 二、运行方式 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
@@ -44,6 +44,14 @@ open JobsLanguageLearning.xcworkspace
 
 4、日语内置字义和学习示例可直接离线阅读。未缓存的词义、用法或例句译文点击“生成 / 重试中文译文”，通过 [Apple Translation](https://developer.apple.com/documentation/translation/translating-text-within-your-app) 在本机生成；首次需要真机允许下载英中语言包，下载后可离线翻译。模拟器保留内置中文，但不能验证系统翻译。英文仅作为内部翻译源，学习界面不以英文释义兜底。译文写入 Application Support 的 `JobsKanjiChinese.json`。
 
+### 2.1、Xcode 手动安装依赖 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+
+在 `Xcode → Behaviors → 🫘语言学习 iOS · Pod Install` 随时手动打开 [**Terminal**](https://support.apple.com/guide/terminal/welcome/mac)，核对项目路径后按回车执行 `pod install`，按 `Ctrl+C` 取消。入口为 [ScriptsByPods 脚本包](<./ScriptsByPods/【MacOS@Xcode】🫘打开终端运行Pod Install.command/README.md>)；工程导航中的同名组只包含脚本和说明文件，不加入 App target、Build Phase 或 Scheme 自动动作。
+
+脚本以自身目录的 `../..` 定位本原生 iOS 工程，确认后检查 `Podfile` 与 [**CocoaPods**](https://cocoapods.org/) 的 `pod --version`，再实时显示安装输出并返回真实退出码。安装可能下载依赖、更新 `Pods/`、`Podfile.lock` 和工作空间，并执行 Podfile 已有钩子；脚本不自动安装或升级工具链、不执行构建。完整日志在系统临时目录中的 `language-learning-pod-install.log`，每次终端确认后覆盖；Xcode 打开终端成功只代表入口已启动，安装结果以终端与日志为准。
+
+自定义 Behaviors 属于 Xcode 当前用户设置。更换电脑时，在 `Xcode → Behaviors → Edit Behaviors… → Custom` 新增上述行为并启用 `Run`，选择包内同名 `.command`；移动项目路径后重新选择脚本，快捷键按个人习惯设置。双击脚本也使用同一确认流程。初始工程生成器 `ScriptsByDevTools/generate_project.rb` 会保留该手动文件组引用。
+
 ## 三、工程结构与解耦 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
 ```text
@@ -54,6 +62,7 @@ JobsLanguageLearning/
 ├── Podfile.deps                    # swiftAppCommon / byJobs / target
 ├── Podfile.lock                    # 当前第三方版本锁定
 ├── ScriptsByDevTools/             # 初始工程生成器与自动 IPA 脚本
+├── ScriptsByPods/                 # Xcode 手动 Pod Install 入口与说明
 ├── build/                         # 仅保留本次真机.ipa 或模拟器.ipa
 ├── JobsLanguageLearning/           # AppDelegate / SceneDelegate / 首页 / Business
 ├── JobsByPods/
@@ -118,7 +127,7 @@ UI 创建、配置、事件和布局采用现有 Jobs 工厂、`byXxx` 链与 [*
 
 ### 4.1、自动输出构建产物 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
-主 App 最后一个 Build Phase `Save Build IPA` 调用 [save_device_ipa_after_build.sh](./ScriptsByDevTools/save_device_ipa_after_build.sh)，每次 iOS App 构建都会执行，Xcode 内无须手动确认。按设备平台保存以下产物：
+主 App 最后一个 Build Phase `Save Build IPA` 调用 [save_device_ipa_after_build.command](./ScriptsByDevTools/save_device_ipa_after_build.command/save_device_ipa_after_build.command)，每次 iOS App 构建都会执行，Xcode 内无须手动确认。按设备平台保存以下产物：
 
 | 构建平台 | 本次唯一产物 |
 | --- | --- |
@@ -139,7 +148,8 @@ UI 创建、配置、事件和布局采用现有 Jobs 工厂、`byXxx` 链与 [*
 
 `clean`、非 iOS 平台、Tests / Widget 构建不独立输出 IPA；该阶段只挂在主 App，测试触发主 App 重建时仍会更新产物。Build Phase 发生在 Scheme 后置动作之前，产物存在不代表整个 workspace 或测试已成功完成。输入只声明脚本文件，不把整个 App 目录列为输入，避免签名、扩展和测试包造成依赖循环；输出声明 `./build/` 目录，以覆盖平台切换及全部内容清理。
 
-日志同步输出到 Xcode 构建日志与系统临时目录中的 `save_device_ipa_after_build.log`。终端手动运行会先展示内置自述并等待回车，仍需提供 Xcode 构建环境变量。
+日志同步输出到 Xcode 构建日志与系统临时目录中的 `save_device_ipa_after_build.log`。终端手动运行须提供有效 App 与构建环境变量。
+脚本与专属说明位于 `ScriptsByDevTools/save_device_ipa_after_build.command/`，参见 [脚本 README](./ScriptsByDevTools/save_device_ipa_after_build.command/README.md)。Xcode 构建入口仍打印自述后自动执行；独立终端运行需先回车确认，再输入 `YES` 同意成功打包后的 build/ 清空，没有可交互输入则退出。确认前不初始化日志，也不修改产物。
 
 ## 五、数据与能力边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 

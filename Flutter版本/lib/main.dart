@@ -99,6 +99,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LearningPage(
     title: 'Jobs语言学习',
+    actions: const [_HomeThemeButton()],
     child: CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
@@ -207,23 +208,6 @@ class HomePage extends StatelessWidget {
               ),
           ]),
         ),
-        SliverToBoxAdapter(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 900),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 12, 24, 20),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: TextButton(
-                    onPressed: () => _about(context),
-                    child: const Text('数据覆盖 · 来源与使用边界'),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
       ],
     ),
   );
@@ -262,21 +246,105 @@ class HomePage extends StatelessWidget {
           Navigator.push(context, MaterialPageRoute(builder: (_) => page)),
     ),
   );
-  void _about(BuildContext context) => showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      title: const Text('数据与使用说明'),
-      content: const SingleChildScrollView(
-        child: Text(
-          '内置完整来源词库：日语 13,108 字、218,844 词、26,269 不同例句。KANJIDIC2 / JMdict 依据 EDRDG CC BY-SA 4.0；Tatoeba 保留原句作者链接。英语词书来源和使用限制见 assets/english/THIRD_PARTY_NOTICES.txt。\n\n原库存在缺读音、释义、例句；中文机器译文仅辅助学习。系统 TTS 不等同于专业音素录音。辅音表头采用代表音节试听。\n\n优先使用内置中文；缺译可在 macOS / iOS / Android 生成设备端译文并缓存。Windows 缺译显示待补充。下载或安装系统语音后可离线点读。',
-        ),
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('知道了'),
-        ),
-      ],
-    ),
-  );
+}
+
+class _HomeThemeButton extends StatefulWidget {
+  const _HomeThemeButton();
+
+  @override
+  State<_HomeThemeButton> createState() => _HomeThemeButtonState();
+}
+
+class _HomeThemeButtonState extends State<_HomeThemeButton> {
+  bool _menuOpen = false;
+
+  String _label(ThemeMode mode) => switch (mode) {
+    ThemeMode.system => '跟随系统',
+    ThemeMode.light => '白天',
+    ThemeMode.dark => '黑夜',
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final settings = Services.of(context).settings;
+    return ListenableBuilder(
+      listenable: settings,
+      builder: (_, _) {
+        return Semantics(
+          label: '选择主题',
+          value: _label(settings.theme),
+          hint: '展开白天、黑夜、跟随系统选项',
+          child: PopupMenuButton<ThemeMode>(
+            tooltip: '展开主题选项',
+            position: PopupMenuPosition.under,
+            offset: const Offset(-12, 6),
+            constraints: const BoxConstraints.tightFor(width: 210),
+            menuPadding: EdgeInsets.zero,
+            color: Theme.of(context).colorScheme.surfaceContainer,
+            surfaceTintColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+            clipBehavior: Clip.antiAlias,
+            onOpened: () => setState(() => _menuOpen = true),
+            onCanceled: () => setState(() => _menuOpen = false),
+            onSelected: (mode) {
+              setState(() => _menuOpen = false);
+              settings.setTheme(mode);
+            },
+            itemBuilder: (_) => [
+              for (final mode in const [
+                ThemeMode.light,
+                ThemeMode.dark,
+                ThemeMode.system,
+              ]) ...[
+                PopupMenuItem<ThemeMode>(
+                  value: mode,
+                  height: 44,
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Semantics(
+                    checked: settings.theme == mode,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            _label(mode),
+                            style: const TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                        if (settings.theme == mode)
+                          const ExcludeSemantics(child: Text('✓')),
+                      ],
+                    ),
+                  ),
+                ),
+                if (mode != ThemeMode.system)
+                  PopupMenuDivider(
+                    height: 0.5,
+                    thickness: 0.5,
+                    color: Theme.of(context).colorScheme.outlineVariant,
+                  ),
+              ],
+            ],
+            child: ExcludeSemantics(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: Center(
+                  child: Text(
+                    _menuOpen ? '主题 ▴' : '主题 ▾',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
 }

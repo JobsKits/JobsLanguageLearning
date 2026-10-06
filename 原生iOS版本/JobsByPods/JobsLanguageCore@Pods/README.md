@@ -33,7 +33,7 @@ UI 由 [**SnapKit**](https://github.com/SnapKit/SnapKit) 布局。主题依赖�
 
 ## 二、使用与验证 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
-Podfile.deps 的 `byJobs` 统一挂载；具体根级依赖与资源范围见 `JobsLanguageCore.podspec`，没有重复的 Core subspec。继承 `JobsLanguageBaseVC` 后覆盖标题、帮助和 `speechLanguage`，通过 `speak(_:language:)` 点读。
+Podfile.deps 的 `byJobs` 统一挂载；具体根级依赖与资源范围见 `JobsLanguageCore.podspec`，没有重复的 Core subspec。继承 `JobsLanguageBaseVC` 后覆盖标题和 `speechLanguage`，通过 `speak(_:language:)` 点读。默认右侧为设置入口；首页覆盖 `learningNavigationButtons`，提供主题下拉列表入口，选择后通过 `JobsLanguageAppearance.choose` 保存三态主题。学习说明入口与帮助传参已移除。
 
 SQLite、播放与主题对象独立于原 Demo 主工程。工程级构建、真实词库测试、页面测试及设备限制见根目录 [README](../../README.md) 和 [验证记录](../../验证记录.md)。
 

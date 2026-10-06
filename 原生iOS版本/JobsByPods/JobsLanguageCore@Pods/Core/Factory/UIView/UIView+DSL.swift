@@ -10,6 +10,14 @@ import JobsSwiftBaseDefines
 
 public extension UIView {
 
+    @discardableResult
+    func byLearningAccessibility(label: String, value: String, hint: String) -> Self {
+        accessibilityLabel = label
+        accessibilityValue = value
+        accessibilityHint = hint
+        return self
+    }
+
     @discardableResult func byLearningObserveAppearance(_ handler: @escaping () -> Void) -> Self {
         registerForTraitChanges([UITraitUserInterfaceStyle.self]) { (_: UIView, _: UITraitCollection) in
             handler()

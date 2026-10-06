@@ -24,9 +24,6 @@ final class JobsEnglishLearningVC: JobsLanguageBaseVC, UITableViewDataSource, UI
         "en-US"
     }
 
-    override var learningHelp: String {
-        "点击左侧单词发音，点击右侧释义查看例句。按级别、字母、英文或中文筛选。雅思 1～7 档是自定义词频分级，非官方逐分词表。13,430 词、25,832 例句；844 词缺例句，原库不提供逐义例句关联。语料授权与来源详见工程 README。"
-    }
     private let repository = JobsEnglishRepository()
     private var levels: [JobsEnglishLevel] = []
     private var words: [JobsEnglishWord] = []

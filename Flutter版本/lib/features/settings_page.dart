@@ -25,6 +25,16 @@ class _SettingsPageState extends State<SettingsPage> {
     final services = Services.of(context);
     final settings = services.settings;
     final voice = settings.voices[language]!;
+    final sampleText = const {
+      'ru-RU': 'Привет',
+      'de-DE': 'Guten Tag',
+      'en-US': 'Hello',
+      'ja-JP': 'こんにちは',
+      'fr-FR': 'Bonjour',
+      'es-ES': 'Hola',
+      'ko-KR': '안녕하세요',
+      'ar-SA': 'مرحبًا',
+    }[language];
     return Scaffold(
       appBar: AppBar(title: const Text('主题与语音设置')),
       body: ListenableBuilder(
@@ -142,14 +152,9 @@ class _SettingsPageState extends State<SettingsPage> {
               spacing: 12,
               children: [
                 FilledButton(
-                  onPressed: () => services.speech.read(
-                    {
-                      'ru-RU': 'Привет',
-                      'en-US': 'Hello',
-                      'ja-JP': 'こんにちは',
-                    }[language]!,
-                    language,
-                  ),
+                  onPressed: sampleText == null
+                      ? null
+                      : () => services.speech.read(sampleText, language),
                   child: const Text('试听'),
                 ),
                 OutlinedButton(

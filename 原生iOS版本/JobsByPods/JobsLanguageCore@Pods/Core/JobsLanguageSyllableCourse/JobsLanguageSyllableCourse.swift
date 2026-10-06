@@ -243,7 +243,9 @@ public struct JobsLanguageSyllableCourse {
             } else {
                 soundSequence = "\(initial)\(vowelIPA)"
             }
-            return "\(consonant)\(vowel) /\(soundSequence)/"
+            let spelling = syllable(consonant: consonant, vowel: vowel, coda: coda)
+                ?? "\(consonant)\(vowel)"
+            return "\(spelling) /\(soundSequence)/"
         }
         return ""
     }

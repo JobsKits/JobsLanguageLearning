@@ -9,11 +9,13 @@ class LearningPage extends StatelessWidget {
   final Widget? titleWidget;
   final Widget child;
   final String? language;
+  final List<Widget>? actions;
   const LearningPage({
     required this.title,
     required this.child,
     this.titleWidget,
     this.language,
+    this.actions,
     super.key,
   });
   @override
@@ -37,7 +39,7 @@ class LearningPage extends StatelessWidget {
                 offset: const Offset(0, -6),
                 child: titleWidget,
               ),
-        actions: [
+        actions: actions ?? [
           TextButton(onPressed: speech.stop, child: const Text('停止')),
           TextButton(
             onPressed: () => Navigator.push(

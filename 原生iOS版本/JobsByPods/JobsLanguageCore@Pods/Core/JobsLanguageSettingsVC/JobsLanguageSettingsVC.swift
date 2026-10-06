@@ -15,7 +15,6 @@ import GKNavigationBarSwift
 
 public final class JobsLanguageSettingsVC: JobsLanguageBaseVC, UITableViewDataSource, UITableViewDelegate {
     private var language: String?
-    private var help = ""
 
     public override var learningTitle: String {
         "学习设置"
@@ -35,11 +34,6 @@ public final class JobsLanguageSettingsVC: JobsLanguageBaseVC, UITableViewDataSo
         return self
     }
 
-    @discardableResult public func byHelp(_ value: String) -> Self {
-        help = value
-        return self
-    }
-
     public override func viewDidLoad() {
         super.viewDidLoad()
         table.byAddTo(view) { [unowned self] make in
@@ -49,20 +43,20 @@ public final class JobsLanguageSettingsVC: JobsLanguageBaseVC, UITableViewDataSo
     }
 
     public func numberOfSections(in tableView: UITableView) -> Int {
-        language == nil ? 2 : 3
+        language == nil ? 1 : 2
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 3 : section == 1 && language != nil ? 4 : 1
+        section == 0 ? 3 : 4
     }
 
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        section == 0 ? "外观" : section == 1 && language != nil ? "点读声音（按语言保存）" : "学习说明"
+        section == 0 ? "外观" : "点读声音（按语言保存）"
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let labels = ["白天", "黑夜", "跟随系统"]
-        var title = "查看学习说明"
+        var title = ""
         var detail = ""
         var selected = false
         if indexPath.section == 0 {
@@ -125,8 +119,6 @@ public final class JobsLanguageSettingsVC: JobsLanguageBaseVC, UITableViewDataSo
             }
             alert.byAddCancel()
                 .byPresent(self)
-        } else {
-            showMessage("学习说明", help)
         }
     }
 }
