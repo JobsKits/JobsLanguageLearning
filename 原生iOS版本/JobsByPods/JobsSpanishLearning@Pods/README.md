@@ -2,15 +2,26 @@
 
 ![Jobs出品，必属精品](https://picsum.photos/1500/400)
 
-[toc]
+<!-- jobs-toc:start -->
+<!-- jobs-toc:source {"v":2,"token":"[toc]"} -->
+<details>
+<summary>📚 目录（点击展开 / 收起）</summary>
+
+- [🔥 前言](#jobs-toc-heading-1)
+- [一、职责与拼读范围](#jobs-toc-heading-2)
+- [二、入口](#jobs-toc-heading-3)
+- [三、常见问题](#jobs-toc-heading-4)
+
+</details>
+<!-- jobs-toc:end -->
 
 ---
 
-## 🔥 <font id=前言>前言</font>
+## <span id="jobs-toc-heading-1" data-jobs-toc="v2">🔥 <font id=前言>前言</font></span><!-- jobs-toc:heading-end -->
 
 西班牙语拼读练习数据模块，提供基础元音字母、辅音字母与常见拼写组合；依赖公共 `JobsLanguageCore`，不依赖 Demo 根列表。
 
-## 一、职责与拼读范围 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-2" data-jobs-toc="v2">一、职责与拼读范围 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 - `JobsSpanishLesson.course`：`es-ES` 发音课程，包含 5 个元音、22 个辅音字母，以及 `ch / ll` 组合行。
 - `q` 行只开放 `que / qui`；`·` 标记 `k / w / x` 等较少见或常见于外来词的字母。
@@ -19,11 +30,11 @@
 
 字母与拼写参考 [西班牙皇家学院正字法文档](https://www.rae.es/diccionario-estudiante/docs/ortografia.pdf)，地区差异参考 [RAE 对 seseo / ceceo 的说明](https://www.rae.es/buen-uso-español/el-seseo-y-el-ceceo)。本课程用于基础组合试听，不是完整 IPA 或逐项人工录音。
 
-## 二、入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-3" data-jobs-toc="v2">二、入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 公开入口为 `JobsSpanishLesson.course`。音节组合由 JobsLanguageCore 的 `JobsLanguageSyllableCourse` 生成；`JobsSpanishLearning.podspec` 描述 Pod 与 `JobsLanguageCore` 依赖。系统 TTS 需要设备上有对应西班牙语声音，不会回退到其它语种。
 
-## 三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-4" data-jobs-toc="v2">三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 **`ch` 和 `ll` 为什么单列？** 它们是常见字母组合，便于按一个辅音行练习；课程不把它们称为西班牙字母表中的独立字母。
 

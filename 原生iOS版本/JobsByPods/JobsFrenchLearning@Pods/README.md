@@ -2,15 +2,26 @@
 
 ![Jobs出品，必属精品](https://picsum.photos/1500/400)
 
-[toc]
+<!-- jobs-toc:start -->
+<!-- jobs-toc:source {"v":2,"token":"[toc]"} -->
+<details>
+<summary>📚 目录（点击展开 / 收起）</summary>
+
+- [🔥 前言](#jobs-toc-heading-1)
+- [一、职责与拼读范围](#jobs-toc-heading-2)
+- [二、入口](#jobs-toc-heading-3)
+- [三、常见问题](#jobs-toc-heading-4)
+
+</details>
+<!-- jobs-toc:end -->
 
 ---
 
-## 🔥 <font id=前言>前言</font>
+## <span id="jobs-toc-heading-1" data-jobs-toc="v2">🔥 <font id=前言>前言</font></span><!-- jobs-toc:heading-end -->
 
 法语拼读练习数据模块，提供基础元音字母、辅音字母与常见多字母组合；依赖公共 `JobsLanguageCore`，不依赖 Demo 根列表。
 
-## 一、职责与拼读范围 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-2" data-jobs-toc="v2">一、职责与拼读范围 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 - `JobsFrenchLesson.course`：`fr-FR` 发音课程，包含 6 个元音字母、20 个辅音字母，以及 `ch / gn / ph` 组合。
 - `q` 行仅开放 `que / qui`；`·` 标记 `k / w / x` 等较少见字母。
@@ -19,11 +30,11 @@
 
 课程以 [法国教育部法语音素表](https://www.education.gouv.fr/media/199500/download) 为发音范围参考。系统 TTS 需要设备上有对应法语声音，不会回退到其它语种。
 
-## 二、入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-3" data-jobs-toc="v2">二、入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 公开入口为 `JobsFrenchLesson.course`。音节组合由 JobsLanguageCore 的 `JobsLanguageSyllableCourse` 生成；`JobsFrenchLearning.podspec` 描述 Pod 与 `JobsLanguageCore` 依赖。
 
-## 三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-4" data-jobs-toc="v2">三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 **为什么有些字母和组合不像单一辅音音素？** 系统 TTS 朗读拼写文本，可能按字母名或上下文规则合成。完整发音需结合教师示范或专业音素教材。
 

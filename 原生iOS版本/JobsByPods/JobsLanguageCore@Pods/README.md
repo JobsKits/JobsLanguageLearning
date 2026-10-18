@@ -2,15 +2,26 @@
 
 ![Jobs出品，必属精品](https://picsum.photos/1500/400)
 
-[toc]
+<!-- jobs-toc:start -->
+<!-- jobs-toc:source {"v":2,"token":"[toc]"} -->
+<details>
+<summary>📚 目录（点击展开 / 收起）</summary>
+
+- [🔥 前言](#jobs-toc-heading-1)
+- [一、能力与结构](#jobs-toc-heading-2)
+- [二、使用与验证](#jobs-toc-heading-3)
+- [三、常见问题](#jobs-toc-heading-4)
+
+</details>
+<!-- jobs-toc:end -->
 
 ---
 
-## 🔥 <font id=前言>前言</font>
+## <span id="jobs-toc-heading-1" data-jobs-toc="v2">🔥 <font id=前言>前言</font></span><!-- jobs-toc:heading-end -->
 
 独立语言学习 App 的公共基座，使用 [**Swift**](https://www.swift.org/)、Jobs UI 工厂与链式 DSL。业务模块依赖本 Pod；公共层不反向依赖任何语种。
 
-## 一、能力与结构 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-2" data-jobs-toc="v2">一、能力与结构 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 | 目录 / 类型 | 职责 |
 | --- | --- |
@@ -31,13 +42,13 @@ UI 由 [**SnapKit**](https://github.com/SnapKit/SnapKit) 布局。主题依赖�
 
 导航条在布局回调中通过 Jobs DSL 更新框架的 Frame 宽度，适配 iPad 旋转及窗口变化；页面业务约束仍由 SnapKit 管理，不改导航框架源码。
 
-## 二、使用与验证 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-3" data-jobs-toc="v2">二、使用与验证 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 Podfile.deps 的 `byJobs` 统一挂载；具体根级依赖与资源范围见 `JobsLanguageCore.podspec`，没有重复的 Core subspec。继承 `JobsLanguageBaseVC` 后覆盖标题和 `speechLanguage`，通过 `speak(_:language:)` 点读。默认右侧为设置入口；首页覆盖 `learningNavigationButtons`，提供主题下拉列表入口，选择后通过 `JobsLanguageAppearance.choose` 保存三态主题。学习说明入口与帮助传参已移除。
 
 SQLite、播放与主题对象独立于原 Demo 主工程。工程级构建、真实词库测试、页面测试及设备限制见根目录 [README](../../README.md) 和 [验证记录](../../验证记录.md)。
 
-## 三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-4" data-jobs-toc="v2">三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 **为什么译文不在公共层？** 日语的词义限制、中文缓存和系统翻译属于日语业务；公共层只提供点读、UI 与数据访问。
 

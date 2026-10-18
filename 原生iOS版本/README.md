@@ -2,7 +2,26 @@
 
 ![Jobs出品，必属精品](https://picsum.photos/1500/400)
 
-[toc]
+<!-- jobs-toc:start -->
+<!-- jobs-toc:source {"v":2,"token":"[toc]"} -->
+<details>
+<summary>📚 目录（点击展开 / 收起）</summary>
+
+- [🔥 前言](#jobs-toc-heading-1)
+- [CocoaPods 安装网络选路](#cocoapods-network-route)
+- [一、功能](#jobs-toc-heading-3)
+- [二、运行方式](#jobs-toc-heading-4)
+  - [2.1、Xcode 手动安装依赖](#jobs-toc-heading-5)
+- [三、工程结构与解耦](#jobs-toc-heading-6)
+- [四、项目配置支持](#jobs-toc-heading-7)
+  - [4.1、自动输出构建产物](#jobs-toc-heading-8)
+- [五、数据与能力边界](#jobs-toc-heading-9)
+- [六、验证入口](#jobs-toc-heading-10)
+  - [页面预览](#jobs-toc-heading-11)
+- [七、常见问题](#jobs-toc-heading-12)
+
+</details>
+<!-- jobs-toc:end -->
 
 ---
 
@@ -10,7 +29,7 @@
 
 https://github.com/user-attachments/assets/26dbbee0-261b-4f5b-b9f1-43260d51d281
 
-## 🔥 <font id=前言>前言</font>
+## <span id="jobs-toc-heading-1" data-jobs-toc="v2">🔥 <font id=前言>前言</font></span><!-- jobs-toc:heading-end -->
 
 使用 [**Swift**](https://www.swift.org/) 编写的独立 iPhone / iPad App。首页将分级英语词本置顶，再列俄、法、西、朝鲜、德、日语学习入口及阿拉伯语拼读；国家语种行显示对应国旗，阿拉伯联盟旗帜使用本地打包资源，原始 SVG 与来源说明一并保留。俄语、阿拉伯语、法语、西班牙语、朝鲜语和德语复用拼读页面；英语、日语复用各自离线词库。运行 App 不需要 Python，也不依赖原工程所在路径。
 
@@ -34,7 +53,7 @@ pod install
 
 [网络适配、开关与测试](<./ScriptsByPods/【MacOS】🌐CocoaPods网络适配.command/README.md>) · [Specs 选源、超时与日志](<./ScriptsByPods/【MacOS】🌐CocoaPods源自动选择.command/README.md>)。迁移时保留完整 ScriptsByPods 包及各 Podfile 的相对加载路径。网络摘要显示在安装输出中，Specs 日志写系统临时目录并按 Podfile 所在目录隔离。
 
-## 一、功能 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-3" data-jobs-toc="v2">一、功能 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 | 首页入口 | 学习能力 |
 | --- | --- |
@@ -49,7 +68,7 @@ pod install
 
 首页右上角“主题 ▾”展开导航栏下方的列表，可选择白天、黑夜或跟随系统，当前选项带勾。选择后保存并收起，点击外部或再次点击主题按钮也可收起；语种页面的“设置”保留外观、声音、语速、重复次数和音量。首次默认跟随系统，选择保存到 App 沙盒。“学习说明”入口与弹窗已移除，页面内发音提示仍保留。页面离开或 App 失去活跃状态时停止点读；新目标取消旧队列并过滤旧回调。
 
-## 二、运行方式 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-4" data-jobs-toc="v2">二、运行方式 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 1、最低系统版本为 iOS / iPadOS 18，使用已安装对应 iOS SDK 的 [**Xcode**](https://developer.apple.com/xcode)。首次配置可运行：
 
@@ -64,7 +83,7 @@ open JobsLanguageLearning.xcworkspace
 
 4、日语内置字义和学习示例可直接离线阅读。未缓存的词义、用法或例句译文点击“生成 / 重试中文译文”，通过 [Apple Translation](https://developer.apple.com/documentation/translation/translating-text-within-your-app) 在本机生成；首次需要真机允许下载英中语言包，下载后可离线翻译。模拟器保留内置中文，但不能验证系统翻译。英文仅作为内部翻译源，学习界面不以英文释义兜底。译文写入 Application Support 的 `JobsKanjiChinese.json`。
 
-### 2.1、Xcode 手动安装依赖 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+### <span id="jobs-toc-heading-5" data-jobs-toc="v2">2.1、Xcode 手动安装依赖 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 在 `Xcode → Behaviors → 🫘语言学习 iOS · Pod Install` 随时手动打开 [**Terminal**](https://support.apple.com/guide/terminal/welcome/mac)，核对项目路径后按回车执行 `pod install`，按 `Ctrl+C` 取消。入口为 [ScriptsByPods 脚本包](<./ScriptsByPods/【MacOS@Xcode】🫘打开终端运行Pod Install.command/README.md>)；工程导航中的同名组只包含脚本和说明文件，不加入 App target、Build Phase 或 Scheme 自动动作。
 
@@ -72,7 +91,7 @@ open JobsLanguageLearning.xcworkspace
 
 自定义 Behaviors 属于 Xcode 当前用户设置。更换电脑时，在 `Xcode → Behaviors → Edit Behaviors… → Custom` 新增上述行为并启用 `Run`，选择包内同名 `.command`；移动项目路径后重新选择脚本，快捷键按个人习惯设置。双击脚本也使用同一确认流程。初始工程生成器 `ScriptsByDevTools/generate_project.rb` 会保留该手动文件组引用。
 
-## 三、工程结构与解耦 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-6" data-jobs-toc="v2">三、工程结构与解耦 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 ```text
 JobsLanguageLearning/
@@ -136,7 +155,7 @@ UI 创建、配置、事件和布局采用现有 Jobs 工厂、`byXxx` 链与 [*
 
 `resource-provenance.json` 保留提取时语料路径、SHA-256 和当前来源位置。提取后的日语源工程已更名为 `JobsKanjiByJap.py/JobsKanjiByJap`；SQLite、中文种子、指南和覆盖报告重新核验一致，归属声明仅标题改名。新 App 保留提取时声明与许可正文。
 
-## 四、项目配置支持 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-7" data-jobs-toc="v2">四、项目配置支持 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 - [**CocoaPods**](https://cocoapods.org/) 依赖清单在 `Podfile.deps`，每个依赖使用一行明确的 `pod` 声明及实际路径，没有外部脚本副作用。`Podfile` 在依赖文件存在时读取定义，`post_install` 统一设置 iOS 18、Swift 5 和脚本沙盒配置。AFNetworking target 关闭 Clang 模块和显式模块扫描，以兼容当前 SDK 的系统私有头限制；不改第三方源码。
 - `Podfile` 的 `post_integrate` 同步调用 `jobs_show_dependency_manifest`：依赖清单与 Pods 工程存在时，将 `Podfile.deps` 作为 Ruby 文件引用显示在 Pods 根组的 `Podfile` 下方，显式类型为 `text.script.ruby`，呈现红钻图标及文件引用标识，不进入任何 Build Phase。每次安装查重并维护位置，使用 CocoaPods 自带的 `xcodeproj`，无需外部脚本或额外依赖。保存后重新打开校验根对象及引用；失败恢复原工程并告警，不阻断安装。结果输出到 CocoaPods 控制台，没有单独日志或开关。
@@ -145,7 +164,7 @@ UI 创建、配置、事件和布局采用现有 Jobs 工厂、`byXxx` 链与 [*
 - 根 `.gitignore` 排除 Pods、build、DerivedData、work 和 Xcode 用户状态；源码、Podfile.lock、离线词库和归属文件属于可交付内容。项目没有创建 Git 提交或远端。
 - AppIcon 复用原 Swift 模块从 [**iconfont**](https://www.iconfont.cn/) 获得的语言图标：图标 ID `577386`，作者 ID `2607`，库 ID `4955`。保留原始 SVG 和可编译图标资源。
 
-### 4.1、自动输出构建产物 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+### <span id="jobs-toc-heading-8" data-jobs-toc="v2">4.1、自动输出构建产物 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 主 App 最后一个 Build Phase `Save Build IPA` 调用 [save_device_ipa_after_build.command](./ScriptsByDevTools/save_device_ipa_after_build.command/save_device_ipa_after_build.command)，每次 iOS App 构建都会执行，Xcode 内无须手动确认。按设备平台保存以下产物：
 
@@ -171,7 +190,7 @@ UI 创建、配置、事件和布局采用现有 Jobs 工厂、`byXxx` 链与 [*
 日志同步输出到 Xcode 构建日志与系统临时目录中的 `save_device_ipa_after_build.log`。终端手动运行须提供有效 App 与构建环境变量。
 脚本与专属说明位于 `ScriptsByDevTools/save_device_ipa_after_build.command/`，参见 [脚本 README](./ScriptsByDevTools/save_device_ipa_after_build.command/README.md)。Xcode 构建入口仍打印自述后自动执行；独立终端运行需先回车确认，再输入 `YES` 同意成功打包后的 build/ 清空，没有可交互输入则退出。确认前不初始化日志，也不修改产物。
 
-## 五、数据与能力边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-9" data-jobs-toc="v2">五、数据与能力边界 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 - 英语词库为 13,430 个词条和 25,832 条例句；844 词缺例句。原库没有逐义例句映射，详情页明确显示词条级关联。雅思档位为 wordfreq 自定义学习分级，其它档位来自原备考词书集合。来源 kajweb/dict 的再分发授权仍需在公开发行前解决；详见英语 `Resource/coverage.json` 与 `THIRD_PARTY_NOTICES.txt`。
 - 日语为 KANJIDIC2 的 13,108 字、JMdict 的 218,844 词、26,269 条不同 Tatoeba 例句。751 字缺读音、2,724 字缺原释义、7,092 字缺关联词条。保留预制中文、原读法限制、词义限制和原例句 token，缺项按原库报告，不自动造句。
@@ -181,7 +200,7 @@ UI 创建、配置、事件和布局采用现有 Jobs 工厂、`byXxx` 链与 [*
 - 德语以八个基础元音字母、`y` 的外来词读音、辅音和常见辅音拼写组合组成入门表；宽式读音提示参考[慕尼黑大学德语元音音质研究](https://www.phonetik.uni-muenchen.de/forschung/publikationen/DioubinaPfitzinger_ICSLP02.pdf)与[国际音标协会 IPA 表](https://www.internationalphoneticassociation.org/IPAcharts/IPA_chart_trans/pdfs/IPA_Kiel_2020_full_deu.pdf)。系统 TTS 试听不等同于人工音素录音。
 - 真机系统声音、首次下载翻译语言包、发行签名与 App Store 提交需在相应设备和账号验证。
 
-## 六、验证入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-10" data-jobs-toc="v2">六、验证入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 ```shell
 xcodebuild -workspace JobsLanguageLearning.xcworkspace \
@@ -199,7 +218,7 @@ xcodebuild -workspace JobsLanguageLearning.xcworkspace \
 
 验证结果和设备基线见 [验证记录](./验证记录.md)。示例模拟器名需替换成机器上实际存在的 iOS 18+ 设备。测试覆盖真实词库与跨页面行为，不能代替真机听音或翻译语言包验证。
 
-### 页面预览 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+### <span id="jobs-toc-heading-11" data-jobs-toc="v2">页面预览 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 | 俄语矩阵 | 日语振假名 |
 | --- | --- |
@@ -207,7 +226,7 @@ xcodebuild -workspace JobsLanguageLearning.xcworkspace \
 
 现有截图展示原俄语、英语、日语页面；新增拼读页尚未生成截图。其余英语、日语、主题设置及 iPad 截图保存在 `Screenshots`。
 
-## 七、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-12" data-jobs-toc="v2">七、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 **打开工程报找不到模块？** 使用 `.xcworkspace`；移动文件夹后在根目录执行 `pod install --no-repo-update`。
 

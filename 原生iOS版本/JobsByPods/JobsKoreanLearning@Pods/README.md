@@ -2,15 +2,26 @@
 
 ![Jobs出品，必属精品](https://picsum.photos/1500/400)
 
-[toc]
+<!-- jobs-toc:start -->
+<!-- jobs-toc:source {"v":2,"token":"[toc]"} -->
+<details>
+<summary>📚 目录（点击展开 / 收起）</summary>
+
+- [🔥 前言](#jobs-toc-heading-1)
+- [一、职责与音节结构](#jobs-toc-heading-2)
+- [二、入口](#jobs-toc-heading-3)
+- [三、常见问题](#jobs-toc-heading-4)
+
+</details>
+<!-- jobs-toc:end -->
 
 ---
 
-## 🔥 <font id=前言>前言</font>
+## <span id="jobs-toc-heading-1" data-jobs-toc="v2">🔥 <font id=前言>前言</font></span><!-- jobs-toc:heading-end -->
 
 朝鲜语韩文拼读课程数据模块，依赖公共 `JobsLanguageCore`，不依赖 Demo 根列表。
 
-## 一、职责与音节结构 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-2" data-jobs-toc="v2">一、职责与音节结构 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 - `JobsKoreanLesson.course`：`ko-KR` 发音课程，使用 19 个声母、21 个元音，并提供 27 种收音及无收音选项。
 - `JobsLanguageSyllableCourse` 按韩文 Unicode 音节块公式组合声母、元音与可选收音，显示为可朗读的完整韩文音节。
@@ -19,11 +30,11 @@
 
 音节结构参考 [韩国国立国语院韩文介绍](https://www.korean.go.kr/eng_hangeul/principle/001.html)。课程展示音节块并使用系统 TTS 试听，不替代逐项人工录音或词中音变课程。
 
-## 二、入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-3" data-jobs-toc="v2">二、入口 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 公开入口为 `JobsKoreanLesson.course`。课程使用 JobsLanguageCore 的 `JobsLanguageSyllableCourse` 生成音节块；`JobsKoreanLearning.podspec` 描述 Pod 与 `JobsLanguageCore` 依赖。缺少系统朝鲜语声音时会提示安装，不使用其它语种兜底。
 
-## 三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-4" data-jobs-toc="v2">三、常见问题 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 **为什么要选收音？** 韩文音节块由声母、元音及可选收音构成；通过同一声母和元音切换收音，试听这些组合。
 

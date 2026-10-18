@@ -2,11 +2,29 @@
 
 ![Jobs出品，必属精品](https://picsum.photos/1500/400)
 
-[toc]
+<!-- jobs-toc:start -->
+<!-- jobs-toc:source {"v":2,"token":"[toc]"} -->
+<details>
+<summary>📚 目录（点击展开 / 收起）</summary>
+
+- [🔥 前言](#jobs-toc-heading-1)
+- [CocoaPods 安装网络选路](#cocoapods-network-route)
+- [一、功能](#jobs-toc-heading-3)
+- [二、运行与构建](#jobs-toc-heading-4)
+- [三、结构](#jobs-toc-heading-5)
+- [四、语料与版权](#jobs-toc-heading-6)
+- [五、验证方式](#jobs-toc-heading-7)
+- [六、FAQ](#jobs-toc-heading-8)
+  - [1、点击后没有声音？](#jobs-toc-heading-9)
+  - [2、为什么日语有“中文译文待补充”？](#jobs-toc-heading-10)
+  - [3、红色振假名是否一定准确？](#jobs-toc-heading-11)
+
+</details>
+<!-- jobs-toc:end -->
 
 ---
 
-## <span id="前言">🔥 前言</span>
+## <span id="jobs-toc-heading-1" data-jobs-toc="v2"><span id="前言">🔥 前言</span></span><!-- jobs-toc:heading-end -->
 
 Jobs 多语种学习应用的 [**Flutter**](https://flutter.dev/) 版本，以 [**Dart**](https://dart.dev/) 实现界面与业务。词库独立复制自 JobsLanguageLearning，运行时不依赖 Swift 或 Python 来源目录。
 
@@ -31,7 +49,7 @@ pod install
 
 [网络适配、开关与测试](<./ScriptsByPods/【MacOS】🌐CocoaPods网络适配.command/README.md>) · [Specs 选源、超时与日志](<./ScriptsByPods/【MacOS】🌐CocoaPods源自动选择.command/README.md>)。迁移时保留完整 ScriptsByPods 包及各 Podfile 的相对加载路径。网络摘要显示在安装输出中，Specs 日志写系统临时目录并按 Podfile 所在目录隔离。
 
-## 一、功能 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-3" data-jobs-toc="v2">一、功能 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 | 模块 | 能力 |
 | --- | --- |
@@ -49,7 +67,7 @@ pod install
 | 播放生命周期 | 新点读取消旧队列；切换页面、退出或切入后台停止；缺声音显示安装提示 |
 | 中文 | 内置字义、学习指南和缓存；缺译可在 macOS / iOS / Android 按需生成并保存 |
 
-## 二、运行与构建 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-4" data-jobs-toc="v2">二、运行与构建 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 使用 Flutter 3.47.6 / Dart 3.13.5 创建。项目根目录执行：
 
@@ -85,7 +103,7 @@ flutter build windows --release
 
 5、此工程提供 Android、iOS、macOS、Windows 宿主；未提供 Web / Linux 运行入口。
 
-## 三、结构 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-5" data-jobs-toc="v2">三、结构 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 ```text
 ./
@@ -107,7 +125,7 @@ flutter build windows --release
 
 首次查询将只读词库复制至系统 Application Support 的 `catalog-v1`，使用绑定参数查询，不改打包资源。升级资源时应同步提升词库目录版本，避免沿用旧缓存。主题 / 语音设置和已生成中文保存到本机偏好中。
 
-## 四、语料与版权 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-6" data-jobs-toc="v2">四、语料与版权 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 - 日语 KANJIDIC2 / JMdict 版权归 EDRDG，派生数据遵守 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)；详情保留 Tatoeba 原句链接。完整原始归属见 `./assets/japanese/NOTICE.txt`。
 - 英语来源与使用限制见 `./assets/english/THIRD_PARTY_NOTICES.txt` 和 `coverage.json`，不能因制作 Flutter 客户端扩大原数据再分发许可。
@@ -115,7 +133,7 @@ flutter build windows --release
 - 来源 NOTICE 包含 Python、Qt、Argos 的历史说明；Flutter 应用未携带 Python / Qt / Argos 运行时或模型。
 - 业务未新增第三方图片或下载图标，保留 Flutter 宿主提供的系统导航控件。字体由平台负责日语及俄语回退。
 
-## 五、验证方式 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-7" data-jobs-toc="v2">五、验证方式 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 ```sh
 flutter analyze
@@ -127,17 +145,17 @@ flutter test integration_test/app_test.dart -d macos
 
 注音是宽式入门提示，不代替完整发音规则或人工录音。阿拉伯语表使用 hamza 与三个短元音符号，不覆盖长元音、词形变化和地区口音；法语不覆盖鼻化、重音及全部位置规则；西班牙语表按西班牙本土音值显示 /θ/，拉美 seseo 地区相应读 /s/；韩语收音标注不模拟词中连音和音变；德语长短元音及辅音拼写依上下文变化。参考资料：[阿拉伯语罗马转写与 IPA 对照（沙迦大学）](https://romanization.sharjah.ac.ae/firstpageView/)、[国际音标表（IPA 协会）](https://www.internationalphoneticassociation.org/content/ipa-chart)、[法国教育部法语音素表](https://www.education.gouv.fr/media/199500/download)、[西班牙皇家学院正字法文档](https://www.rae.es/diccionario-estudiante/docs/ortografia.pdf)、[RAE seseo / ceceo 说明](https://www.rae.es/buen-uso-español/el-seseo-y-el-ceceo)、[韩国国立国语院修订罗马字](https://www.korean.go.kr/front_eng/roman/roman_01.do)、[慕尼黑大学德语元音音质研究](https://www.phonetik.uni-muenchen.de/forschung/publikationen/DioubinaPfitzinger_ICSLP02.pdf) 与[IPA 协会音标表](https://www.internationalphoneticassociation.org/IPAcharts/IPA_chart_trans/pdfs/IPA_Kiel_2020_full_deu.pdf)。
 
-## 六、FAQ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+## <span id="jobs-toc-heading-8" data-jobs-toc="v2">六、FAQ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
-### 1、点击后没有声音？ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+### <span id="jobs-toc-heading-9" data-jobs-toc="v2">1、点击后没有声音？ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 先查看页面底部错误，再到系统语音设置安装对应语言。零音量、静音输出设备或未安装声音都会影响点读。系统 TTS 不等同于专业音素录音，俄语单辅音可能读成字母名称；日语辅音表头明确使用代表音节。
 
-### 2、为什么日语有“中文译文待补充”？ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+### <span id="jobs-toc-heading-10" data-jobs-toc="v2">2、为什么日语有“中文译文待补充”？ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 原库缺项和机器译文未经完整校对。支持的平台可点击“生成 / 重试中文译文”，首次可能下载模型；成功后本机缓存，拒绝把仍含英文的结果当成中文释义。Windows 暂时保留缺译提示。
 
-### 3、红色振假名是否一定准确？ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
+### <span id="jobs-toc-heading-11" data-jobs-toc="v2">3、红色振假名是否一定准确？ <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
 自动分析可能有歧义。词库保留整词读法、义项及例句关联限制，不把熟字训强拆为单字读音，不使用自动造句补齐缺失语料。
 

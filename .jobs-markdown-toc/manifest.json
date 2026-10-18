@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "files": [
+    ".jobs-markdown-toc/README.md",
+    "Flutter版本/README.md",
+    "Flutter版本/ScriptsByPods/【MacOS】🌐CocoaPods源自动选择.command/README.md",
+    "Flutter版本/ScriptsByPods/【MacOS】🌐CocoaPods网络适配.command/README.md",
+    "原生iOS版本/JobsByPods/JobsEnglishLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsFrenchLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsGermanLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsImageTools@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsInheritance@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsKanjiLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsKoreanLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsLanguageCore@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsRussianLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsSpanishLearning@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsSwiftBlock@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsSwiftDSL@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsSwiftStandardLibrary@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsSwiftTimer@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsTextTools@Pods/README.md",
+    "原生iOS版本/JobsByPods/JobsViewPush@Pods/README.md",
+    "原生iOS版本/JobsByPods/Jobsl10n@Pods/README.md",
+    "原生iOS版本/JobsByPods/Jobsl10n@Pods/iOS多语言环境设置.md/iOS多语言环境设置.md",
+    "原生iOS版本/README.md",
+    "原生iOS版本/ScriptsByDevTools/save_device_ipa_after_build.command/README.md",
+    "原生iOS版本/ScriptsByPods/【MacOS@Xcode】🫘打开终端运行Pod Install.command/README.md",
+    "原生iOS版本/ScriptsByPods/【MacOS】🌐CocoaPods源自动选择.command/README.md",
+    "原生iOS版本/ScriptsByPods/【MacOS】🌐CocoaPods网络适配.command/README.md",
+    "原生iOS版本/验证记录.md"
+  ]
+}
