@@ -266,7 +266,7 @@ MIT 是 Pod 源码声明，不替代其中词库的独立许可。lottie-ios 仅
 
 ### 6.3、<span id="flutter-dependencies">Flutter 直接依赖</span> <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a>
 
-2026-10-19 依据 [pubspec.yaml](./Flutter版本/pubspec.yaml) 与 [pubspec.lock](./Flutter版本/pubspec.lock) 计 11 个直接声明（含 3 个 SDK 包与开发检查工具）；插件许可证从当前本机已解析包的 LICENSE 核对，首次在其它机器恢复仍应核查随包许可。
+> 2026-10-19 依据 [pubspec.yaml](./Flutter版本/pubspec.yaml) 与 [pubspec.lock](./Flutter版本/pubspec.lock) 计 11 个直接声明（含 3 个 SDK 包与开发检查工具）；插件许可证从当前本机已解析包的 LICENSE 核对，首次在其它机器恢复仍应核查随包许可。
 
 | 依赖名 | 版本（声明 → 锁定） | 来源／私库地址 | 许可证 | 关系 | 用途／仍使用 |
 | --- | --- | --- | --- | --- | --- |

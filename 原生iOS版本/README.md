@@ -85,11 +85,13 @@ open JobsLanguageLearning.xcworkspace
 
 ### <span id="jobs-toc-heading-5" data-jobs-toc="v2">2.1、Xcode 手动安装依赖 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 
-在 `Xcode → Behaviors → 🫘语言学习 iOS · Pod Install` 随时手动打开 [**Terminal**](https://support.apple.com/guide/terminal/welcome/mac)，核对项目路径后按回车执行 `pod install`，按 `Ctrl+C` 取消。入口为 [ScriptsByPods 脚本包](<./ScriptsByPods/【MacOS@Xcode】🫘打开终端运行Pod Install.command/README.md>)；工程导航中的同名组只包含脚本和说明文件，不加入 App target、Build Phase 或 Scheme 自动动作。
+在 `Xcode → Behaviors → 🫘当前工程 · Pod Install` 手动启动共享脚本；[通用入口与完整用法](<./../../JobsGenesis/JobsCommand@iOS/Cocoapods/【MacOS@Xcode】🫘当前工程Pod Install.command/README.md>)位于 `JobsCommand@iOS` 的 `Cocoapods` 分类。本工程不保存脚本副本或手动入口展示组，也不为该入口增加 App target、Build Phase 或 Scheme 自动动作。
 
-脚本以自身目录的 `../..` 定位本原生 iOS 工程，确认后检查 `Podfile` 与 [**CocoaPods**](https://cocoapods.org/) 的 `pod --version`，再实时显示安装输出并返回真实退出码。安装可能下载依赖、更新 `Pods/`、`Podfile.lock` 和工作空间，并执行 Podfile 已有钩子；脚本不自动安装或升级工具链、不执行构建。完整日志在系统临时目录中的 `language-learning-pod-install.log`，每次终端确认后覆盖；Xcode 打开终端成功只代表入口已启动，安装结果以终端与日志为准。
+脚本优先读取 Xcode 本次调用的 `XcodeWorkspacePath`，再读取 `XcodeProjectPath`；在当前工程及仓库边界内的祖先目录寻找最近的 `Podfile`，不遍历其它子工程。没有工程上下文或找不到 `Podfile` 时停止；`Pods`、`.swiftpm` 生成工程及明确声明为非 iOS 的 Podfile 会被拒绝。动态 Ruby DSL 不会在确认前执行或求值，未知平台仍须核对终端展示的目标。
 
-自定义 Behaviors 属于 Xcode 当前用户设置。更换电脑时，在 `Xcode → Behaviors → Edit Behaviors… → Custom` 新增上述行为并启用 `Run`，选择包内同名 `.command`；移动项目路径后重新选择脚本，快捷键按个人习惯设置。双击脚本也使用同一确认流程。初始工程生成器 `ScriptsByDevTools/generate_project.rb` 会保留该手动文件组引用。
+终端显示精确工程与 Podfile 路径，**精确输入大写 `INSTALL` 后回车执行；空行、其它输入、Ctrl+C 或输入结束均取消**。确认从真实终端的 `/dev/tty` 读取，确认前不运行 `pod` 或写安装日志。确认后复检已有 CocoaPods 并执行 `pod install`；可能下载依赖、更新 `Pods/`、`Podfile.lock`、工作空间，并照常运行目标 Podfile 的钩子。入口不安装或升级工具链、不执行构建，失败退出码保留。每次确认后建立系统临时目录中的独立 `jobs-xcode-pod-install.log.*` 日志，多个工程互不覆盖；Xcode 成功打开终端仅代表入口已启动。
+
+Behaviors 属于 Xcode 用户设置。更换电脑或移动共享脚本库后，在 `Xcode → Behaviors → Edit Behaviors… → Custom` 创建或编辑上述唯一行为，启用 `Run` 并重新选择共享包内的同名 `.command`；移动目标工程后无需另建 Behavior。终端可显式传入 `--xcode-path`，加 `--check` 只读核对定位，不运行 `pod`、不写日志或工程文件；参数示例见通用说明。
 
 ## <span id="jobs-toc-heading-6" data-jobs-toc="v2">三、工程结构与解耦 <a href="#前言" style="font-size:17px; color:green;"><b>🔼</b></a> <a href="#🔚" style="font-size:17px; color:green;"><b>🔽</b></a></span><!-- jobs-toc:heading-end -->
 

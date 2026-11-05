@@ -56,7 +56,6 @@
 
 /* Begin PBXFileReference section */
 		042FB72D01E0F36E061B609C /* JobsLanguageHomeVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JobsLanguageHomeVC.swift; path = JobsLanguageHomeVC/JobsLanguageHomeVC.swift; sourceTree = "<group>"; };
-		0570831877147BF6B1EFE9ED /* 【MacOS@Xcode】🫘打开终端运行Pod Install.command */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "【MacOS@Xcode】🫘打开终端运行Pod Install.command"; sourceTree = "<group>"; };
 		109FB31727953235F28BE65F /* JobsRussianConsonantPickerVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsRussianConsonantPickerVC.swift; sourceTree = "<group>"; };
 		1429F79EDDFE8777D045BCD8 /* JobsRussianTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsRussianTableView.swift; sourceTree = "<group>"; };
 		1627B891AE6CD60A833B87B8 /* JobsLanguageLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobsLanguageLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +88,6 @@
 		CEDE3DAE4852445798D42750 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFB82B6328784AA9FFEC7398 /* JobsLanguageRepositoryTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsLanguageRepositoryTests.swift; sourceTree = "<group>"; };
 		D329AE79BA7A66E0DA834D27 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D6E6AF9E7D567665BE8F4604 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		DCA53FF72F24140D79D58B1C /* SceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = SceneDelegate/SceneDelegate.swift; sourceTree = "<group>"; };
 		E3FC260D9BC189055F13B568 /* JobsKanjiLearningVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsKanjiLearningVC.swift; sourceTree = "<group>"; };
 		E8D050ADB1E95A50B5D6D904 /* JobsEnglishWordCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = JobsEnglishWordCell.swift; sourceTree = "<group>"; };
@@ -205,16 +203,6 @@
 			path = Translation;
 			sourceTree = "<group>";
 		};
-		362D277F3E725BC77684C2DC /* 【MacOS@Xcode】🫘打开终端运行Pod Install.command */ = {
-			isa = PBXGroup;
-			children = (
-				0570831877147BF6B1EFE9ED /* 【MacOS@Xcode】🫘打开终端运行Pod Install.command */,
-				D6E6AF9E7D567665BE8F4604 /* README.md */,
-			);
-			name = "【MacOS@Xcode】🫘打开终端运行Pod Install.command";
-			path = "【MacOS@Xcode】🫘打开终端运行Pod Install.command";
-			sourceTree = "<group>";
-		};
 		37AA06D404BE35F574D6B35C /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,15 +220,6 @@
 			path = JobsKanjiTranslationHost;
 			sourceTree = "<group>";
 		};
-		4F8296D80B5756D343586227 /* ScriptsByPods */ = {
-			isa = PBXGroup;
-			children = (
-				362D277F3E725BC77684C2DC /* 【MacOS@Xcode】🫘打开终端运行Pod Install.command */,
-			);
-			name = ScriptsByPods;
-			path = ScriptsByPods;
-			sourceTree = "<group>";
-		};
 		5272C1BE09F8479D3D2E4151 = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +230,6 @@
 				F23CBB41E7ECA7B01DEBBF49 /* UITests */,
 				DF1215D532B19E64448BC6EC /* Pods */,
 				A2D000062026100500000011 /* ScriptsByDevTools */,
-				4F8296D80B5756D343586227 /* ScriptsByPods */,
 			);
 			sourceTree = "<group>";
 		};

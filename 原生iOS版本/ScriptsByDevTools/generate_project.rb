@@ -17,13 +17,6 @@ Dir.glob(root.join('JobsLanguageLearning/Resource/*').to_s).sort.each do |file|
   target.resources_build_phase.add_file_reference(resources.new_file(File.basename(file)))
 end
 resources.new_file('Info.plist')
-# 手动依赖入口只展示文件，不参与 target 或自动构建流程。
-pod_script_name = '【MacOS@Xcode】🫘打开终端运行Pod Install.command'
-pod_scripts = project.main_group.new_group('ScriptsByPods', 'ScriptsByPods')
-pod_package = pod_scripts.new_group(pod_script_name, pod_script_name)
-pod_script = pod_package.new_file(pod_script_name)
-pod_script.last_known_file_type = 'text.script.sh'
-pod_package.new_file('README.md')
 # 自动 IPA 脚本包只展示文件，实际执行由主 App 最后构建阶段负责。
 ipa_script_name = 'save_device_ipa_after_build.command'
 dev_scripts = project.main_group.new_group('ScriptsByDevTools', 'ScriptsByDevTools')
